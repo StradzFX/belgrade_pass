@@ -1,0 +1,136 @@
+@mixin clearfix() {
+	&:after {
+     	visibility: hidden;
+     	display: block;
+     	font-size: 0;
+     	content: " ";
+     	clear: both;
+     	height: 0;
+    }
+}
+
+
+@mixin absolute-center-element() {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px; 
+	margin: auto;
+}
+
+
+@mixin border-box-sizing() {
+	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box;    
+    box-sizing: border-box;      
+}
+
+
+@mixin border-radius($default-radius) {
+	-webkit-border-radius: $default-radius; 
+    -moz-border-radius: $default-radius;    
+    -o-border-radius: $default-radius; 
+    border-radius: $default-radius;     
+}
+
+
+@mixin border-radius-left($default-radius) {
+
+	-webkit-border-top-left-radius: $default-radius;
+	-moz-border-radius-topleft: $default-radius;
+	border-top-left-radius: $default-radius;
+}
+
+
+@mixin border-radius-right($default-radius) {
+	-webkit-border-top-right-radius: $default-radius;
+	-moz-border-radius-topright: $default-radius;
+	border-top-right-radius: $default-radius;  
+}
+
+@mixin border-bottom-right-radius($default-radius) {
+	-webkit-border-bottom-right-radius: $default-radius; 
+    -moz-border-radius-bottomright: $default-radius;    
+    border-bottom-right-radius: $default-radius; 
+}
+
+@mixin border-bottom-left-top-right-radius($default-radius) {
+    -webkit-border-top-right-radius: $default-radius; 
+	-webkit-border-bottom-left-radius: $default-radius; 
+	-moz-border-radius-topright: $default-radius; 
+	-moz-border-radius-bottomleft: $default-radius; 
+	border-top-right-radius: $default-radius; 
+	border-bottom-left-radius: $default-radius; 
+}
+
+
+
+@mixin border($border-size, $border-type, $border-color) {
+	border: $border-size $border-type $border-color;   
+}
+@mixin border-top($border-size, $border-type, $border-color) {
+	border-top: $border-size $border-type $border-color;   
+}
+@mixin border-bottom($border-size, $border-type, $border-color) {
+	border-bottom: $border-size $border-type $border-color;   
+}
+@mixin border-left($border-size, $border-type, $border-color) {
+	border-left: $border-size $border-type $border-color;   
+}
+@mixin border-right($border-size, $border-type, $border-color) {
+	border-right: $border-size $border-type $border-color;   
+}
+@mixin border-left-right-bottom($border-size, $border-type, $border-color) {
+	border-left: $border-size $border-type $border-color;   
+	border-right: $border-size $border-type $border-color;   
+	border-bottom: $border-size $border-type $border-color;   
+}
+
+
+@mixin box-shaddow($x-value, $y-value, $blur-radius, $spread, $rgba-color) {
+	-webkit-box-shadow: $x-value $y-value $blur-radius $spread $rgba-color;
+	box-shadow: $x-value $y-value $blur-radius $spread $rgba-color;
+}
+
+@mixin transition($transitionTime) {
+	-webkit-transition: all $transitionTime ease-in-out;
+	-moz-transition: all $transitionTime ease-in-out;
+	-ms-transition: all $transitionTime ease-in-out;
+	-o-transition: all $transitionTime ease-in-out;
+	transition: all $transitionTime ease-in-out;
+}
+
+@mixin transform($defaultTransform) {
+	-moz-transform: scale($defaultTransform);
+	-webkit-transform: scale($defaultTransform);
+	-o-transform: scale($defaultTransform);
+	-ms-transform: scale($defaultTransform);
+	transform: scale($defaultTransform);
+}
+
+@mixin text-shaddow($x-shaddow, $y-shaddow, $blur-shaddow, $color-shaddow) {
+	text-shadow: $x-shaddow $y-shaddow $blur-shaddow $color-shaddow;
+}
+
+
+
+@mixin placeholder-color($place-color) {
+
+	&::-webkit-input-placeholder {
+	   color: $place-color;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: $place-color;  
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: $place-color;  
+	}
+
+	&:-ms-input-placeholder {  
+	   color: $place-color;  
+	}
+
+}

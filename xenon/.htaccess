@@ -1,0 +1,19 @@
+#SET FOLDERS TO HAVE FORBIDEN ACCESS 
+Options -Indexes 
+
+DirectoryIndex index.php
+
+<FilesMatch "\.(php|inc)$">
+Order allow,deny
+deny from all
+</FilesMatch>
+
+<FilesMatch "(index.php|upload.php|uploadfile.php|crop.php|cron.php|newsletter_counter.php|parent.php|uploadify.php|export_csv.php|unsubscribe.php|export_pictures.php|export_files.php)$">
+Order allow,deny
+allow from all
+</FilesMatch>
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>

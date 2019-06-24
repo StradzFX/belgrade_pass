@@ -1,0 +1,111 @@
+Poštovani/a <a href="mailto:{user_email}"  style="color:#fff;">{user_email}</a>,<br/>
+
+Izvršena je transakcija kupovine paketa platnom karticom na portalu KidCard.rs. <br/><br/>
+
+Dostavljamo Vam neophodne informacije o izvršenoj transakciji:<br/><br/>
+
+<table cellpadding="0" cellspacing="0">
+	<tr>
+		<th colspan="2" style="font-size:18px;">{transaction_status_text}</th>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr>
+		<th colspan="2">Informacije o korisniku</th>
+	</tr>
+	<tr>
+		<td><b>Ime</b></td>
+		<td>{user_name}</td>
+	</tr>
+	<tr>
+		<td><b>Email</b></td>
+		<td><a href="mailto:{user_email}"  style="color:#fff;">{user_email}</a></td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<tr>
+		<th colspan="2">Informacije o porudžbini</th>
+	</tr>
+	<tr>
+		<td><b>Naziv</b></td>
+		<td>{order_name}</td>
+	</tr>
+	<tr>
+		<td><b>Količina</b></td>
+		<td>{order_quantity}</td>
+	</tr>
+	<tr>
+		<td><b>Cena</b></td>
+		<td>{order_price}</td>
+	</tr>
+	<tr>
+		<td><b>PDV</b></td>
+		<td>{order_tax}</td>
+	</tr>
+	<tr>
+		<td><b>Ukupna cena</b></td>
+		<td>{order_total_price}</td>
+	</tr>
+	<tr>
+		<td><b>ID transakcije</b></td>
+		<td>{order_id}</td>
+	</tr>
+	<tr>
+		<th colspan="2">&nbsp;</th>
+	</tr>
+	<tr>
+		<th colspan="2">Informacije o prodavcu</th>
+	</tr>
+	<tr>
+		<td><b>Naziv</b></td>
+		<td>{merchant_name}</td>
+	</tr>
+	<tr>
+		<td><b>Adresa</b></td>
+		<td>{merchant_address}</td>
+	</tr>
+	<tr>
+		<td><b>PIB</b></td>
+		<td>{merchant_reg_id}</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><span style="color:#fff">*KID CARD doo nije obveznik PDV-a</span></td>
+	</tr>
+	<tr>
+		<th colspan="2">&nbsp;</th>
+	</tr>
+	<tr>
+		<th colspan="2">Informacije o transackiji</th>
+	</tr>
+	<tr>
+		<td><b>ID</b></td>
+		<td>{transaction_id}</td>
+	</tr>
+	{transaction_authorisation_code}
+	
+	<tr>
+		<td><b>Status</b></td>
+		<td>{transaction_status}</td>
+	</tr>
+	<tr>
+		<td><b>Statusni Kod</b></td>
+		<td>{transaction_status_code}</td>
+	</tr>
+	<tr>
+		<td><b>Datum kupovine</b></td>
+		<td>{transaction_date}</td>
+	</tr>
+	<tr>
+		<td><b>Cena</b></td>
+		<td>{transaction_amount}</td>
+	</tr>
+	<tr>
+		<td><b>Referentni ID</b></td>
+		<td>{transaction_referrer_id}</td>
+	</tr>
+</table>
+<br/>
+

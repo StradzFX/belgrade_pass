@@ -1,0 +1,4 @@
+[30-Oct-2018 22:30:01 Europe/Moscow] PHP Fatal error:  Call to undefined function is_admin() in /home/belgradepass/public_html/wp-content/themes/twentysixteen/inc/template-tags.php on line 169
+[30-Oct-2018 23:40:46 Europe/Moscow] PHP Fatal error:  Call to undefined function is_admin() in /home/belgradepass/public_html/wp-content/themes/twentysixteen/inc/template-tags.php on line 169
+[03-Nov-2018 21:56:36 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentysixteen/inc/customizer.php on line 61
+[03-Nov-2018 22:55:04 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentysixteen/inc/customizer.php on line 61

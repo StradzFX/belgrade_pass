@@ -1,0 +1,43 @@
+@charset "utf-8";
+/* CSS Document */
+.scenes{
+	width: 810px;
+	height: 820px;
+	overflow: hidden;
+}
+
+.scene{
+	width: 810px;
+	height: 820px;
+	overflow: hidden;
+	position: relative;
+}
+
+.home_scene{
+	background-image: url('../../images/facebook_app/scenes/home_scene.jpg');
+}
+
+.register_scene{
+	background-image: url('../../images/facebook_app/scenes/register_scene.jpg');
+}
+
+.top_list_scene{
+	background-image: url('../../images/facebook_app/scenes/top_list_scene.jpg');
+}
+
+.gallery_scene{
+	background-image: url('../../images/facebook_app/scenes/gallery_scene.jpg');
+}
+
+.single_image_scene{
+	background-image: url('../../images/facebook_app/scenes/single_image_scene.jpg');
+}
+
+.vote_thank_you_scene{
+	background-image: url('../../images/facebook_app/scenes/vote_thank_you_scene.jpg');
+}
+
+.rules_scene{
+	background-image: url('../../images/facebook_app/scenes/rules_scene.jpg');
+}
+

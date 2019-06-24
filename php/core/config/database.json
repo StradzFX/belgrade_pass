@@ -1,0 +1,16 @@
+{
+  "development": {
+  	"server" : "localhost",
+  	"port" : "",
+  	"db_name" : "belgrade_pass",
+  	"username" : "root",
+  	"password" : ""
+  },
+  "production": {
+  	"server" : "mysql681.loopia.se",
+  	"port" : "",
+  	"db_name" : "belgradepass_rs",
+  	"username" : "bp_weblab@b49371",
+  	"password" : "webbrod2015+"
+  }
+}

@@ -1,0 +1,2 @@
+
+<p dir="ltr"><strong>1. NAZIV, SEDIŠTE I DRUGI PODACI ORGANIZATORA NAGRADNOG TAKMIČENJA</strong></p>

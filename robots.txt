@@ -1,0 +1,2 @@
+Disallow: /cgi-bin/
+Disallow: /xenon/

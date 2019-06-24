@@ -1,0 +1,40 @@
+RewriteEngine on
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+Options -Indexes 
+
+DirectoryIndex index.php
+
+RewriteRule ^public/ - [L]
+RewriteRule ^classes/ - [L]
+RewriteRule ^files/ - [L]
+RewriteRule ^lang/ - [L]
+RewriteRule ^multimedia/ - [L]
+RewriteRule ^wp-content/ - [L]
+RewriteRule ^php/ - [L]
+RewriteRule ^pictures/ - [L]
+RewriteRule ^template/ - [L]
+RewriteRule ^xenon/ - [L]
+RewriteRule ^([^/]*) index.php [L]
+
+<FilesMatch "\.(php|inc)$">
+Order allow,deny
+deny from all
+</FilesMatch>
+
+<FilesMatch "(index.php)$">
+Order allow,deny
+allow from all
+</FilesMatch>
+
+ErrorDocument 400 /error/400
+ErrorDocument 401 /error/401
+ErrorDocument 403 /error/403
+ErrorDocument 404 /error/404
+ErrorDocument 500 /error/500
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>

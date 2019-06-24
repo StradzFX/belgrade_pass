@@ -1,0 +1,14 @@
+[26-Oct-2018 03:59:36 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/back-compat.php on line 26
+[26-Oct-2018 04:28:08 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/back-compat.php on line 26
+[26-Oct-2018 07:50:22 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/custom-header.php on line 41
+[26-Oct-2018 08:25:45 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/custom-header.php on line 41
+[26-Oct-2018 12:04:34 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/customizer.php on line 83
+[26-Oct-2018 12:39:48 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/customizer.php on line 83
+[26-Oct-2018 12:57:16 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/back-compat.php on line 26
+[26-Oct-2018 13:07:08 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/back-compat.php on line 26
+[26-Oct-2018 16:45:13 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/template-tags.php on line 171
+[26-Oct-2018 17:24:52 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/template-tags.php on line 171
+[09-Nov-2018 13:18:12 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/custom-header.php on line 41
+[09-Nov-2018 13:41:44 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/custom-header.php on line 41
+[09-Nov-2018 16:04:54 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/template-tags.php on line 171
+[09-Nov-2018 16:26:20 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyfifteen/inc/template-tags.php on line 171

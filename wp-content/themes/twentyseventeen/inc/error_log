@@ -1,0 +1,8 @@
+[06-Dec-2018 14:30:50 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyseventeen/inc/template-tags.php on line 196
+[06-Dec-2018 14:42:16 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyseventeen/inc/template-tags.php on line 196
+[06-Dec-2018 15:10:48 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyseventeen/inc/template-tags.php on line 196
+[06-Dec-2018 16:37:15 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyseventeen/inc/template-tags.php on line 196
+[07-Dec-2018 04:28:03 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyseventeen/inc/icon-functions.php on line 22
+[07-Dec-2018 04:38:47 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyseventeen/inc/icon-functions.php on line 22
+[07-Dec-2018 06:21:17 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyseventeen/inc/icon-functions.php on line 22
+[07-Dec-2018 07:45:56 Europe/Moscow] PHP Fatal error:  Call to undefined function add_action() in /home/belgradepass/public_html/wp-content/themes/twentyseventeen/inc/icon-functions.php on line 22

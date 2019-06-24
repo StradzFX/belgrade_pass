@@ -1,0 +1,10 @@
+/*---- FONTS ----*/
+@import url("fonts.css");
+/*---- DEFAULT STYLE ----*/
+@import url("default.css");
+/*---- STYLE ----*/
+@import url("style.css");
+/*---- AJAX DEBUGGER ----*/
+@import url("ajax_debugger.css");
+/*---- FONT AWSOME ----*/
+@import url("font_awsome.css");
