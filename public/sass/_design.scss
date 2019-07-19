@@ -27,6 +27,12 @@ body{
   font-family: 'Montserrat', sans-serif;
 }
 
+.site-branding img{
+  @media (max-width: $medium-mobile-width) {
+    max-height: 40px!important;
+  }
+}
+
 .error_message{
     width: 100%;
     background-color: #9e0e0e;
@@ -2902,8 +2908,18 @@ body{
     }
 }
 
+.company_page_content{
+  @media (max-width: $medium-mobile-width) {
+    padding-top: 0px!important;
+  }
+}
+
 .company_menu{
   padding: 10px 0px;
+
+  @media (max-width: $medium-mobile-width) {
+    padding: 0px;
+  }
 
    a {
       -webkit-transition: all 0.3s ease-in-out;
@@ -2928,6 +2944,11 @@ body{
       @media (max-width: $medium-mobile-width) {
         font-size: 10px;
         margin: 0 0 0 5px;
+        width: 100%;
+        border-radius: 0px;
+        margin: 0px!important;
+        background-color: #ff6f75;
+        padding: 10px;
       }
 
       &:hover{

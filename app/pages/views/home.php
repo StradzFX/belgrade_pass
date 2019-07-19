@@ -204,7 +204,7 @@
 							<img src="public/images/restaurant.png" />
 							<div class="card__title">Odaberi restoran</div>
 
-							Zabava je na svakom koraku, pronađi je! Preko 300 restorana samo u Beogradu daju širom izbor mogućnosti
+							Zabava je na svakom koraku, pronađi je! Preko 300 restorana samo u Beogradu daju širok izbor mogućnosti
 						</div><!-- .card__content -->
 					</div><!-- .card.card--post.card--feature -->
 				</div><!-- .grid__item -->
@@ -223,7 +223,7 @@
 						<div class="card__content">
 							<img src="public/images/frame.png" />
 							<div class="card__title">Plati QR kodom</div>
-							Sve što je neohdno da uradite je da pokažete QR kod vaše kartice i transakcija će biti zabeležena						</div><!-- .card__content -->
+							Sve što je neophodno da uradite je da pokažete QR kod vaše kartice i transakcija će biti zabeležena						</div><!-- .card__content -->
 					</div><!-- .card.card--post.card--feature -->
 				</div><!-- .grid__item -->
 

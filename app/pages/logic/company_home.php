@@ -33,9 +33,10 @@ $company = $broker->get_session('company');
 //============== MONEY ============
 $statistics_list_money = array();
 
-$SQL = "SELECT SUM(pay_to_company) AS total FROM accepted_passes WHERE recordStatus = 'O' AND checker != '' AND training_school = ".$company->id." AND MONTH(makerDate) = ".date('m');
+$SQL = "SELECT SUM(taken_passes) AS total FROM accepted_passes WHERE recordStatus = 'O' AND checker != '' AND training_school = ".$company->id." AND makerDate > ".date('Y-m-d',strtotime("-7 day", date('Y-m-d')));
 $total_profit_current_month = $broker->execute_sql_get_array($SQL);
 $total_profit_current_month = $total_profit_current_month[0]['total'];
+$total_profit_current_month = ($total_profit_current_month * 100 ) / (100 - $company->pass_customer_percentage);
 $total_profit_current_month = number_format($total_profit_current_month,2,',','.');
 $total_profit_current_month .= ' RSD';
 $statistics_list_money[] = array(
@@ -44,7 +45,7 @@ $statistics_list_money[] = array(
 	'info' => 'Ukupna zarada na odobrenim prolazima evidentirano za tekući mesec.'
 );
 
-$SQL = "SELECT SUM(pay_to_company) AS total FROM accepted_passes WHERE recordStatus = 'O' AND checker != '' AND training_school = ".$company->id."";
+$SQL = "SELECT SUM(taken_passes) AS total FROM accepted_passes WHERE recordStatus = 'O' AND checker != '' AND training_school = ".$company->id."";
 $total_profit = $broker->execute_sql_get_array($SQL);
 $total_profit = $total_profit[0]['total'];
 
@@ -76,7 +77,7 @@ $statistics_list_money[] = array(
 );
 
 
-$SQL = "SELECT SUM(price) AS total FROM purchase WHERE recordStatus = 'O' AND checker != '' AND company_flag = ".$company->id."";
+$SQL = "SELECT SUM(pay_to_us) AS total FROM accepted_passes WHERE recordStatus = 'O' AND checker != '' AND training_school = ".$company->id."";
 $company_needs_to_pay = $broker->execute_sql_get_array($SQL);
 $company_needs_to_pay = $company_needs_to_pay[0]['total'];
 

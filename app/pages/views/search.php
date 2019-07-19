@@ -24,7 +24,7 @@ $categories_search = $broker->get_all_data_condition($categories_search);
 									<div class="row">
 										<div class="col-12 col-sm-4">
 											<label for="search_location">Kategorija</label>
-											<select>
+											<select name="search_category" onchange="get_search_results()">
 												<option value="">Sve kategorije</option>
 												<?php for ($i=0; $i < sizeof($categories_search); $i++) { ?>
 													<option class="level-0" <?php if($_GET['search_categories'] == $categories_search[$i]->id){ ?>selected="selected"<?php } ?> value="<?php echo $categories_search[$i]->id; ?>">
@@ -35,11 +35,11 @@ $categories_search = $broker->get_all_data_condition($categories_search);
 										</div>
 										<div class="col-12 col-sm-4">
 											<label for="search_location">Šta tražite</label>
-											<input type="text" name="search_keywords" value="<?php echo $_GET['search_keywords']; ?>" placeholder="---">
+											<input type="text" name="search_keywords" onkeyup="get_search_results()" value="<?php echo $_GET['search_keywords']; ?>" placeholder="---">
 										</div>
 										<div class="col-12 col-sm-4">
 											<label for="search_location">Lokacija</label>
-											<input type="text" name="search_location" value="<?php echo $_GET['search_location']; ?>" name="" placeholder="---">
+											<input type="text" name="search_location" onkeyup="get_search_results()" value="<?php echo $_GET['search_location']; ?>" name="" placeholder="---">
 										</div>
 									</div>
 								</div><!-- .search_jobs -->
@@ -268,9 +268,9 @@ function populate_markers(){
 
 	function get_search_filters(){
 		var filters = {};
-			filters.search_text = $('[name="search_text"]').val();
-			filters.category = '<?php echo $selected_category; ?>';
-			filters.location = $('[name="location"]').val();
+			filters.search_text = $('[name="search_keywords"]').val();
+			filters.category = $('[name="search_category"]').val();
+			filters.location = $('[name="search_location"]').val();
 			
 
 		return filters;

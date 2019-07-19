@@ -3,7 +3,7 @@
         Spisak svih uplata provizije koje ste izvršili prema BelgradePass-u
     </div>
     <?php if(sizeof($payments_debit) > 0){ ?>
-    <table class="table">
+    <table class="table table-responsive">
       <thead>
         <tr>
           <th scope="col">#</th>

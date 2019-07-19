@@ -1,4 +1,4 @@
-<div class="paying_option_box payment_option_approved_passes" <?php if($selected_tab != 'approved_passes'){ ?>style="display: none;"<?php } ?>>
+<div class="paying_option_box payment_option_approved_passes table-responsive" <?php if($selected_tab != 'approved_passes'){ ?>style="display: none;"<?php } ?>>
     <?php if($company->type == 'master'){ ?>
     <div class="hello">
         Ukupno za uplatu Partneru-u: <span><?php echo $total_to_pay_to_partner; ?> RSD</span>

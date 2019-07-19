@@ -281,17 +281,9 @@ class SchoolModule{
 		}
 
 		if($filters['location'] != ''){
-			$filter_location = explode(',', $filters['location']);
-			if(sizeof($filter_location) == 1){
-				$list->add_condition('id','IN',"(SELECT training_school FROM ts_location WHERE city = '".$filter_location[0]."')");
-			}
-
-			if(sizeof($filter_location) == 2){
-				$list->add_condition('id','IN',"(SELECT training_school FROM ts_location WHERE city = '".$filter_location[0]."' AND part_of_city = '".$filter_location[1]."')");
-			}
+			$list->add_condition('id','IN',"(SELECT training_school FROM ts_location WHERE city LIKE '%".$filters['location']."%' OR part_of_city LIKE '%".$filters['location']."%')");
 			
 		}
-
 
 		
 		$list->add_condition('recordStatus','=','O');

@@ -12,6 +12,10 @@ body {
   background-color: #fff;
   font-family: 'Montserrat', sans-serif; }
 
+@media (max-width: 768px) {
+  .site-branding img {
+    max-height: 40px !important; } }
+
 .error_message {
   width: 100%;
   background-color: #9e0e0e;
@@ -2163,8 +2167,15 @@ body {
     .user_menu a:first-child {
       margin: 0 0 0 0; }
 
+@media (max-width: 768px) {
+  .company_page_content {
+    padding-top: 0px !important; } }
+
 .company_menu {
   padding: 10px 0px; }
+  @media (max-width: 768px) {
+    .company_menu {
+      padding: 0px; } }
   .company_menu a {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -2187,7 +2198,12 @@ body {
     @media (max-width: 768px) {
       .company_menu a {
         font-size: 10px;
-        margin: 0 0 0 5px; } }
+        margin: 0 0 0 5px;
+        width: 100%;
+        border-radius: 0px;
+        margin: 0px !important;
+        background-color: #ff6f75;
+        padding: 10px; } }
     .company_menu a:hover {
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;

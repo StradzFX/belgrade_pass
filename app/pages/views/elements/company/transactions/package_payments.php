@@ -4,7 +4,7 @@
         Ukupno za uplatu BelgradePass-u: <span><?php echo $total_to_pay; ?> RSD</span>
     </div>
     <?php } ?>
-    <table class="table">
+    <table class="table table-responsive">
       <thead>
         <tr>
           <th scope="col">#</th>
