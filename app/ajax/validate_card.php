@@ -118,6 +118,14 @@ if($validation_message == ""){
 
 <script type="text/javascript">
 	$('.btn_validate_card').hide();
+
+
+  
+  $('[name="purchase_value"]').val('');
+  $('[name="purchase_card_number"]').val('');
+  $('[name="purchase_card_password"]').val('');
+  $('.purchase_card_number').show();
+  $('.purchase_card_password').show();
 </script>
 
 <?php }else{ ?>
