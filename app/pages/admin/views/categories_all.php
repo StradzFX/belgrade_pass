@@ -30,12 +30,16 @@
                     <td><img src="../public/images/icons/<?php echo $list[$i]->logo; ?>"></td>
                     <td><?php echo $list[$i]->popularity; ?> points</td>
                     <td>
+                      
                         <a href="categories_manage/<?php echo $list[$i]->id; ?>">
-                          <i class="fa fa-pencil" title="Edit"></i>
+                          <div class="btn btn-primary">
+                            <i class="fa fa-pencil" title="Edit"></i>
+                          </div>
                         </a>
-
                         <a href="javascript:void(0)" onclick="remove_item(<?php echo $list[$i]->id; ?>)">
-                          <i class="fa fa-trash" title="delete"></i>
+                          <div class="btn btn-primary">
+                            <i class="fa fa-trash" title="delete"></i>
+                          </div>
                         </a>
                     </td>
                   </tr>

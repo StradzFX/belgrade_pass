@@ -34,11 +34,14 @@
 
                       <?php if($list[$i]->status != 'Approved'){ ?>
                       <a href="javascript:void(0)" onclick="approve_post_office(<?php echo $list[$i]->id; ?>)">
-                        <i class="fa fa-thumbs-up" title="Approve"></i>
+                        <div class="btn btn-default">
+                          <i class="fa fa-thumbs-up" title="Approve"></i>
+                        </div>
                       </a>
                       <?php }else{ ?>
-
-                      <i class="fa fa-thumbs-up" title="Approved"></i>
+                      <div class="btn btn-primary" disabled>
+                        <i class="fa fa-thumbs-up" title="Approved"></i>
+                      </div>
                       <?php } ?>
                       
 
@@ -65,16 +68,7 @@
     <!-- /.content -->
 </div>
 <style type="text/css">
-  .table i{
-    border-radius: 5px;
-    border: 1px solid #3c8dbc;
-    padding: 5px;
-  }
 
-  .table i:hover{
-    color:#fff;
-    background-color: #3c8dbc;
-  }
 </style>
 <script type="text/javascript">
     function approve_post_office(id){

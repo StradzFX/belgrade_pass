@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="../public/admin/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="../public/admin/bower_components/font-awesome/css/font-awesome.min.css">
+
   <!-- Theme style -->
   <link rel="stylesheet" href="../public/admin/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -42,6 +43,7 @@
 
   <!-- jQuery 3 -->
 <script src="../public/admin/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="https://use.fontawesome.com/1e6825c6c9.js"></script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
