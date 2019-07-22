@@ -35,7 +35,9 @@
                     <td><?php echo $list[$i]->user->email; ?></td>
                     <td>
                         <a href="admin_payments_create/?preselected_card=<?php echo $list[$i]->card_number; ?>">
-                          <i class="fa fa-money" title="Admin payment"></i>
+                          <div class="btn btn-primary">
+                            <i class="fa fa-money" title="Admin payment"></i>
+                          </div>
                         </a>
                     </td>
                   </tr>

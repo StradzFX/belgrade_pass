@@ -1,191 +1,4 @@
-  <!-- bootstrap slider -->
-  <link rel="stylesheet" href="../public/admin/plugins/bootstrap-slider/slider.css">
-
-<div class="modal fade" id="modal-coach">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add coach</h4>
-      </div>
-      <div class="modal-body">
-        <select name="new_coach" class="form-control">
-          <option value="">Select coach</option>
-          <?php for ($i=0; $i < sizeof($coach_list); $i++) { ?> 
-            <option value="<?php echo $coach_list[$i]->id; ?>"><?php echo $coach_list[$i]->full_name; ?></option>
-          <?php } ?>
-        </select>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="add_coach()">Insert</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-
-<div class="modal fade" id="modal-category">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add category</h4>
-      </div>
-      <div class="modal-body">
-        <select name="new_category" class="form-control">
-          <option value="">Select category</option>
-          <?php for ($i=0; $i < sizeof($category_list); $i++) { ?> 
-            <option value="<?php echo $category_list[$i]->id; ?>"><?php echo $category_list[$i]->name; ?></option>
-          <?php } ?>
-        </select>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="add_category()">Insert</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-<div class="modal fade" id="modal-days">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Edit programm days</h4>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="save_days()">Insert</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-
-<div class="modal fade" id="modal-programm">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add programm</h4>
-      </div>
-      <div class="modal-body">
-        Name:<br/>
-        <input type="text" class="form-control" name="programm_name" placeholder="Insert name of a programm" />
-      </div>
-
-
-      <div class="modal-body">
-        Age range:<br/>
-        <input type="hidden" class="form-control" name="programm_age_from" />
-        <input type="hidden" class="form-control" name="programm_age_to" />
-        <input type="text" name="programm_age" value="10,50" class="slider form-control" data-slider-min="1" data-slider-max="99"
-                         data-slider-step="1" data-slider-value="[10,50]" data-slider-orientation="horizontal"
-                         data-slider-selection="before" data-slider-tooltip="show" data-slider-id="blue">
-      </div>
-
-      <div class="modal-body">
-        Coach:<br/>
-        <select name="programm_coach" class="form-control">
-          <option value="">Select coach</option>
-        </select>
-      </div>
-
-      <div class="modal-body">
-        Location:<br/>
-        <select name="programm_location" class="form-control">
-          <option value="">Select location</option>
-        </select>
-      </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="add_programm()">Insert</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-<?php include_once 'app/pages/admin/views/elements/company_manage/modal-location.php'; ?>
-<?php include_once 'app/pages/admin/views/elements/company_manage/modal-location-birthday-data.php'; ?>
-
-
-<style type="text/css">
-  .margin_form{
-    margin-bottom: 10px;
-  }
-
-  .wth{
-    height: 22px;
-  }
-
-  .tar{
-    text-align: right;
-  }
-
-  .disabled_select{
-    color: #ccc;
-  }
-</style>
-
-<script type="text/javascript">
-  function change_working_day(day_of_week){
-    var is_checked = $('[name="not_working_'+day_of_week+'"]').is(':checked');
-    if(is_checked){
-      $('.working_day_'+day_of_week).find('select').attr('disabled','disabled');
-      $('.working_day_'+day_of_week).addClass('disabled_select');
-    }else{
-      $('.working_day_'+day_of_week).find('select').attr('disabled',null);
-      $('.working_day_'+day_of_week).removeClass('disabled_select');
-    }
-  }
-</script>
-
-<div class="modal fade" id="modal-image">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add image</h4>
-      </div>
-      <div class="modal-body">
-        <input type="file" name="new_image"   onchange="readURL(this);" >
-        <div class="image_preview">
-          
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onclick="add_image()">Upload</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
+<?php include_once 'app/pages/admin/views/elements/company_manage/modals.php'; ?>
 
 <div class="content-wrapper" style="min-height: 989.8px;">
     <input type="hidden" name="id" value="<?php echo $item->id; ?>">
@@ -213,59 +26,231 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="row">
-        <!-- left column -->
-        <div class="col-sm-12 col-md-7">
-          <!-- general form elements -->
-          <div class="row">
-            <div class="col-sm-12">
-                <?php include_once 'app/pages/admin/views/elements/company_manage/basic_details.php'; ?>
-            </div>   
-            <?php if($item->id > 0){ ?>
-            <div class="col-sm-12">
-              <?php include_once 'app/pages/admin/views/elements/company_manage/master_login.php'; ?>
-              
+
+      <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#company_data" data-toggle="tab">Company data</a></li>
+          <li><a href="#company_transactions" data-toggle="tab">Transactions</a></li>
+          <li><a href="#company_payments" data-toggle="tab">Payments</a></li>
+        </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="company_data">
+                <?php require 'app/pages/admin/views/elements/company_manage/tab_company_info.php'; ?>
             </div>
-            <?php } ?>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="company_transactions">
+              <section class="content-header">
+                <h1>
+                  Transactions with companies
+                </h1>
+              </section>
+              <section class="content">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="box">
+                    <div class="box-header">
+                      <h3 class="box-title">All data</h3>
+                      <div class="pull-right">
+                        <a href="company_transaction_manage/" class="btn btn-success">New transaction</a>
+                      </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                      <table class="table table-striped all_items">
+                        <tbody>
+                          <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Trn. Date</th>
+                            <th>Trn. Type</th>
+                            <th>Value</th>
+                            <th style="width: 150px">Actions</th>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>31.12.2018</td>
+                            <td>Payment to company</td>
+                            <td>-6.025,25</td>
+                            <td>
+                              <a href="company_transaction_manage/" class="btn btn-default btn-xs">
+                                <i class="fa fa-pencil" title="Edit"></i>
+                              </a>
+                              <a href="javascript:void(0)" class="btn btn-default btn-xs">
+                                <i class="fa fa-trash" title="delete"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>31.01.2019</td>
+                            <td>Payment from company</td>
+                            <td>250</td>
+                            <td>
+                              <a href="company_transaction_manage/" class="btn btn-default btn-xs">
+                                <i class="fa fa-pencil" title="Edit"></i>
+                              </a>
+                              <a href="javascript:void(0)" class="btn btn-default btn-xs">
+                                <i class="fa fa-trash" title="delete"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>31.02.2019</td>
+                            <td>Payment to company</td>
+                            <td>-1500,00</td>
+                            <td>
+                              <a href="company_transaction_manage/" class="btn btn-default btn-xs">
+                                <i class="fa fa-pencil" title="Edit"></i>
+                              </a>
+                              <a href="javascript:void(0)" class="btn btn-default btn-xs">
+                                <i class="fa fa-trash" title="delete"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>31.12.2019</td>
+                            <td>Payment from company</td>
+                            <td>3500</td>
+                            <td>
+                              <a href="company_transaction_manage/" class="btn btn-default btn-xs">
+                                <i class="fa fa-pencil" title="Edit"></i>
+                              </a>
+                              <a href="javascript:void(0)" class="btn btn-default btn-xs">
+                                <i class="fa fa-trash" title="delete"></i>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.box-body -->
+                  </div>
+                  <!-- /.box -->
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            <div>
+            </section>
+            </div>
+            <!-- /.tab-pane -->
+                
+            <div class="tab-pane" id="company_payments">
+                 <section class="content-header">
+                    <h1>
+                      Reports | Card Usage
+                    </h1>
+                  </section>
+
+                  <!-- Main content -->
+                  <section class="content">
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="box">
+                          <div class="box-header">
+                            <h3 class="box-title">Filters</h3>
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body">
+                            <div class="row">
+                              <div class="col col-sm-2">
+                                Date From:<br/>
+                                <input type="date" class="form-control" value="<?php echo $filter_date_from; ?>" name="date_from" onchange="get_report_card_usage()">
+                              </div>
+
+                              <div class="col col-sm-2">
+                                Date To:<br/>
+                                <input type="date" class="form-control" value="<?php echo $filter_date_to; ?>" name="date_from" onchange="get_report_card_usage()">
+                              </div>
+
+                              <div class="col col-sm-2">
+                                Company:<br/>
+                                <select name="company" class="form-control" onchange="get_report_card_usage()">
+                                  <option value="">Select company</option>
+                                  <?php for ($i=0; $i < sizeof($company_list); $i++) { ?>
+                                    <option value="<?php echo $company_list[$i]->id; ?>" <?php if($preselected_company == $company_list[$i]->id){ ?>selected="selected"<?php } ?>><?php echo $company_list[$i]->name; ?></option>
+                                  <?php } ?>
+                                </select>
+                                </div>
+
+                              <div class="col col-sm-2">
+                                  User Email or Full Name:<br/>
+                                  <input type="text" class="form-control" value="" name="user_search" onkeyup="get_report_card_usage()">
+                              </div>
+                            </div><br>
+                            <table class="table table-striped all_items">
+                              <tbody>
+                                <tr>
+                                  <th>#</th>
+                                  <th>Date:</th>
+                                  <th>Location</th>
+                                  <th>Card Number</th>
+                                  <th>User Email</th>
+                                  <th>User Full Name</th>
+                                </tr>
+                                <tr>
+                                  <td>1.</td>
+                                  <td>15.02.2019.</td>
+                                  <td>ostrvosablagom</td>
+                                  <td>000065</td>
+                                  <td>primer2@gmail.com</td>
+                                  <td>Petar Petrović</td>
+                                </tr>
+                                <tr>
+                                  <td>2.</td>
+                                  <td>14.08.2019.</td>
+                                  <td>ostrvosablagom</td>
+                                  <td>000065</td>
+                                  <td>primer@gmail.com</td>
+                                  <td>Petar Petrović</td>
+                                </tr>
+                                <tr>
+                                  <td>3.</td>
+                                  <td>10.05.2019.</td>
+                                  <td>ostrvosablagom</td>
+                                  <td>000065</td>
+                                  <td>primer@gmail.com</td>
+                                  <td>Petar Petrović</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="box">
+                          <div class="box-header">
+                            <h3 class="box-title">Result</h3>
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body no-padding result_holder">
+                            
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                      </div>
+                      <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                  <div>
+                  </section>
+            </div>
+            <!-- /.tab-pane -->
           </div>
-        </div>
-        <!--/.col (left) -->
-
-        <div class="col-sm-12 col-md-5">
-          <div class="row">
-            <?php if($item->id > 0){ ?>
-            <div class="col-sm-12 col-md-12">
-              <?php include_once 'app/pages/admin/views/elements/company_manage/company_options.php'; ?>
-            </div>
-
-            <div class="col-sm-12 col-md-12">
-              <?php include_once 'app/pages/admin/views/elements/company_manage/categories.php'; ?>
-            </div>
-
-            <div class="col-sm-12 col-md-12" style="display: none;">
-              <?php include_once 'app/pages/admin/views/elements/company_manage/main_business_options.php'; ?>
-            </div>
-
-            <div class="col-sm-12 col-md-12 birthday_options_main_holder" style="display: none;">
-              <?php include_once 'app/pages/admin/views/elements/company_manage/panel-location-birthday-data.php'; ?>
-            </div>
-
-            <div class="col-sm-12 col-md-12">
-              <?php include_once 'app/pages/admin/views/elements/company_manage/gallery.php'; ?>
-            </div>
-
-            <div class="col-sm-12 col-md-12">
-              <?php include_once 'app/pages/admin/views/elements/company_manage/locations.php'; ?>
-            </div>
-          <?php } ?>
-          </div>
-        </div>
+            <!-- /.tab-content -->
       </div>
-      <!-- /.row -->
-    <div>
     </section>
     <!-- /.content -->
 </div>
+
+
+
 
 <style type="text/css">
   .image_preview{

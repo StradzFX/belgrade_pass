@@ -33,7 +33,9 @@
                     <td><?php echo $list[$i]['total']; ?></td>
                     <td>
                         <a href="company_cards_view/<?php echo $list[$i]['company']->id; ?>">
-                          <i class="fa fa-eye" title="View info"></i>
+                          <div class="btn btn-primary">
+                            <i class="fa fa-eye"title="View info"></i>
+                          </div>
                         </a>
                     </td>
                   </tr>

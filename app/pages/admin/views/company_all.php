@@ -36,15 +36,20 @@
                     </td>
                     <td>
                         <a href="javascript:void(0)" class="action" onclick="promote_school(<?php echo $list[$i]->id; ?>)">
-                          <i class="fa fa-star <?php if($list[$i]->promoted){ ?>red<?php }else{ ?>silver<?php } ?>" title="Edit"></i>
+                          <div class="btn btn-primary">
+                            <i class="fa fa-star <?php if($list[$i]->promoted){ ?>red<?php }else{ ?>silver<?php } ?>" title="Edit"></i>
+                          </div>
                         </a>
 
                         <a href="company_manage/<?php echo $list[$i]->id; ?>" class="action">
-                          <i class="fa fa-pencil" title="Edit"></i>
+                          <div class="btn btn-primary">
+                            <i class="fa fa-pencil" title="Edit"></i>
+                          </div>
                         </a>
-
                         <a href="javascript:void(0)" class="action" onclick="remove_item(<?php echo $list[$i]->id; ?>)">
-                          <i class="fa fa-trash" title="delete"></i>
+                          <div class="btn btn-primary">
+                            <i class="fa fa-trash" title="delete"></i>
+                          </div>
                         </a>
                     </td>
                   </tr>
@@ -69,7 +74,6 @@
     display: inline-block;
     border-radius: 3px;
     background-color: #bbbfc1;
-    width: 20px;
     text-align: center;
     color: #000;
   }
