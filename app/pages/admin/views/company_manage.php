@@ -71,10 +71,10 @@
                             <td>Payment to company</td>
                             <td>-6.025,25</td>
                             <td>
-                              <a href="company_transaction_manage/" class="btn btn-default btn-xs">
+                              <a href="company_transaction_manage/" class="btn btn-primary">
                                 <i class="fa fa-pencil" title="Edit"></i>
                               </a>
-                              <a href="javascript:void(0)" class="btn btn-default btn-xs">
+                              <a href="javascript:void(0)" class="btn btn-primary">
                                 <i class="fa fa-trash" title="delete"></i>
                               </a>
                             </td>
@@ -85,10 +85,10 @@
                             <td>Payment from company</td>
                             <td>250</td>
                             <td>
-                              <a href="company_transaction_manage/" class="btn btn-default btn-xs">
+                              <a href="company_transaction_manage/" class="btn btn-primary">
                                 <i class="fa fa-pencil" title="Edit"></i>
                               </a>
-                              <a href="javascript:void(0)" class="btn btn-default btn-xs">
+                              <a href="javascript:void(0)" class="btn btn-primary">
                                 <i class="fa fa-trash" title="delete"></i>
                               </a>
                             </td>
@@ -99,10 +99,10 @@
                             <td>Payment to company</td>
                             <td>-1500,00</td>
                             <td>
-                              <a href="company_transaction_manage/" class="btn btn-default btn-xs">
+                              <a href="company_transaction_manage/" class="btn btn-primary">
                                 <i class="fa fa-pencil" title="Edit"></i>
                               </a>
-                              <a href="javascript:void(0)" class="btn btn-default btn-xs">
+                              <a href="javascript:void(0)" class="btn btn-primary">
                                 <i class="fa fa-trash" title="delete"></i>
                               </a>
                             </td>
@@ -113,10 +113,10 @@
                             <td>Payment from company</td>
                             <td>3500</td>
                             <td>
-                              <a href="company_transaction_manage/" class="btn btn-default btn-xs">
+                              <a href="company_transaction_manage/" class="btn btn-primary">
                                 <i class="fa fa-pencil" title="Edit"></i>
                               </a>
-                              <a href="javascript:void(0)" class="btn btn-default btn-xs">
+                              <a href="javascript:void(0)" class="btn btn-primary">
                                 <i class="fa fa-trash" title="delete"></i>
                               </a>
                             </td>
@@ -189,6 +189,9 @@
                                   <th>Card Number</th>
                                   <th>User Email</th>
                                   <th>User Full Name</th>
+                                  <th>Total price</th>
+                                  <th>User payed</th>
+                                  <th>BP commission</th>
                                 </tr>
                                 <tr>
                                   <td>1.</td>
@@ -197,6 +200,9 @@
                                   <td>000065</td>
                                   <td>primer2@gmail.com</td>
                                   <td>Petar Petrović</td>
+                                  <td>365</td>
+                                  <td>328.5</td>
+                                  <td>11</td>
                                 </tr>
                                 <tr>
                                   <td>2.</td>
@@ -205,6 +211,9 @@
                                   <td>000065</td>
                                   <td>primer@gmail.com</td>
                                   <td>Petar Petrović</td>
+                                  <td>365</td>
+                                  <td>328.5</td>
+                                  <td>11</td>
                                 </tr>
                                 <tr>
                                   <td>3.</td>
@@ -213,6 +222,15 @@
                                   <td>000065</td>
                                   <td>primer@gmail.com</td>
                                   <td>Petar Petrović</td>
+                                  <td>365</td>
+                                  <td>328.5</td>
+                                  <td>11</td>
+                                </tr>
+                                <tr>
+                                  <td colspan="6"><b class="pull-right">Total</b></td>
+                                  <td>820 RSD</td>
+                                  <td>728 RSD</td>
+                                  <td>25 RSD</td>
                                 </tr>
                               </tbody>
                             </table>

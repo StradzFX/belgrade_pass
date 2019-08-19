@@ -10,37 +10,63 @@
     <section class="content">
       <div class="row">
         <div class="col-md-12">
-          <div class="box">
+          <div class="box box-primary">
             <div class="box-header">
-              <h3 class="box-title">List of payments</h3>
-
+              <h3 class="box-title">Pretraga</h3>
               <a class="btn btn-success pull-right" href="admin_payments_create/">Create new payment</a>
             </div>
+            <div class="col-12 col-xs-4">
+              <div class="form-group">
+                <label>Ime i Prezime</label>
+                  <input type="text" class="form-control" value="">
+              </div>
+            </div>
+            <div class="col-12 col-xs-4">
+              <div class="form-group">
+                <label>Odobreno</label>
+                <select class="form-control">
+                  <option>--</option>
+                  <option>Da</option>
+                  <option>Ne</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12 col-xs-4">
+              <div class="form-group">
+                <label>Za računovodstvo</label>
+                <select class="form-control">
+                  <option>--</option>
+                  <option>Spremni</option>
+                  <option>Nepopunjeni</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12 col-xs-4">
+              <label>Date From:</label> 
+              <input type="date" class="form-control" value="2019-04-02" name="date_from" onchange="get_company_transactions()">
+            </div>
+            <div class="col-12 col-xs-4">
+              <label>Date to:</label>
+              <input type="date" class="form-control" name="date_to" onchange="get_company_transactions()">
+            </div>
             <!-- /.box-header -->
-            <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody><tr>
-                  <th style="width: 100px;">Purchase no.</th>
-                  
-                  <th>Card number</th>
-                  <th>User</th>
-                  <th>Package</th>
-                  <th>Number of passes</th>
-                  <th>Price</th>
-                </tr>
-                <?php for ($i=0; $i < sizeof($list); $i++) { ?>
-                  <tr>
-                    <td><?php echo $list[$i]->id; ?></td>
-                    
-                    <td><?php echo $list[$i]->user_card->card_number; ?></td>
-                    <td><?php echo $list[$i]->user->email; ?></td>
-                    <td><?php echo $list[$i]->card_package->name; ?></td>
-                    <td><?php echo $list[$i]->number_of_passes; ?></td>
-                    <td><?php echo $list[$i]->price; ?> RSD</td>
-                  </tr>
-                <?php } ?>
+            <div class="box-body">
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <!-- /.box-header -->
+            <div class="box-header">
+              <h3 class="box-title">Spisak uplata</h3>
+            </div>
+            <div class="box-body">
+              <input type="hidden" name="id" value="0">
+              <div class="list_of_admin_payments_holder">
                 
-              </tbody></table>
+              </div>
             </div>
             <!-- /.box-body -->
           </div>
@@ -49,24 +75,70 @@
         <!-- /.col -->
       </div>
       <!-- /.row -->
-    <div>
     </section>
     <!-- /.content -->
 </div>
-<style type="text/css">
-  .table i{
-    border-radius: 5px;
-    border: 1px solid #3c8dbc;
-    padding: 5px;
-  }
 
-  .table i:hover{
-    color:#fff;
-    background-color: #3c8dbc;
-  }
+<div class="modal fade" id="modal-approve">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Odobri uplatu</h4>
+      </div>
+      <div class="modal-body">
+        <p>Da li ste sigurni da želite da odobrite uplatu?</p>
+        <div class="row">
+            <div class="col-12 col-xs-6">
+              <div class="form-group">
+                <label>Ime i prezime</label>
+                <input type="text" name="name_surname" class="form-control">
+              </div>
+            </div>
+            <div class="col-12 col-xs-6">
+              <label>Datum uplate</label> 
+              <input type="date" class="form-control" value="" name="date">
+            </div><br>
+          </div>
+        </div>
+        
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Nazad</button>
+        <button type="button" class="btn btn-success" onclick="get_admin_approve_payment_data()">Odobri</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<div class="modal fade" id="modal-delete-admin-payment">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Brisanje uplate</h4>
+      </div>
+      <div class="modal-body">
+        <p>Da li ste sigurni da želite da odobrite uplatu?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Nazad</button>
+        <button type="button" class="btn btn-danger" onclick="delete_admin_payment()">Obriši</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<style type="text/css">
+
 </style>
 <script type="text/javascript">
-    function approve_post_office(id){
+    /*function approve_post_office(id){
       var confirm_result = confirm('Are you sure you want to approve this transaction?');
 
       var data = {};
@@ -89,5 +161,46 @@
         }  
         ajax_json_call(call_url, call_data, callback); 
       }
+    }*/
+    function  delete_admin_payment(){
+        alert('Uplata obrisana');
+        $('#modal-delete-admin-payment').modal('hide');
     }
+
+    function get_list_of_admin_payments(){
+      var data={};
+          data.id=$('[name="id"]').val();
+
+      var call_url='get_list_of_admin_payments';
+      var call_data={data:data}
+      var callback = function(response){
+        $('.list_of_admin_payments_holder').html(response);
+      }
+      ajax_call(call_url, call_data, callback);
+
+    }
+
+    $(function(){
+      get_list_of_admin_payments()
+    });
+
+    function  get_admin_approve_payment_data(){
+      var data={};
+          data.id=$('[name="id"]').val()
+          data.name_surname=$('[name="name_surname"]').val();
+          data.date=$('[name="date"]').val()
+
+      var call_url='get_admin_approve_payment_data'
+      var call_data={data:data}
+      var call_back=function(response){
+        if (response.success){
+          alert(response.message)
+        }else{
+          alert(response.message)
+        }
+      }
+      ajax_json_call(call_url, call_data, call_back)
+    }
+
+
 </script>

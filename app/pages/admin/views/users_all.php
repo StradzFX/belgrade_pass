@@ -1,3 +1,5 @@
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal-user-delete.php';?>
+
 <div class="content-wrapper" style="min-height: 960px;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -60,16 +62,24 @@
 				                	<td><i class="fa fa-user"></i> Fizičko lice</td>
 				                	<td>Pavle Jovanovic</td>
 				                	<td>nikola@weblab.co.rs</td>
+				                	<input type="hidden" name="id" value="0">
 				                	<td>
-				                        <a href="javascript:void(0)" class="action">
-				                          <i class="fa fa-star" title="Edit"></i>
-				                        </a>
-				                        <a href="users_manage/" class="action">
-				                          <i class="fa fa-pencil" title="Edit"></i>
-				                        </a>
-				                        <a href="javascript:void(0)" class="action" data-toggle="modal" data-target="#modal-default">
-				                          <i class="fa fa-trash" title="delete"></i>
-				                        </a>
+				                		<div class="btn btn-primary">
+				                			<a href="javascript:void(0)" class="action">
+				                          	<i class="fa fa-star" title="Edit"></i>
+				                        	</a>
+				                		</div>
+				                        <div class="btn btn-primary">
+					                        <a href="users_manage/" class="action">
+					                          <i class="fas fa-edit"></i>
+					                        </a>
+				                        </div>
+				                        <div class="btn btn-primary">
+					                        <a href="javascript:void(0)" class="action" data-toggle="modal" data-target="#modal-user-delete">
+					                          <i class="fa fa-trash" title="delete">
+					                          </i>
+					                        </a>
+				                    	</div>
 				                    </td>
 				                </tr>
 				                <tr>
@@ -77,16 +87,25 @@
 				                	<td><i class="fa fa-building"></i> Pravno lice</td>
 				                	<td>Prasad & Sons</td>
 				                	<td>office@weblab.co.rs</td>
+				                	<input type="hidden" name="id" value="0">
 				                	<td>
-				                        <a href="javascript:void(0)" class="action">
-				                          <i class="fa fa-star" title="Edit"></i>
-				                        </a>
-				                        <a href="users_manage_legal/" class="action">
-				                          <i class="fa fa-pencil" title="Edit"></i>
-				                        </a>
-				                        <a href="javascript:void(0)" class="action" data-toggle="modal" data-target="#modal-default">
-				                          <i class="fa fa-trash" title="delete"></i>
-				                        </a>
+				                		<div class="btn btn-primary">
+				                			<a href="javascript:void(0)" class="action">
+				                          	<i class="fa fa-star" title="Edit"></i>
+				                        	</a>
+				                		</div>
+				                        <div class="btn btn-primary">
+					                        <a href="users_manage_legal/" class="action">
+					                          <i class="fas fa-edit"></i>
+					                        </a>
+				                        </div>
+				                        <div class="btn btn-primary">
+					                        <a href="javascript:void(0)" class="action" data-toggle="modal" 
+					                       data-target="#modal-user-delete">
+					                          <i class="fa fa-trash" title="delete">
+					                          </i>
+					                        </a>
+				                    	</div>
 				                    </td>
 				                </tr>
 			              	</tbody>
@@ -130,20 +149,20 @@
   .all_items a.action{
     display: inline-block;
     border-radius: 3px;
-    background-color: #bbbfc1;
-    width: 20px;
+    	
+    
     text-align: center;
-    color: #000;
+    color: #fff;
   }
 
 
   .all_items a.stats{
     display: inline-block;
     border-radius: 3px;
-    background-color: #bbbfc1;
+    
     text-align: center;
-    padding: 2px 5px;
-    color: #000;
+    
+   
   }
 
   .all_items a.stats:hover{
@@ -207,4 +226,29 @@
         ajax_json_call(call_url, call_data, callback); 
       }
     }
+
+  function user_delete(){
+  
+    var data={};
+        data.id = $('[name="id"]').val();
+
+
+    var call_url = "user_delete";
+
+    var call_data = {
+        data:data
+    }
+
+
+
+    var call_back = function(odgovor){
+      if(odgovor.success){
+          alert(odgovor.message);
+          $('#modal-user-delete').modal('hide');
+      }
+    }
+    ajax_json_call(call_url, call_data, call_back);
+}
+
+
 </script>

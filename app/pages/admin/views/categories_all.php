@@ -33,7 +33,7 @@
                       
                         <a href="categories_manage/<?php echo $list[$i]->id; ?>">
                           <div class="btn btn-primary">
-                            <i class="fa fa-pencil" title="Edit"></i>
+                            <i class="fas fa-edit" title="Edit"></i>
                           </div>
                         </a>
                         <a href="javascript:void(0)" onclick="remove_item(<?php echo $list[$i]->id; ?>)">

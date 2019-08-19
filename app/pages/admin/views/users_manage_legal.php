@@ -1,6 +1,9 @@
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal-user-delete.php'; ?>
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
+      <input type="hidden" name="id" value="0">
       <h1>
         Company Profile
       </h1>
@@ -27,14 +30,18 @@
                   <b>Email</b> <a class="pull-right">prasad@gmail.com</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Adress</b> <a class="pull-right">Gorje pruge bb</a>
+                  <b>Adress</b> <a class="pull-right">Gornje pruge bb</a>
                 </li>
               </ul>
+                <a href="#" class="btn btn-danger btn-block" data-toggle="modal"
+                data-target="#modal-user-delete"
+                ><b>Obriši korisnika</b></a>
+
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-
+            
           <!-- About Me Box -->
 
           <!-- /.box -->
@@ -71,14 +78,14 @@
                   </div>
                   <div class="col-12 col-xs-6">
                     <div class="form-group">
-                      <label for="presonal_nr">Matični:</label>
-                      <input type="text" name="presonal_nr" class="form-control" value="246810121416">
+                      <label for="personal_nr">Matični:</label>
+                      <input type="text" name="personal_nr" class="form-control" value="246810121416">
                     </div>
                   </div>
                   <div class="col-12 col-xs-12">
                     <div class="form-group">
                       <label for="email">Email:</label>
-                      <input type="text" name="phone" class="form-control" value="prasad@gmail.com">
+                      <input type="text" name="email" class="form-control" value="prasad@gmail.com">
                     </div>
                   </div>
                   <div class="col-12 col-xs-6">
@@ -94,8 +101,9 @@
                     </div>
                   </div>
                   <div class="col-12 col-xs-12">
-                    <a href="users_all/">
-                      <div class="btn btn-primary pull-right">Sačuvaj</div>
+                    <a href="javascript:void(0)" onclick="save_legal_user_data()" class="btn btn-primary pull-right" 
+                    >
+                      Sačuvaj
                     </a>
                     <a href="users_all/">
                       <div class="btn btn-default">Nazad</div>
@@ -114,77 +122,18 @@
                     <div class="col-12 col-xs-3">
                       <div class="form-group">
                         <label>Search by user name:</label>
-                        <input type="text" name="name" class="form-control">
+                        <input type="text" name="search_user_name" class="form-control">
                       </div>
                     </div>
                     <div class="col-12 col-xs-3">
                       <div class="form-group">
                         <label>Search by email:</label>
-                          <input type="text" class="form-control" value="Email">
+                          <input type="text" class="form-control" value="Email" name="search_email">
                       </div>
                     </div>
                   </div><br>
-                <div class="row">
-                  <div class="col-12 col-xs-12">
-                    <table class="table table-hover">
-                      <tr>
-                          <th>ID</th>
-                          <th>Broj Kartice</th>
-                          <th>Ime i prezime</th>
-                          <th>Email</th>
-                          <th>Kredit</th>
-                          <th>Akcije</th>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>000022</td>
-                          <td>Pavle Jovanović</td>
-                          <td>pavle_car@gmail.com</td>
-                          <td>2255 din</td>
-                          <td>
-                            <button type="button" class="btn btn-primary btn-xs">Zameni Karticu</button>
-                            <button type="button" class="btn btn-primary btn-xs">Potrošnja</button>
-                            <button type="button" class="btn btn-primary btn-xs">Uplate</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>000220</td>
-                          <td>Strahinja Krstić</td>
-                          <td>prasad@gmail.com</td>
-                          <td>2375 din</td>
-                          <td>
-                            <button type="button" class="btn btn-primary btn-xs">Zameni Karticu</button>
-                            <button type="button" class="btn btn-primary btn-xs">Potrošnja</button>
-                            <button type="button" class="btn btn-primary btn-xs">Uplate</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>000022</td>
-                          <td>Nikola Jovanović</td>
-                          <td>pavle_car@gmail.com</td>
-                          <td>2255 din</td>
-                          <td>
-                            <button type="button" class="btn btn-primary btn-xs">Zameni Karticu</button>
-                            <button type="button" class="btn btn-primary btn-xs">Potrošnja</button>
-                            <button type="button" class="btn btn-primary btn-xs">Uplate</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>000022</td>
-                          <td>Pavle Jovanović</td>
-                          <td>pavle_car@gmail.com</td>
-                          <td>2255 din</td>
-                          <td>
-                            <button type="button" class="btn btn-primary btn-xs">Zameni Karticu</button>
-                            <button type="button" class="btn btn-primary btn-xs">Potrošnja</button>
-                            <button type="button" class="btn btn-primary btn-xs">Uplate</button>
-                          </td>
-                        </tr>
-                    </table>
-                  </div>
+                <div class="company_cards_holder">
+                  
                 </div>
               </div>
               <div class="tab-pane" id="bills">
@@ -192,13 +141,13 @@
                   <div class="col-12 col-xs-3">
                     <div class="form-group">
                       <label>Search by email:</label>
-                        <input type="text" class="form-control" value="Email">
+                        <input type="text" class="form-control" value="Email" name="mail_search" onkeyup="get_company_billings()">
                     </div>
                   </div>
                   <div class="col-12 col-xs-3">
                     <div class="form-group">
                       <label>Search card number:</label>
-                        <input type="text" class="form-control" value="br kartice 000022">
+                        <input type="text" class="form-control" value="br kartice 000022" name="card_search" onkeyup="get_company_billings()">
                     </div>
                   </div>
                     <div class="col-12 col-xs-3">
@@ -208,74 +157,19 @@
                       </div>
                     </div>
                 </div><br>
-                <div class="row">
-                  <div class="col-12 col-xs-12">
-                    <table class="table table-hover">
-                      <tbody>
-                        <tr>
-                          <th>ID</th>
-                          <th>Datum</th>
-                          <th>Broj Fakture</th>
-                          <th>Iznos</th>
-                          <th>Štampaj</th>
-                          <th>Status</th>
-                          <th>Akcija</th>
-                        </tr>
-                        <tr>
-                          <td>1</td>
-                          <td>20.08.2019.</td>
-                          <td>00001/2019</td>
-                          <td>550 din</td>
-                          <td><a href="#" class="btn btn-primary btn-xs"><i class="fa fa-copy"></i></a></td>
-                          <td><span class="label label-success">Approved</span></td>
-                          <td>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>10.04.2019.</td>
-                          <td>00001/2019</td>
-                          <td>250 din</td>
-                          <td><a href="#" class="btn btn-primary btn-xs"><i class="fa fa-copy"></i></a></td>
-                          <td><span class="label label-warning">Pending</span></td>
-                          <td>
-                            <button type="button" class="btn btn-primary btn-xs">Approve</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>3</td>
-                          <td>20.07.2019.</td>
-                          <td>00001/2019</td>
-                          <td>50 din</td>
-                          <td><a href="#" class="btn btn-primary btn-xs"><i class="fa fa-copy"></i></a></td>
-                          <td><span class="label label-success">Approved</span></td>
-                          <td>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>4</td>
-                          <td>11.07.2019.</td>
-                          <td>00001/2019</td>
-                          <td>1750 din</td>
-                          <td><a href="#" class="btn btn-primary btn-xs"><i class="fa fa-copy"></i></a></td>
-                          <td><span class="label label-success">Approved</span></td>
-                          <td>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="company_billings_holder">
+                  
                 </div>
               </div>
               <div class="tab-pane" id="settings">
                 <div class="row">
                   <div class="col-12 col-xs-3">
                     <label>Date From:</label> 
-                    <input type="date" class="form-control" value="2019-04-02" name="date_from" >
+                    <input type="date" class="form-control" value="2019-04-02" name="date_from" onchange="get_company_transactions()">
                   </div>
                   <div class="col-12 col-xs-3">
                     <label>Date to:</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" name="date_to" onchange="get_company_transactions()">
                   </div>
                   <div class="col-12 col-xs-3">
                     <label for="card_number">Search by card number</label>
@@ -292,62 +186,8 @@
                       </div>
                     </div>
                 </div><br>
-                <div class="row">
-                  <div class="col-12 col-xs-12">
-                    <table class="table table-hover">
-                      <tbody>
-                        <tr>
-                          <th style="width: 10px">#</th>
-                          <th>Date</th>
-                          <th>Company</th>
-                          <th>Location</th>
-                          <th>Total price</th>
-                          <th>User payed</th>
-                          <th>BP commision</th>
-                          <th>Card Number</th>
-                        </tr>
-                        <tr>
-                            <td>1.</td>
-                            <td>30.06.2019 11:49:22</td>
-                            <td>Dunavska priča</td>
-                            <td>Kej oslobodjenja 69</td>
-                            <td>365 RSD</td>
-                            <td>328.50 RSD</td>
-                            <td>11 RSD</td>
-                            <td>000001</td>
-                        </tr>
-                        <tr>
-                            <td>2.</td>
-                            <td>27.06.2019 12:57:04</td>
-                            <td>Ceger </td>
-                            <td>Skerlićeva 20</td>
-                            <td>255 RSD</td>
-                            <td>229.50 RSD</td>
-                            <td>8 RSD</td>
-                            <td>000015</td>
-                        </tr>
-                        <tr>
-                            <td>3.</td>
-                            <td>26.06.2019 20:02:51</td>
-                            <td>Kafeterija Šank</td>
-                            <td>Nedeljka Gvozdenovića 22b</td>
-                            <td>200 RSD</td>
-                            <td>170.00 RSD</td>
-                            <td>6 RSD</td>
-                            <td>000022</td>
-                        </tr>
-                        <tr>
-                          <td colspan="4"><b class="pull-right">Total</b></td>
-                          <td>820 RSD</td>
-                          <td>728 RSD</td>
-                          <td>25 RSD</td>
-                          <td></td>
-                          <td></td>
-                          <td></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                <div class="company_transactions_holder">
+                  
                 </div>
               </div>
               <!-- /.tab-pane -->
@@ -376,35 +216,88 @@
 
   </style>
 
-   <!--<tbody>
-        <tr>
-          <th>ID</th>
-          <th>Date</th>
-          <th>Status</th>
-          <th>Iznos</th>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>11-7-2014</td>
-          <td><span class="label label-success">Approved</span></td>
-          <td>750 din</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>11-7-2014</td>
-          <td><span class="label label-warning">Pending</span></td>
-          <td>1250 din</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>11-7-2014</td>
-          <td><span class="label label-primary">Approved</span></td>
-          <td>500 din</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>11-7-2014</td>
-          <td><span class="label label-danger">Denied</span></td>
-          <td>945 din</td>
-        </tr>
-      </tbody>-->
+<script type="text/javascript">
+  
+  function save_legal_user_data(){
+
+    var podaci = {};
+        podaci.ime = $('[name="company_name"]').val();
+        podaci.adresa = $('[name = "adress"]').val();
+        podaci.pib = $('[name = "pib"]').val();
+        podaci.maticni_broj = $('[name = "personal_nr"]').val();
+        podaci.mejl = $('[name = "email"]').val();
+
+    var call_url = "save_legal_user_data"
+
+    var call_data = {
+      data:podaci
+    }
+
+    var callback = function(response){
+      if(response.success){
+        alert(response.message);
+      } else {
+        alert(response.message);
+      }
+    }
+
+    ajax_json_call(call_url, call_data, callback);
+
+  }
+
+function get_company_transactions(){
+
+  var data={};
+      data.date_from = $('[name="date_from"]').val();
+      data.date_to = $('[name="date_to"]').val();
+
+  var call_url = 'get_company_transactions';
+  var call_data = {data:data};
+
+  var call_back = function(odgovor){
+    $('.company_transactions_holder').html(odgovor);
+  }
+  ajax_call(call_url, call_data, call_back);
+}
+
+$(function(){
+  get_company_transactions();
+});
+
+
+
+function  get_company_billings(){
+  var data={};
+      data.id = $('[name = "id"]').val();
+
+  var call_url='get_company_billings';
+  var call_data={data:data};
+  var callback = function(response){
+    $('.company_billings_holder').html(response);
+  }
+
+  ajax_call(call_url, call_data, callback);
+}
+
+$(function(){
+    get_company_billings();
+  });
+
+
+function get_company_cards(){
+  var data={};
+      data.id = $('[name="id"]').val();
+  
+
+  var call_url = "get_company_cards";
+  var call_data ={data:data}
+  var callback = function(response){
+    $('.company_cards_holder').html(response);
+  }
+  ajax_call(call_url, call_data, callback);
+}
+
+$(function(){
+  get_company_cards();
+});
+</script>

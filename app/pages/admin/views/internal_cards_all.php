@@ -21,29 +21,10 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody><tr>
-                  <th style="width: 10px">#</th>
-                  <th>Card number</th>
-                  <th>User</th>
-                  <th>Actions</th>
-                </tr>
-                <?php for ($i=0; $i < sizeof($list); $i++) { ?>
-                  <tr>
-                    <td><?php echo $i+1; ?>.</td>
-                    <td><?php echo $list[$i]->card_number; ?></td>
-                    <td><?php echo $list[$i]->user->email; ?></td>
-                    <td>
-                        <a href="admin_payments_create/?preselected_card=<?php echo $list[$i]->card_number; ?>">
-                          <div class="btn btn-primary">
-                            <i class="fa fa-money" title="Admin payment"></i>
-                          </div>
-                        </a>
-                    </td>
-                  </tr>
-                <?php } ?>
+              <input type="hidden" name="id" value="0">
+              <div class="internal_cards_all_holder">
                 
-              </tbody></table>
+              </div>
             </div>
             <!-- /.box-body -->
           </div>
@@ -57,11 +38,27 @@
     <!-- /.content -->
 </div>
 
+<script type="text/javascript">
+  function get_internal_cards_all(){
+    var data={};
+        data.id=$('[name="id"]').val();
+
+    var call_url='get_internal_cards_all';
+    var call_data={data:data};
+    var callback=function(response){
+      $('.internal_cards_all_holder').html(response);
+    }
+    ajax_call(call_url, call_data, callback);
+  }
+
+  $(function(){
+    get_internal_cards_all();
+  });
+</script>
+
 <style type="text/css">
   .table i{
     border-radius: 5px;
-    border: 1px solid #3c8dbc;
-    padding: 5px;
   }
 
   .table i:hover{

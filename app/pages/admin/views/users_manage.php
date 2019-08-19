@@ -1,4 +1,9 @@
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal-user-delete.php';?>
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal_user_add_card_credit.php';?>
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal-change-card.php';?>
+
 <div class="content-wrapper">
+  <input type="hidden" name="id" value="0">
     <!-- Main content -->
     <section class="content">
 
@@ -29,10 +34,10 @@
                 </li>
               </ul>
 
-              <a href="#" class="btn btn-warning btn-block"><b>Promeni karticu</b></a>
-              <a href="#" class="btn btn-primary btn-block"><b>Uplati kredit</b></a>
-              <a href="#" class="btn btn-primary btn-block"><b>Pošalji PIN na Email</b></a>
-              <a href="#" class="btn btn-danger btn-block"><b>Obriši korisnika</b></a>
+              <a href="card_info/" class="btn btn-primary btn-block"><b>Pogledaj karticu</b></a>
+
+              <a href="javascript:void(0)" class="btn btn-warning btn-block" data-toggle="modal" data-target="#modal-change-card"><b>Promeni karticu</b></a>
+              <a href="#" class="btn btn-danger btn-block" data-toggle="modal" data-target="#modal-user-delete"><b>Obriši korisnika</b></a>
             </div>
             <!-- /.box-body -->
           </div>
@@ -43,7 +48,7 @@
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               <li class="active"><a href="#activity" data-toggle="tab">Izmeni podatke</a></li>
-              <li><a href="#payments" data-toggle="tab">Uplate</a></li>
+              <li><a href="#deposits" data-toggle="tab">Uplate</a></li>
               <li><a href="#charges" data-toggle="tab">Potrošnja</a></li>
             </ul>
             <div class="tab-content">
@@ -70,18 +75,18 @@
                   <div class="col-12 col-xs-6">
                     <div class="form-group">
                       <label for="phone">Lozinka</label>
-                      <input type="password" name="phone" class="form-control" value="">
+                      <input type="text" name="password_one" class="form-control" value="">
                     </div>
                   </div>
                   <div class="col-12 col-xs-6">
                     <div class="form-group">
                       <label for="confirm_pass">Ponovi Lozinku</label>
-                      <input type="password" name="phone" class="form-control" value="">
+                      <input type="text" name="password_two" class="form-control" value="">
                     </div>
                   </div>
                   <div class="col-12 col-xs-12">
-                    <a href="users_all/">
-                      <div class="btn btn-primary pull-right">Sačuvaj</div>
+                    <a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="save_user_data()">
+                      Sačuvaj
                     </a>
                     <a href="users_all/">
                       <div class="btn btn-default">Nazad</div>
@@ -89,118 +94,25 @@
                   </div>
                 </div>
               </div>
-              <div class="tab-pane" id="payments">
-                <div>
-                  <table class="table table-hover">
-                    <tbody>
-                      <tr>
-                        <th>ID</th>
-                        <th>Date</th>
-                        <th>Credits</th>
-                        <th>Payment type</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>11.07.2014.</td>
-                        <td>750 din</td>
-                        <td>Post office</td>
-                        <td><span class="label label-success">Approved</span></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>11.07.2014.</td>
-                        <td>1250 din</td>
-                        <td>Post office</td>
-                        <td><span class="label label-warning">Pending</span></td>
-                        <td><a href="#" class="btn btn-primary btn-xs">Approve</a></td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>11.07.2014.</td>
-                        <td>500 din</td>
-                        <td>Post office</td>
-                        <td><span class="label label-success">Approved</span></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>11.07.2014.</td>
-                        <td>945 din</td>
-                        <td>Post office</td>
-                        <td><span class="label label-success">Approved</span></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+              <div class="tab-pane" id="deposits">
+                  <div class="user_deposits_holder">
+                    
+                  </div>
               </div>
               <div class="tab-pane" id="charges">
                 <div class="row">
                   <div class="col col-xs-3">
                     <label>Date From:</label>
-                    <input type="date" class="form-control" value="2019-04-02" name="date_from" onchange="get_report_card_usage()">
+                    <input type="date" class="form-control" value="2019-04-02" name="charges_date_from" onchange="get_user_charges()">
                   </div>
                   <div class="col col-xs-3">
                     <label>Date to:</label>
-                    <input type="date" class="form-control" value="2019-07-02" name="date_from" onchange="get_report_card_usage()">
+                    <input type="date" class="form-control" value="2019-07-02" name="charges_date_to" onchange="get_user_charges()">
                   </div>
                 </div><br>
                 <div class="row">
-                  <div class="col-12 col-xs-12">
-                    <table class="table table-striped all_items">
-                      <tbody>
-                        <tr>
-                          <th style="width: 10px">#</th>
-                          <th>Date</th>
-                          <th>Company</th>
-                          <th>Location</th>
-                          <th>Total price</th>
-                          <th>User payed</th>
-                          <th>BP commision</th>
-                        </tr>
-                        <tr>
-                            <td>1.</td>
-                            <td>30.06.2019 11:49:22</td>
-                            <td>Dunavska priča</td>
-                            <td>Kej oslobodjenja 69</td>
-
-                            <td>365 RSD</td>
-                            <td>328.50 RSD</td>
-                            <td>11 RSD</td>
-                        </tr>
-                        <tr>
-                            <td>2.</td>
-                            <td>27.06.2019 12:57:04</td>
-                            <td>Ceger </td>
-                            <td>Skerlićeva 20</td>
-
-                            <td>255 RSD</td>
-                            <td>229.50 RSD</td>
-                            <td>8 RSD</td>
-                        </tr>
-                        <tr>
-                            <td>3.</td>
-                            <td>26.06.2019 20:02:51</td>
-                            <td>Kafeterija Šank</td>
-                            <td>Nedeljka Gvozdenovića 22b</td>
-
-                            <td>200 RSD</td>
-                            <td>170.00 RSD</td>
-                            <td>6 RSD</td>
-                        </tr>
-                        <tr>
-                          <td colspan="4"><b class="pull-right">Total</b></td>
-
-                          <td>820 RSD</td>
-                          <td>728 RSD</td>
-                          <td>25 RSD</td>
-                        </tr>
-                        
-                      </tbody>
-                    </table>
+                  <div class="col-12 col-xs-12 user_charges_holder">
+                    
                   </div>
                 </div>
               </div>
@@ -229,3 +141,86 @@
     }
 
   </style>
+
+
+<script type="text/javascript">
+  
+  //FUKCIJA AJAX JSON KOJA CUVA PODATKE
+  function save_user_data(){
+
+    //podaci koji se prosledjuju u PHP
+    var data = {};
+        data.id = $('[name="id"]').val();
+        data.name = $('[name="name"]').val();
+        data.surname = $('[name="surname"]').val();//name se odnosi na atribut name, ne na naziv varijabile 
+        data.mail = $('[name="mail"]').val();
+        data.password_one = $('[name="password_one"]').val();
+        data.password_two = $('[name="password_two"]').val();
+
+    // PHP stranica koja se poziva putem ajaxa
+    var call_url = "save_user_data"; 
+  
+    // ovde prosledjujemo podatke iz funkcije u ajax tj u php 
+    var call_data = { //gde je prva data naziv varijabile u php fajlu, a druga data naziv varijbile u java scriptu
+      data:data 
+    }  
+
+    // ovde pisemo sta se radi nakon zavrsenog poziva PHP stranice
+    var callback = function(response){  
+      //response im po defaultu dva podatka, success i message
+      //success moze da bude true ili false, message je poruka definisana u PHP
+
+      if(response.success){  
+          //napisemo sta radimo kada je sve ok
+          alert(response.message);
+      }else{  
+          //napisemo sta radimo kada postoji problem
+          alert(response.message);
+      }  
+
+    }  
+    ajax_json_call(call_url, call_data, callback); 
+  }
+
+
+  function get_user_charges(){
+
+    var data = {};
+        data.date_from = $('[name="charges_date_from"]').val();
+        data.date_to = $('[name="charges_date_to"]').val();
+
+    var call_url = "get_user_charges";
+
+    var call_data = {data:data}
+
+    var callback = function(response){
+      $('.user_charges_holder').html(response);
+    }
+
+    ajax_call(call_url, call_data, callback); 
+
+  }
+
+  //on document load - kada se ucita ceo HTML, onda pokreni automatski ovu funkciju
+  $(function(){
+    get_user_charges();
+  });
+
+
+  function get_user_deposits(){
+    var data={};
+        data.id=$('[name="id"]').val();
+
+    var call_url="get_user_deposits";
+    var call_data={data:data}
+    var callback = function(response){
+      $('.user_deposits_holder').html(response);
+      }
+    ajax_call(call_url, call_data, callback);
+  }
+
+  $(function(){
+    get_user_deposits();
+  });
+
+</script>
