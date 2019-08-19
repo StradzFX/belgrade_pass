@@ -37,7 +37,9 @@ for($i=0;$i<sizeof($company_category_all);$i++){
             </td>
             <td>
                 <a href="javascript:void(0)" onclick="remove_category(<?php echo $category->id; ?>)">
-                  <i class="fa fa-trash" title="delete"></i>
+                  <div class="btn btn-primary">
+                    <i class="fa fa-trash" title="delete"></i>
+                  </div>
                 </a>
             </td>
           </tr>

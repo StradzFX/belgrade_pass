@@ -29,11 +29,15 @@ $item = SchoolModule::get_admin_data($data['id']);
             </td>
             <td>
               <a href="javascript:void(0)" onclick="edit_location(<?php echo $location->id; ?>,'<?php echo $location->city; ?>','<?php echo $location->part_of_city; ?>','<?php echo $location->street; ?>','<?php echo $location->email; ?>','<?php echo $location->username; ?>','<?php echo $location->latitude; ?>','<?php echo $location->longitude; ?>')">
-                  <i class="fa fa-pencil" title="edit"></i>
+                  <div class="btn btn-primary">
+                    <i class="fa fa-pencil" title="edit"></i>
+                  </div>
                 </a>
 
                 <a href="javascript:void(0)" onclick="remove_location(<?php echo $location->id; ?>)">
-                  <i class="fa fa-trash" title="delete"></i>
+                  <div class="btn btn-primary">
+                    <i class="fa fa-trash" title="delete"></i>
+                  </div>
                 </a>
 
 

@@ -43,7 +43,7 @@
 
                         <a href="company_manage/<?php echo $list[$i]->id; ?>" class="action">
                           <div class="btn btn-primary">
-                            <i class="fa fa-pencil" title="Edit"></i>
+                            <i class="fas fa-edit" title="Edit"></i>
                           </div>
                         </a>
                         <a href="javascript:void(0)" class="action" onclick="remove_item(<?php echo $list[$i]->id; ?>)">

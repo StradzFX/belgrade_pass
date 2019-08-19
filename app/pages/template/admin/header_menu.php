@@ -31,9 +31,9 @@
           </span>
         </a>
         <ul class="treeview-menu" <?php if(in_array($page, array('categories_all','categories_manage'))){ ?>style="display:block"<?php } ?>>
-          <li <?php if(in_array($page, array('categories_all'))){ ?>class="active"<?php } ?>><a href="categories_all/"><i class="fa fa-circle-o"></i> See all</a></li>
+          <li <?php if(in_array($page, array('categories_all'))){ ?>class="active"<?php } ?>><a href="categories_all/"><i class="fas fa-eye"></i> See all</a></li>
           <li <?php if(in_array($page, array('categories_manage'))){ ?>class="active"<?php } ?>>
-            <a href="categories_manage/"><i class="fa fa-circle-o"></i> New
+            <a href="categories_manage/"><i class="fas fa-plus"></i></i> New
             </a>
           </li>
         </ul>
@@ -45,9 +45,9 @@
           </span>
         </a>
         <ul class="treeview-menu" <?php if(in_array($page, array('company_all','company_manage'))){ ?>style="display:block"<?php } ?>>
-          <li <?php if(in_array($page, array('company_all')))?>><a href="company_all/"><i class="fa fa-circle-o"></i> See all</a></li>
+          <li <?php if(in_array($page, array('company_all')))?>><a href="company_all/"><i class="fas fa-eye"></i> See all</a></li>
           <li <?php if(in_array($page, array('company_manage')))?>>
-            <a href="company_manage/"><i class="fa fa-circle-o"></i> New
+            <a href="company_manage/"><i class="fas fa-plus"></i> New
             </a>
           </li>
         </ul>
@@ -72,9 +72,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li <?php if(in_array($page, array('company_cards_all'))){ ?>class="active"<?php } ?>><a href="company_cards_all/"><i class="fa fa-circle-o"></i> Partner cards</a></li>
-          <li <?php if(in_array($page, array('internal_cards_all','internal_card_assign'))){ ?>class="active"<?php } ?>><a href="internal_cards_all/"><i class="fa fa-circle-o"></i> Internal use cards</a></li>
-          <li <?php if(in_array($page, array('cards_distribution'))){ ?>class="active"<?php } ?>><a href="cards_distribution/"><i class="fa fa-circle-o"></i> Cards distribution</a></li>
+          <li <?php if(in_array($page, array('internal_cards_all','internal_card_assign'))){ ?>class="active"<?php } ?>><a href="internal_cards_all/"><i class="fas fa-address-card"></i> Internal use cards</a></li>
+          <li <?php if(in_array($page, array('internal_cards_all','internal_card_assign'))){ ?>class="active"<?php } ?>><a href="company_cards_all/"><i class="fas fa-desktop"></i> Website cards</a></li>
+          <li <?php if(in_array($page, array('cards_distribution'))){ ?>class="active"<?php } ?>><a href="cards_distribution/"><i class="fas fa-exchange-alt"></i> Cards distribution</a></li>
         </ul>
       </li>
       <li class="treeview <?php if(in_array($page, array('post_office','payment_cards','company_payments','admin_payments','admin_payments_create'))){ ?>active<?php } ?>">
@@ -87,16 +87,12 @@
         </a>
         <ul class="treeview-menu">
           <li <?php if(in_array($page, array('admin_payments','admin_payments_create'))){ ?>class="active"<?php } ?>>
-            <a href="admin_payments/"><i class="fa fa-money"></i> Admin payments</a>
+            <a href="admin_payments/"><i class="fas fa-user-shield"></i> Admin payments</a>
           </li>
           <li <?php if(in_array($page, array('post_office'))){ ?>class="active"<?php } ?>>
-            <a href="post_office/"><i class="fa fa-circle-o"></i> Post Office</a>
-          </li>
-          <li <?php if(in_array($page, array('payment_cards'))){ ?>class="active"<?php } ?>>
-            <a href="payment_cards/"><i class="fa fa-circle-o"></i> Payment Cards</a>
-          </li>
-          <li <?php if(in_array($page, array('company_payments'))){ ?>class="active"<?php } ?>>
-            <a href="company_payments/"><i class="fa fa-circle-o"></i> Partner payments</a>
+            <a href="post_office/"><i class="fas fa-mail-bulk"></i> Post Office</a>
+            <li <?php if(in_array($page, array('post_office'))){ ?>class="active"<?php } ?>>
+            <a href="invoices/"><i class="fas fa-file-invoice"></i></i>      Invoices</a>
           </li>
         </ul>
       </li>
@@ -130,10 +126,10 @@
     </a>
     <ul class="treeview-menu">
       <li <?php if(in_array($page, array('report_card_usage'))){ ?>class="active"<?php } ?>>
-        <a href="report_card_usage/"><i class="fa fa-circle-o"></i> Card Usage</a>
+        <a href="report_card_usage/"><i class="fas fa-tachometer-alt"></i> Card Usage</a>
       </li>
       <li <?php if(in_array($page, array('report_unused_cards'))){ ?>class="active"<?php } ?>>
-        <a href="report_unused_cards/"><i class="fa fa-circle-o"></i> Unused cards</a>
+        <a href="report_unused_cards/"><i class="fas fa-calendar-times"></i> Unused cards</a>
       </li>
     </ul>
   </li>

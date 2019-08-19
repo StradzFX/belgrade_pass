@@ -19,31 +19,12 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tbody><tr>
-                  <th style="width: 10px">#</th>
-                  <th>Company</th>
-                  <th>Number of cards</th>
-                  <th>Actions</th>
-                </tr>
-                <?php for ($i=0; $i < sizeof($list); $i++) { ?>
-                  <tr>
-                    <td><?php echo $i+1; ?>.</td>
-                    <td><?php echo $list[$i]['company']->name; ?></td>
-                    <td><?php echo $list[$i]['total']; ?></td>
-                    <td>
-                        <a href="company_cards_view/<?php echo $list[$i]['company']->id; ?>">
-                          <div class="btn btn-primary">
-                            <i class="fa fa-eye"title="View info"></i>
-                          </div>
-                        </a>
-                    </td>
-                  </tr>
-                <?php } ?>
-                
-              </tbody></table>
+              
             </div>
-            <!-- /.box-body -->
+            <input type="hidden" name="id" value="0">
+            <div class="company_cards_all_holder">
+              
+            </div>
           </div>
           <!-- /.box -->
         </div>
@@ -81,4 +62,20 @@
         ajax_json_call(call_url, call_data, callback); 
       }
     }
+
+  function get_company_cards_all(){
+    var data={};
+        data.id=$('[name="id"]').val();
+
+    var call_url='get_company_cards_all';
+    var call_data={data:data};
+    var callback=function(response){
+      $('.company_cards_all_holder').html(response);
+    }
+    ajax_call(call_url, call_data, callback);
+  }
+
+  $(function(){
+    get_company_cards_all();
+  })
 </script>
