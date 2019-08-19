@@ -5,22 +5,16 @@
 			<div class="wrapper-main">
 				<div class="user_data">
 					<div class="personal_data">
-						<div class="title">Kreirajte novu karticu</div>
+						<div class="title">Dodajte kredite na karticu</div>
 						<div>
 							<div>
-								<a href="javascript:void(0)" onclick="add_row()" class="btn">Dodaj novog korisnika</a>
+								<a href="javascript:void(0)" onclick="add_row()" class="btn">Dodaj novu karticu</a>
 							</div>
 
 							<div class="new_card_holder">
 								<div class="row">
 									<div class="col-12 col-sm-2">
-										Ime
-									</div>
-									<div class="col-12 col-sm-2">
-										Prezime
-									</div>
-									<div class="col-12 col-sm-2">
-										Email
+										Kartica
 									</div>
 									<div class="col-12 col-sm-2">
 										Kredita na kartici
@@ -32,7 +26,7 @@
 							</div>
 
 							<div>
-								<a href="javascript:void(0)" onclick="create_cards()" class="btn">Kreiraj kartice</a>
+								<a href="javascript:void(0)" onclick="create_cards()" class="btn">Dodaj kredite</a>
 							</div>
 						</div>
 					</div>
@@ -48,13 +42,12 @@
 
 var row_template = '<div class="row new_user_row row_{id}">\
 						<div class="col-12 col-sm-2">\
-							<input type="text" class="form-control" placeholder="Ime" name="first_name">\
-						</div>\
-						<div class="col-12 col-sm-2">\
-							<input type="text" class="form-control" placeholder="Prezime" name="last_name">\
-						</div>\
-						<div class="col-12 col-sm-2">\
-							<input type="text" class="form-control" placeholder="Email" name="email">\
+							<select class="form-control card_select">\
+								<option value="">Odaberite karticu</option>\
+								<?php for($i=0;$i<sizeof($card_list);$i++){ ?>\
+									<option value="<?php echo $card_list[$i]->id; ?>"><?php echo $card_list[$i]->card_number; ?></option>\
+								<?php } ?>\
+							</select>\
 						</div>\
 						<div class="col-12 col-sm-2">\
 							<input type="text" class="form-control" id="credit_{id}" placeholder="Kredit" name="credits" data-slider-id="credit_{id}" type="text" data-slider-min="500" data-slider-max="10000" data-slider-step="500" data-slider-value="2500">\
@@ -237,3 +230,9 @@ function create_card(){
     ajax_json_call(call_url, call_data, callback); 
 }
 </script>
+
+<style type="text/css">
+	.card_select{
+		padding: 0;
+	}
+</style>

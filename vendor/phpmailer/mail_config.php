@@ -16,7 +16,7 @@ if(!$send_gmail){
 	$host_password = 'webbrod2015+';
 	$sender_name = 'BelgradePass';
 	$sender_email = 'no-reply@belgradepass.com';
-	$replier_name = 'KidCard';
+	$replier_name = 'BelgradePass';
 	$replier_email = 'no-reply@belgradepass.com';
 	$host = 'mailcluster.loopia.se';
 	$port = 587;

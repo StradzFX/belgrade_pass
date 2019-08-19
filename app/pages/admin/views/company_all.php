@@ -28,7 +28,7 @@
                   <tr>
                     <td><?php echo $list[$i]->id; ?>.</td>
                     <td><?php echo $list[$i]->name; ?></td>
-                    <td><?php echo $list[$i]->category_name; ?></td>
+                    <td><?php echo $list[$i]->categories_display; ?></td>
                     <td>
                       <a href="report_card_usage/?company=<?php echo $list[$i]->id; ?>" class="stats">
                         <?php echo $list[$i]->card_usage_total; ?> times used

@@ -17,43 +17,26 @@
 						</div>
 						<?php }else{ ?>
 						<div class="card_info">
-							<?php for ($i=0; $i < sizeof($card_list); $i++) { ?> 
-								<div class="row">
-									<div class="col s12 m4">
-										<div class="card_template">
-											<div class="card_number">
-												<?php echo $card_list[$i]->card_number; ?>
-											</div>
-											<div class="child_name">
-												<?php echo $card_list[$i]->child_name; ?>
-											</div>
-										</div>
-									</div>
-									<div class="col s12 m8">
-										<div>
-											<div>
-												Broj kartice: <?php echo $card_list[$i]->card_number; ?>
-											</div>
-											<div>
-												Dostava: <span><?php echo $card_list[$i]->card_status; ?></span>
-											</div>
-										</div>
-										<div>
-											<div>
-												Ime deteta: <?php echo $card_list[$i]->child_name; ?>
-											</div>
-											<div>
-												Datum rođenja deteta: <?php echo $card_list[$i]->child_birthdate; ?>
-											</div>
-
-											<div>
-												
-											</div>
-										</div>
-									</div>
-								</div>
-							<?php } ?>
-							
+							<table class="table">
+								<tr>
+									<th>Kartica</th>
+									<th>Kredita</th>
+									<th>Ime i prezime</th>
+									<th>Email</th>
+									<th></th>
+								</tr>
+								<?php for ($i=0; $i < sizeof($card_list); $i++) { ?> 
+								<tr>
+									<td><?php echo $card_list[$i]->card_number; ?></td>
+									<td>0</td>
+									<td><?php echo $card_list[$i]->parent_first_name; ?> <?php echo $card_list[$i]->parent_last_name; ?></td>
+									<td><?php echo $card_list[$i]->email; ?></td>
+									<td>
+										<a class="btn" href="buy_company_credits/">Uplati kredit</a>
+									</td>
+								</tr>
+								<?php } ?>
+							</table>
 						</div>
 						<?php } ?>
 					</div>

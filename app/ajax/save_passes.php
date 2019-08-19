@@ -149,6 +149,15 @@ if($validation_message == ""){
 					$wl_mailer = new wl_mailer($host_email,$host_password,array($sender_email,$sender_name),array($replier_email,$replier_name),$host,$port); 
 					$wl_mailer->set_subject('BelgradePASS račun');
 
+					$mail_html = str_replace('{transaction_date}', date('d.m.Y.'), $mail_html);
+					$mail_html = str_replace('{transaction_time}', date('H:i'), $mail_html);
+
+					$total_bill = ($total_passes_to_collect_email * 100) / (100 - $company->pass_customer_percentage);
+					$total_saved = $total_bill - $total_passes_to_collect_email;
+
+					$mail_html = str_replace('{total_bill}', $total_bill, $mail_html);
+					$mail_html = str_replace('{total_saved}', $total_saved, $mail_html);
+
 					$mail_html = str_replace('{user_email}', $user->email, $mail_html);
 					$mail_html = str_replace('{user_card_number}', $last_card->card_number, $mail_html);
 					$mail_html = str_replace('{company_name}', $company->name, $mail_html);
@@ -176,7 +185,7 @@ if($validation_message == ""){
 					$mail_html = str_replace('{content}', $mail_html_content, $mail_html);
 
 					$wl_mailer = new wl_mailer($host_email,$host_password,array($sender_email,$sender_name),array($replier_email,$replier_name),$host,$port); 
-					$wl_mailer->set_subject('BelgradePASS račun');
+					$wl_mailer->set_subject('BelgradePASS račun - Kompanija');
 
 					$mail_html = str_replace('{user_email}', $user->email, $mail_html);
 					$mail_html = str_replace('{user_card_number}', $last_card->card_number, $mail_html);
@@ -192,8 +201,8 @@ if($validation_message == ""){
 						$wl_mailer->add_image("public/images/mailer/company_logo.png", "company_logo", "company_logo.png");
 					}
 
-					$wl_mailer->set_email_content($mail_html);
-					$wl_mailer->send_email();
+					//$wl_mailer->set_email_content($mail_html);
+					//$wl_mailer->send_email();
 				}
 
 				

@@ -208,12 +208,12 @@ class PaymentModule{
 		// Image,Size,Angle,X,Y,Color,Font,Text
 		imagettftext($image_to_display, 10, 0, 30, 65, $black, $font, 'IME I PREZIME');
 		imagettftext($image_to_display, 10, 0, 30, 80, $black, $font, 'ULICA');
-		imagettftext($image_to_display, 10, 0, 30, 135, $black, $font, "Uplata za paket ".$card_package->name);
-		imagettftext($image_to_display, 10, 0, 30, 190, $black, $font, "BELGRADE PASS d.o.o., Nehruova 68");
-		imagettftext($image_to_display, 10, 0, 30, 205, $black, $font, "11070, Novi Beograd");
+		imagettftext($image_to_display, 10, 0, 30, 135, $black, $font, "Uplata ".$purchase->price." kredita");
+		imagettftext($image_to_display, 10, 0, 30, 190, $black, $font, "CITY PASS DOO, GENERAL");
+		imagettftext($image_to_display, 10, 0, 30, 205, $black, $font, "ŽDANOVA 1E 1, 11010 BEOGRAD");
 		imagettftext($image_to_display, 10, 0, 365, 70, $black, $font, "RSD");
 		imagettftext($image_to_display, 10, 0, 450, 70, $black, $font, $purchase->price);
-		imagettftext($image_to_display, 10, 0, 400, 122, $black, $font, "340-0000011022416-79");
+		imagettftext($image_to_display, 10, 0, 400, 122, $black, $font, "160-0000000370918-09");
 		imagettftext($image_to_display, 10, 0, 400, 162, $black, $font, $purchase->id);
 		imagejpeg($image_to_display,'public/images/post_office/'.$purchase->id.'.jpg');
 	}

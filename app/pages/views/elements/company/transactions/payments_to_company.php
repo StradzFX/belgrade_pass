@@ -3,7 +3,7 @@
         Spisak svih isplata koje je BelgradePass izvršio prema Vama
     </div>
     <?php if(sizeof($payments_credit) > 0){ ?>
-    <table class="table">
+    <table class="table table-responsive">
       <thead>
         <tr>
           <th scope="col">#</th>

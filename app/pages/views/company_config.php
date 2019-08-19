@@ -1,4 +1,4 @@
-<div class="page_content">
+<div class="page_content company_page_content">
 	<?php include_once 'app/pages/template/company_menu.php'; ?>
 	<div class="my-account">
 		<div class="container">

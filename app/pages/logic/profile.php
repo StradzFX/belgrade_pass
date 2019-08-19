@@ -69,3 +69,24 @@ for ($i=0; $i < sizeof($card_list); $i++) {
 	$card_list[$i]->left_passes = $total_passes - $taken_passes;
 
 }
+
+
+$card_list = new user_card();
+$card_list->set_condition('checker','!=','');
+$card_list->add_condition('recordStatus','=','O');
+$card_list->add_condition('user','=',$reg_user->id);
+$card_list->set_order_by('pozicija','DESC');
+$card_list->set_order_by('id','DESC');
+$card_list = $broker->get_all_data_condition($card_list);
+
+for ($i=0; $i < sizeof($card_list); $i++) { 
+	if($card_list[$i]->delivery_method == 'post'){
+		$address = $card_list[$i]->post_street.', '.$card_list[$i]->post_postal.' '.$card_list[$i]->post_city.'';
+		$card_list[$i]->card_status = "Dostava na kućnu adresu: <b>$address</b>";
+	}
+
+	if($card_list[$i]->delivery_method == 'partner'){
+		$card_list[$i]->partner = $broker->get_data(new training_school($card_list[$i]->partner_id));
+		$card_list[$i]->card_status = 'Preuzeti kod patnera "<b>'.$card_list[$i]->partner->name.'</b>"';
+	}
+}
