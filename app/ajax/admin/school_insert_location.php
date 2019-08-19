@@ -11,7 +11,7 @@ if($data['part_of_city'] == ''){$error_message = 'Please insert part of city.';}
 if($data['street'] == ''){$error_message = 'Please insert address.';}
 
 if(!$error_message){
-	$item = SchoolLocationModule::insert($data);
+	$item = CompanyLocationModule::insert($data);
 	if($item){
 		$success = true;
 		$message = 'Location saved.';

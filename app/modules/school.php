@@ -128,7 +128,7 @@ class SchoolModule{
 
 		$item->coaches = CoachModule::list_by_school($item->id);
 		$item->gallery = SchoolPictureModule::list_by_school($item->id);
-		$item->locations = SchoolLocationModule::list_by_school($item->id);
+		$item->locations = CompanyLocationModule::list_by_school($item->id);
 		$item->programms = SchoolProgrammModule::list_by_school($item->id);
 
 		return $item;
@@ -141,7 +141,7 @@ class SchoolModule{
 
 		$item->coaches = CoachModule::list_by_school_public($item->id);
 		$item->gallery = SchoolPictureModule::list_by_school_public($item->id);
-		$item->locations = SchoolLocationModule::list_by_school($item->id);
+		$item->locations = CompanyLocationModule::list_by_school($item->id);
 		$item->programms = SchoolProgrammModule::list_by_school($item->id);
 
 		if(sizeof($item->gallery) > 0){
@@ -287,93 +287,6 @@ class SchoolModule{
 
 		
 		$list->add_condition('recordStatus','=','O');
-		$list->set_order_by('number_of_views','DESC');
-		$list = $broker->get_all_data_condition($list);
-
-		for($i=0;$i<sizeof($list);$i++){
-			$list[$i] = self::process_data($list[$i]);
-		}
-
-		return $list;
-	}
-
-	public static function get_search_birthdays($filters){
-		global $broker;
-
-		$list = new training_school();
-		$list->set_condition('checker','!=','');
-		$list->add_condition('birthday_options','=','1');
-		if($filters['category'] != ''){
-			$list->add_condition('sport_category','=',$filters['category']);
-		}
-
-		if($filters['search_text'] != ''){
-			$list->add_condition('','',"(name LIKE '%".$filters['search_text']."%')");
-		}
-
-		if($filters['location'] != ''){
-			$filter_location = explode(',', $filters['location']);
-			if(sizeof($filter_location) == 1){
-				$list->add_condition('id','IN',"(SELECT training_school FROM ts_location WHERE city = '".$filter_location[0]."')");
-			}
-
-			if(sizeof($filter_location) == 2){
-				$list->add_condition('id','IN',"(SELECT training_school FROM ts_location WHERE city = '".$filter_location[0]."' AND part_of_city = '".$filter_location[1]."')");
-			}
-			
-		}
-
-		$data_filters = "";
-		if($filters['number_of_kids'] != ''){
-			$data_filters .= " AND max_kids > ".$filters['number_of_kids']." ";
-		}
-
-		if($filters['number_of_adults'] != ''){
-			$data_filters .= " AND max_adults > ".$filters['number_of_adults']." ";
-		}
-
-		if($filters['garden'] == 1){
-			$data_filters .= " AND garden = 1 ";
-		}
-
-		if($filters['catering'] == 1){
-			$data_filters .= " AND catering = 1 ";
-		}
-
-		if($filters['animators'] == 1){
-			$data_filters .= " AND animators = 1 ";
-		}
-
-		if($filters['smoking'] == 1){
-			$data_filters .= " AND smoking = 1 ";
-		}
-
-		if($filters['watching_kids'] == 1){
-			$data_filters .= " AND watching_kids = 1 ";
-		}
-
-		if($data_filters != ''){
-			$list->add_condition('id','IN',"(SELECT training_school FROM company_birthday_data WHERE recordStatus = 'O' AND checker != '' ".$data_filters.")");
-		}
-		
-		$list->add_condition('recordStatus','=','O');
-		$list->set_order_by('number_of_views','DESC');
-		$list = $broker->get_all_data_condition($list);
-
-		for($i=0;$i<sizeof($list);$i++){
-			$list[$i] = self::process_data($list[$i]);
-		}
-
-		return $list;
-	}
-
-	public static function get_by_coach($coach_id){
-		global $broker;
-
-		$list = new training_school();
-		$list->set_condition('checker','!=','');
-		$list->add_condition('recordStatus','=','O');
-		$list->add_condition('id','IN',"(SELECT training_school FROM ts_trainers WHERE trainer = $coach_id AND recordStatus = 'O' AND checker != '')");
 		$list->set_order_by('number_of_views','DESC');
 		$list = $broker->get_all_data_condition($list);
 

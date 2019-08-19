@@ -6,8 +6,8 @@ $message = 'Location not removed.';
 $data = $post_data['data'];
 
 
-SchoolLocationModule::remove($data['id']);
-$item = SchoolLocationModule::get_admin_data($data['id']);
+CompanyLocationModule::remove($data['id']);
+$item = CompanyLocationModule::get_admin_data($data['id']);
 if(!$item){
 	$success = true;
 	$message = 'Location removed.';

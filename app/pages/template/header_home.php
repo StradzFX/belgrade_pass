@@ -122,7 +122,7 @@ var a2a_config=a2a_config||{};a2a_config.callbacks=a2a_config.callbacks||[];a2a_
 			</script>
 	<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="http://belgradepass.com"><link rel="https://theeventscalendar.com" href="wp-json/tribe/events/v1/" />	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 
-
+	<link href="https://fonts.googleapis.com/css?family=Armata&display=swap" rel="stylesheet">
 </head>
 <body class="home page-template page-template-page-templates page-template-front_page page-template-page-templatesfront_page-php page page-id-206 wp-custom-logo tribe-no-js group-blog listable" data-mapbox-token="" data-mapbox-style="mapbox.emerald">
 

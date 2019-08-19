@@ -1,7 +1,7 @@
 <?php
 $list_categories = CategoryModule::list_all();
 
-$list_cities = SchoolLocationModule::list_cities_select();
+$list_cities = CompanyLocationModule::list_cities_select();
 
 $selected_category = null;
 if($url_params[0] == 'category'){

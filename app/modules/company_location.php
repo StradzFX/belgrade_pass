@@ -1,6 +1,6 @@
 <?php
 
-class SchoolLocationModule{
+class CompanyLocationModule{
 	
 	public static function process_admin_data($item){
 
@@ -11,8 +11,21 @@ class SchoolLocationModule{
 	}
 
 	public static function process_map_data($item){
+		global $broker;
+		$item->company = SchoolModule::get($item->training_school);
+		$item->company->name .= ', '.$item->street;
 
-		$item->school = SchoolModule::get($item->training_school);
+
+		$working_times = new working_times();
+		$working_times->add_condition('checker','!=','');
+		$working_times->add_condition('recordStatus','=','O');
+		$working_times->add_condition('ts_location','=',$item->id);
+		$working_times = $broker->get_all_data_condition($working_times);
+
+		$item->working_times = array();
+		for ($i=0; $i < sizeof($working_times); $i++) { 
+			$item->working_times[$working_times[$i]->day_of_week] = $working_times[$i];
+		}
 
 		return $item;
 	}

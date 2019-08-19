@@ -5,17 +5,8 @@
 </div>
 <!-- search form -->
 <ul class="sidebar-menu" data-widget="tree">
-  <?php /*<li class="header">MAIN LANGUAGE</li>
-  <li class="treeview">
-      <select class="form-control" style="width: 90%;margin:10px auto;">
-        <option>All languages</option>
-        <option>Serbia</option>
-        <option>English</option>
-      </select>
-  </li>
-  */ ?>
   <li class="header">MAIN NAVIGATION</li>
-  <li class="treeview <?php if(in_array($page, array('categories_all','categories_manage'))){ ?>active<?php } ?>">
+  <li class="treeview <?php if(in_array($page, array('categories_all','categories_manage','company_all','company_manage'))){ ?>active<?php } ?>">
     <a href="#">
       <i class="fa fa-list"></i>
       <span>Offers</span>
@@ -38,15 +29,15 @@
           </li>
         </ul>
       </li>
-      <li class="treeview <?php if(in_array($page, array('companies_all','companies_manage'))){ ?>menu-open<?php } ?>" style="height: auto;">
+      <li class="treeview <?php if(in_array($page, array('company_all','companies_manage'))){ ?>menu-open<?php } ?>" style="height: auto;">
         <a href="#"><i class="fa fa-building"></i> Companies
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu" <?php if(in_array($page, array('company_all','company_manage'))){ ?>style="display:block"<?php } ?>>
-          <li <?php if(in_array($page, array('company_all')))?>><a href="company_all/"><i class="fas fa-eye"></i> See all</a></li>
-          <li <?php if(in_array($page, array('company_manage')))?>>
+          <li <?php if(in_array($page, array('company_all'))){ ?>class="active"<?php } ?>><a href="company_all/"><i class="fas fa-eye"></i> See all</a></li>
+          <li <?php if(in_array($page, array('company_manage'))){ ?>class="active"<?php } ?>>
             <a href="company_manage/"><i class="fas fa-plus"></i> New
             </a>
           </li>

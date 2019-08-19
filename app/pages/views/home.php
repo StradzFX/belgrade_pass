@@ -118,7 +118,7 @@
 										?> 
 											<li>
 												<div class="category-cover" style="background-image: url(<?php echo $categories_wrap[$i]->map_logo; ?>)">
-													<a href="category/<?php echo $categories_wrap[$i]->id; ?>">
+													<a href="companies/?search_keywords=&search_location=&search_categories=<?php echo $categories_wrap[$i]->id; ?>&submit=&filter_job_type=">
 														<div class="category-icon">
 															<?php echo $svg_icon; ?>
 															
@@ -147,44 +147,9 @@
 				</span>
 			</h3>
 			<div class="grid  grid--widget  list">
-				<?php for ($i=0; $i < sizeof($top_places); $i++) { ?>
-				<a href="company/<?php echo $top_places[$i]->id; ?>" class="grid__item  grid__item--widget">
-					<article class="card  card--listing  card--widget   product product first instock virtual sold-individually purchasable product-type-booking">
-						<aside class="card__image" style="background-image: url(<?php echo $top_places[$i]->thumb; ?>);">
-						</aside>
-
-						<div class="card__content">
-							<h2 class="card__title" itemprop="name">
-								<?php echo $top_places[$i]->name; ?>
-							</h2>
-							<div class="card__tagline">
-								<?php echo $top_places[$i]->short_description; ?>
-							</div>
-							<footer class="card__footer">
-								
-								<ul class="card__tags">
-									<?php for ($j=0; $j < sizeof($top_places[$i]->categories); $j++) { 
-										$svg_icon = file_get_contents('public/images/icons/'.$top_places[$i]->categories[$j]->logo);
-									?> 
-										<li>
-											<div class="card__tag">
-												<div class="pin__icon">
-														<?php echo $svg_icon; ?>							
-												</div>
-											</div>
-										</li>
-									<?php } ?>
-								</ul>
-
-								<div class="address  card__address">
-									<div itemprop="streetAddress">
-										<span class="address__street"><?php echo $top_places[$i]->pass_customer_percentage; ?>% popusta</span>
-									</div>					
-								</div>
-							</footer>
-						</div><!-- .card__content -->
-					</article><!-- .card.card--listing -->
-				</a><!-- .grid_item -->
+				<?php for ($i=0; $i < sizeof($top_places); $i++) {
+				$company = $top_places[$i]; ?>
+				<?php include 'app/pages/views/elements/presentation/company/_thumbnail.php'; ?>
 				<?php } ?>
 			</div>
 		</div>

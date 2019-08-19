@@ -101,3 +101,41 @@ $company_options_all->add_condition('recordStatus','=','O');
 $company_options_all->add_condition('company','=',$item->id);
 $company_options_all->set_order_by('pozicija','DESC');
 $company_options_all = $broker->get_all_data_condition($company_options_all);
+
+
+
+$previuos_company = new training_school();
+$previuos_company->set_condition('checker','!=','');
+$previuos_company->add_condition('recordStatus','=','O');
+$previuos_company->add_condition('id','<',$school->id);
+$previuos_company->set_order_by('pozicija','DESC');
+$previuos_company->set_limit(1);
+$previuos_company = $broker->get_all_data_condition($previuos_company);
+if(sizeof($previuos_company) == 0){
+	$previuos_company = new training_school();
+	$previuos_company->set_condition('checker','!=','');
+	$previuos_company->add_condition('recordStatus','=','O');
+	$previuos_company->add_condition('id','>',$school->id);
+	$previuos_company->set_limit(1);
+	$previuos_company->set_order_by('pozicija','DESC');
+	$previuos_company = $broker->get_all_data_condition_limited($previuos_company);
+}
+$previuos_company = $previuos_company[0];
+
+$next_company = new training_school();
+$next_company->set_condition('checker','!=','');
+$next_company->add_condition('recordStatus','=','O');
+$next_company->add_condition('id','>',$school->id);
+$next_company->set_order_by('pozicija','ASC');
+$next_company->set_limit(1);
+$next_company = $broker->get_all_data_condition($next_company);
+if(sizeof($next_company) == 0){
+	$next_company = new training_school();
+	$next_company->set_condition('checker','!=','');
+	$next_company->add_condition('recordStatus','=','O');
+	$next_company->add_condition('id','<',$school->id);
+	$next_company->set_limit(1);
+	$next_company->set_order_by('pozicija','ASC');
+	$next_company = $broker->get_all_data_condition_limited($next_company);
+}
+$next_company = $next_company[0];

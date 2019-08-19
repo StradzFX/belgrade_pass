@@ -65,10 +65,10 @@
 				<h2 class="screen-reader-text">Post navigation</h2>
 				<div class="nav-links">
 					<div class="nav-previous">
-						<a href="http://belgradepass.com/listings/tavern-stara-pesma/" rel="prev">Tavern-Stara-pesma</a>
+						<a href="company/<?php echo $previuos_company->id; ?>/" rel="prev"><?php echo $previuos_company->name; ?></a>
 					</div>
 					<div class="nav-next">
-						<a href="http://belgradepass.com/listings/club-beton/" rel="next">Club Beton</a>
+						<a href="company/<?php echo $next_company->id; ?>/" rel="next"><?php echo $next_company->name; ?></a>
 					</div>
 				</div>
 			</nav>

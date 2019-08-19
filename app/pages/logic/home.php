@@ -102,7 +102,7 @@ for ($i=0; $i < sizeof($top_places); $i++) {
 	$categories = new sport_category();
 	$categories->add_condition('checker','!=','');
 	$categories->add_condition('recordStatus','=','O');
-	$categories->add_condition('id','IN',"(SELECT category FROM company_category WHERE company = ".$top_places[$i]->id.")");
+	$categories->add_condition('id','IN',"(SELECT DISTINCT category FROM company_category WHERE company = ".$top_places[$i]->id." AND recordStatus = 'O')");
 
 	$top_places[$i]->categories = $broker->get_all_data_condition($categories);
 }
