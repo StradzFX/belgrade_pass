@@ -68,46 +68,25 @@
 		    $message = "Kreirali ste nalog.";
 		    $broker->set_session('user',$user);
 
-		    require_once "vendor/phpmailer/mail_config.php";
-			require_once "vendor/phpmailer/wl_mailer.class.php";
-
+		   
 			
 			
 
 		    if($user->user_type == 'fizicko'){
 		    	$card = CardModule::create_card($user->first_name,$user->last_name,$user->email,$user->id);
 		    	if($card){
+		    		EmailMoodule::send_retail_user_registration($user,$card);
 		    		$transaction = PaymentModule::create_post_office_payment($card->id,$user_data['selected_amount'],$user->id);
 		    		if($transaction){
 		    			$id = $transaction->id;
+		    			EmailMoodule::send_new_purchase_reservation($user,$card,$transaction);
 		    		}
 		    	}
 
-		    	EmailMoodule::send_retail_user_registration($user,$card);
+		    	
 
 
-				//============= PURCHASE EMAIL ===============
-				$mail_html = file_get_contents('app/mailer/html/general_template.html');
-				$mail_html_content = file_get_contents('app/mailer/html/content_buy_credits_fizicko.html');
-				$mail_html = str_replace('{content}', $mail_html_content, $mail_html);
-
-				$wl_mailer = new wl_mailer($host_email,$host_password,array($sender_email,$sender_name),array($replier_email,$replier_name),$host,$port); 
-				$wl_mailer->set_subject('BelgradePASS rezervacija sredstava (kredita)/ instrukcije za plaćanje');
-
-				$mail_html = str_replace('{user_name}', $user->first_name.' '.$user->last_name, $mail_html);
-				$mail_html = str_replace('{user_email}', $user->email, $mail_html);
-				$mail_html = str_replace('{user_password}', $user_data["password"], $mail_html);
-				$mail_html = str_replace('{card_number}', $card->card_number, $mail_html);
-				$mail_html = str_replace('{card_credits}', $user_data['selected_amount'], $mail_html);
 				
-				if($user->email != ''){
-					$wl_mailer->add_address($user->email,'');
-					$wl_mailer->add_address('office@weblab.co.rs','');
-					$wl_mailer->add_image("public/images/mailer/company_logo.png", "company_logo", "company_logo.png");
-				}
-
-				$wl_mailer->set_email_content($mail_html);
-				$wl_mailer->send_email();
 		    }
 
 		    if($user->user_type == 'pravno'){

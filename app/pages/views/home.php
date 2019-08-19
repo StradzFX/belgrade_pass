@@ -83,7 +83,7 @@
 							<?php for ($i=0; $i < sizeof($categories_highlights); $i++) { 
 								$svg_icon = file_get_contents('public/images/icons/'.$categories_highlights[$i]->logo);
 								?> 
-								<a href="category/<?php echo $categories_highlights[$i]->id; ?>">
+								<a href="companies/?search_keywords=&search_location=&search_categories=<?php echo $categories_highlights[$i]->id; ?>&submit=&filter_job_type=">
 									<span class="cat__icon">
 										<?php echo $svg_icon; ?>
 									</span>

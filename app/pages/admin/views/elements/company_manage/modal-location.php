@@ -65,7 +65,7 @@
                         <div class="col-sm-2 tar">From:</div>
                         <div class="col-sm-4">
                           <select name="working_from_hours_<?php echo $working_days[$j]['day_of_week']; ?>">
-                            <?php for ($i=0; $i < 23; $i++) { ?>
+                            <?php for ($i=0; $i <= 23; $i++) { ?>
                             <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                             <?php } ?>
                           </select>
@@ -79,7 +79,7 @@
                         <div class="col-sm-2 tar">To:</div>
                         <div class="col-sm-4">
                           <select name="working_to_hours_<?php echo $working_days[$j]['day_of_week']; ?>">
-                            <?php for ($i=0; $i < 23; $i++) { ?>
+                            <?php for ($i=0; $i <= 23; $i++) { ?>
                             <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                             <?php } ?>
                             
