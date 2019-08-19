@@ -19,19 +19,19 @@
 										<div class="col-12 col-sm-6">
 											<div>
 												<div>
-													Unesite pun iznos računa
+													Unesite iznos računa sa popustom
 												</div>
 												<div>
-													<input type="number" name="purchase_value_total" onkeyup="calculate_credit_price()" value="0">
+													<input type="number" name="purchase_value" value="0">
 												</div>
 											</div>
 
-											<div>
+											<div style="display: none;">
 												<div>
 													Prikaz kredita koji će se naplatiti
 												</div>
 												<div>
-													<input type="number" disabled="disabled" name="purchase_value" value="0" style="background-color: #d0d0d0">
+													<input type="number" disabled="disabled" name="purchase_value_total" onkeyup="calculate_credit_price()" value="0" style="background-color: #d0d0d0">
 												</div>
 											</div>
 
@@ -133,12 +133,7 @@
 	    var callback = function(odgovor){  
 	        finish_global_call_loader(); 
 	        $('.card_data_holder').html(odgovor); 
-	        $('.card_data_holder').show();
-	        $('[name="purchase_value"]').val('');
-	        $('[name="purchase_card_number"]').val('');
-	        $('[name="purchase_card_password"]').val('');
-	        $('.purchase_card_number').show();
-	        $('.purchase_card_password').show();
+  			$('.card_data_holder').show();
 
 	    }  
 	    ajax_call(call_url, call_data, callback); 
