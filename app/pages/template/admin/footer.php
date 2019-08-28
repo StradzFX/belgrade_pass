@@ -14,6 +14,15 @@
 </div>
 <!-- ./wrapper -->
 
+<style type="text/css">
+  .no-results{
+    text-align: center;
+    font-size: 25px;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+</style>
+
 
 <!-- Bootstrap 3.3.7 -->
 <script src="../public/admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

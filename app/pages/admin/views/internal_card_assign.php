@@ -62,36 +62,12 @@
                     <div class="col col-sm-12 new_user_card">
                       <div class="row">
                         <div class="col col-sm-6">
-                          <div>Parent first name</div>
+                          <div>First name</div>
                           <div><input type="text" class="form-control" name="parent_first_name"></div>
                         </div>
                         <div class="col col-sm-6">
-                          <div>Parent last name</div>
+                          <div>Last name</div>
                           <div><input type="text" class="form-control" name="parent_last_name"></div>
-                        </div>
-                        <div class="col col-sm-3">
-                          <div>Number of kids</div>
-                          <div>
-                            <select class="form-control" name="number_of_kids" onchange="display_child_birthdays()">
-                              <option value="0">-</option>
-                              <?php for($i=1;$i<=10;$i++){ ?>
-                                <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
-                              <?php } ?>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col col-sm-9">
-                          <div>Date of birth for Kids</div>
-                          <div>
-                            <?php for($i=1;$i<=10;$i++){ ?>
-                              <div class="date_of_birth date_of_birth_<?php echo $i; ?>" style="display: none;margin-bottom: 5px;">
-                                  <input type="date" class="form-control" name="child_birthdate" />
-                              </div>
-                              
-                            <?php } ?>
-
-
-                          </div>
                         </div>
                          <div class="col col-sm-12">
                            &nbsp;

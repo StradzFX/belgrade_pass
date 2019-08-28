@@ -102,7 +102,17 @@ for ($i=0; $i < sizeof($top_places); $i++) {
 	$categories = new sport_category();
 	$categories->add_condition('checker','!=','');
 	$categories->add_condition('recordStatus','=','O');
-	$categories->add_condition('id','IN',"(SELECT category FROM company_category WHERE company = ".$top_places[$i]->id.")");
+	$categories->add_condition('id','IN',"(SELECT DISTINCT category FROM company_category WHERE company = ".$top_places[$i]->id." AND recordStatus = 'O')");
 
 	$top_places[$i]->categories = $broker->get_all_data_condition($categories);
+
+	$ts_location = new ts_location();
+	$ts_location->set_condition('checker','!=','');
+	$ts_location->add_condition('training_school','=',$top_places[$i]->id);
+	$ts_location->add_condition('recordStatus','=','O');
+	$ts_location->set_order_by('pozicija','DESC');
+	$ts_location = $broker->get_all_data_condition($ts_location);
+	$ts_location = $ts_location[0];
+	$ts_location->company = $top_places[$i];
+	$top_places[$i] = $ts_location;
 }

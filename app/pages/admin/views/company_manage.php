@@ -568,6 +568,11 @@
           save_data.username = $('[name="location_username"]').val();
           save_data.password = $('[name="location_password"]').val();
 
+          var change_u_a_p = $('[name="change_u_a_p"]').is(':checked');
+          if(!change_u_a_p){
+            save_data.password = '';
+          }
+
           var working_days = new Array();
           for(var i=1;i<=7;i++){
             var working_data = {};

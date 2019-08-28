@@ -28,7 +28,7 @@
     
      function send_user_email_pin(){
       var data={};
-          data.id = $('[name="id"]').val();
+          data.id = $('[name="user_id"]').val();
           data.text =$('[name="text"]').val();
 
       var call_url = "send_user_email_pin";

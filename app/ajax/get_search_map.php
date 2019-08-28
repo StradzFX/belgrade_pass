@@ -3,13 +3,13 @@ global $broker;
 $post_data = $_POST;
 $filters = $post_data['filters'];
 
-$list = SchoolLocationModule::list_map($filters);
+$list = CompanyLocationModule::list_map($filters);
 
 for ($i=0; $i < sizeof($list); $i++) {
 	$sport_category_all = new sport_category();
 	$sport_category_all->set_condition('checker','!=','');
 	$sport_category_all->add_condition('recordStatus','=','O');
-	$sport_category_all->add_condition('id','IN',"(SELECT DISTINCT category FROM company_category WHERE company = ".$list[$i]->school->id." AND recordStatus = 'O')");
+	$sport_category_all->add_condition('id','IN',"(SELECT DISTINCT category FROM company_category WHERE company = ".$list[$i]->company->id." AND recordStatus = 'O')");
 	$sport_category_all->set_order_by('pozicija','DESC');
 	$list[$i]->categories =  $broker->get_all_data_condition($sport_category_all);
 
@@ -90,13 +90,13 @@ for ($i=0; $i < sizeof($list); $i++) {
 		$list[$i]->latitude,
 		$list[$i]->longitude,
 		$working_day_marker,
-		$list[$i]->school->name,
-		$list[$i]->school->short_description,
-		$list[$i]->school->link,
+		$list[$i]->company->name,
+		$list[$i]->company->short_description,
+		$list[$i]->company->link,
 		file_get_contents('public/images/icons/'.$list[$i]->categories[0]->logo),
 		file_get_contents('public/images/blanko_pin.svg'),
 		file_get_contents('public/images/cluster_icon.svg'),
-		$list[$i]->school->thumb,
+		$list[$i]->company->thumb,
 		$list[$i]->street,
 		
 	);

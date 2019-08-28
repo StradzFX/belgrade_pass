@@ -10,7 +10,7 @@
 
 body {
   background-color: #fff;
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Armata', sans-serif; }
 
 @media (max-width: 768px) {
   .site-branding img {
@@ -53,7 +53,7 @@ body {
     padding-left: 0px !important; } }
 
 .my-account {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Armata', sans-serif; }
   .my-account.company_home_page .statistics_item {
     border: 1px solid #ccc;
     padding: 20px;
@@ -223,7 +223,7 @@ body {
   display: none !important; }
 
 .modal.inv-login {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Armata', sans-serif;
   width: 95%;
   max-width: 540px; }
 
@@ -372,7 +372,7 @@ body {
   border-bottom: 1px #000 solid; }
 
 .form-content {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Armata', sans-serif; }
 
 .form-content .wrapper-main {
   -webkit-border-radius: 7px;
@@ -548,7 +548,7 @@ body {
   color: #fff; }
 
 .side-nav {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Armata', sans-serif; }
 
 .side-nav .top {
   background: #713ec7;
@@ -662,7 +662,7 @@ body {
   font-weight: bold; }
 
 .main-header {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Armata', sans-serif; }
   @media (max-width: 767px) {
     .main-header {
       position: fixed;
@@ -805,7 +805,7 @@ body {
           text-decoration: none; }
 
 .main-footer {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Armata', sans-serif;
   background: #713ec7;
   color: #fff;
   padding: 25px 0; }
@@ -1220,7 +1220,7 @@ body {
   width: 40%; }
 
 .school-preview .join-us .autocomplete-content {
-  font-family: "Montserrat", sans-serif !important;
+  font-family: "Armata", sans-serif !important;
   position: absolute;
   max-height: 150px; }
 
@@ -1642,7 +1642,7 @@ body {
 
 .consultant-view {
   background-color: #f8f8f8;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Armata', sans-serif;
   padding: 20px 0 50px 0; }
 
 .consultant-view .message-to-user {
@@ -2758,12 +2758,39 @@ body {
 .search_jobs.see_all select, .search_jobs.see_all label {
   display: block !important; }
 
+.js-widget-gallery .gallery_picture {
+  width: 100%;
+  background-size: cover !important;
+  padding-top: 100%; }
+
+.grid--widget .grid__item {
+  width: 33%; }
+  .grid--widget .grid__item .card__tagline {
+    height: 80px;
+    overflow: hidden; }
+
+.grid__item a:hover {
+  text-decoration: none; }
+.grid__item .card .card__title {
+  height: 60px !important; }
+.grid__item .card .working_time {
+  font-weight: bold;
+  margin-bottom: -10px;
+  margin-top: 5px; }
+  .grid__item .card .working_time .open {
+    color: green; }
+  .grid__item .card .working_time .closed {
+    color: red; }
+
+.card__title {
+  font-size: 20px !important; }
+
 .site-header .site-title {
-  font-family: "Hanken", sans-serif;
+  font-family: "Armata", sans-serif;
   font-weight: 400; }
 
 .primary-menu > ul, ul.primary-menu a {
-  font-family: "Hanken", sans-serif;
+  font-family: "Armata", sans-serif;
   font-weight: 400; }
 
 input,
@@ -2796,7 +2823,7 @@ h1, h2, h3,
 h2.comments-title,
 .page-add-listing fieldset:first-child label,
 .product-content .price {
-  font-family: "Hanken", sans-serif;
+  font-family: "Armata", sans-serif;
   font-weight: 400; }
 
 .intro,
@@ -2808,16 +2835,16 @@ h2.comments-title,
 .single:not(.single-job_listing) .entry-subtitle,
 .page .entry-subtitle,
 .single-job_listing .entry-subtitle {
-  font-family: "Hanken", sans-serif;
+  font-family: "Armata", sans-serif;
   font-weight: 400; }
 
 .card__title.card__title, ul.categories--widget .category-count,
 ul.categories--widget .category-text {
-  font-family: "Hanken", sans-serif;
+  font-family: "Armata", sans-serif;
   font-weight: 400; }
 
 .card {
-  font-family: "Hanken", sans-serif;
+  font-family: "Armata", sans-serif;
   font-weight: 400; }
 
 .single:not(.single-job_listing) .entry-meta,
@@ -2850,7 +2877,7 @@ button[type="submit"],
 .woocommerce-account:not(.logged-in) .woocommerce form.login input[type="submit"],
 .woocommerce .button,
 .search_jobs--frontpage #search_location {
-  font-family: "Hanken", sans-serif;
+  font-family: "Armata", sans-serif;
   font-weight: 400; }
 
 .site-branding img {
@@ -3273,7 +3300,7 @@ div.sd-social.sd-social > div.sd-content.sd-content ul li > a,
 
 .card__title.card__title,
 ul.categories--widget .category-text {
-  font-size: 24px; }
+  font-size: 20px; }
 
 .card__title.card__title, ul.categories--widget .category-count,
 ul.categories--widget .category-text {
@@ -3533,7 +3560,7 @@ div.sd-social.sd-social > div.sd-content.sd-content ul li > a,
 
 .card__title.card__title,
 ul.categories--widget .category-text {
-  font-size: 24px; }
+  font-size: 20px; }
 
 .card__title.card__title, ul.categories--widget .category-count,
 ul.categories--widget .category-text {

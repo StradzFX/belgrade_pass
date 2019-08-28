@@ -10,9 +10,6 @@ $validation_message = "";
 $user_card = null;
 
 if($card_data["card_number"] == ""){$validation_message = "Please select card number";}
-if(sizeof($card_data["birthdays"]) == 0){$validation_message = "Please select at least one kid";}
-if(!is_numeric($card_data["number_of_kids"])){$validation_message = "Number of kids must be numeric value.";}
-if($card_data["number_of_kids"] == ""){$validation_message = "Enter number of kids.";}
 if($card_data["email"] == ""){$validation_message = "Enter email.";}
 
 if($validation_message == ""){
@@ -41,6 +38,7 @@ if($validation_message == ""){
 		    $user->fb_id = '';
 		    $user->first_name = $card_data['parent_first_name'];
 		    $user->last_name = $card_data['parent_last_name'];
+		    $user->user_type = 'fizicko';
 		    $user->avatar = '';
 		    $user->maker = 'system';
 		    $user->makerDate = date('c');
@@ -56,7 +54,7 @@ if($validation_message == ""){
 			$mail_html = str_replace('{content}', $mail_html_content, $mail_html);
 
 			$wl_mailer = new wl_mailer($host_email,$host_password,array($sender_email,$sender_name),array($replier_email,$replier_name),$host,$port); 
-			$wl_mailer->set_subject('Registracija na KidCard.rs');
+			$wl_mailer->set_subject('Registracija na Belgradepass.com');
 
 			$mail_html = str_replace('{user_email}', $user->email, $mail_html);
 			$mail_html = str_replace('{user_password}', $card_data["password"].' (automatski dodeljen broj)', $mail_html);
@@ -82,8 +80,8 @@ if($validation_message == ""){
 	    
 	    $user_card->parent_first_name = $card_data['parent_first_name'];
 	    $user_card->parent_last_name = $card_data['parent_last_name'];
-	    $user_card->number_of_kids = $card_data['number_of_kids'];
-	    $user_card->child_birthdate = $card_data['child_birthdate'];
+	    $user_card->number_of_kids = 1;
+	    $user_card->child_birthdate = '';
 	    $user_card->city = $card_data['city'];
 	    $user_card->phone = $card_data['phone'];
 	    $user_card->email = $card_data['email'];
@@ -137,7 +135,7 @@ if($validation_message == ""){
 		$mail_html = str_replace('{content}', $mail_html_content, $mail_html);
 
 		$wl_mailer = new wl_mailer($host_email,$host_password,array($sender_email,$sender_name),array($replier_email,$replier_name),$host,$port); 
-		$wl_mailer->set_subject('Nova kartica KidCard.rs');
+		$wl_mailer->set_subject('Nova kartica Belgradepass.com');
 
 		$mail_html = str_replace('{user_email}', $user_card->email, $mail_html);
 		$mail_html = str_replace('{card_number}', $user_card->card_number, $mail_html);

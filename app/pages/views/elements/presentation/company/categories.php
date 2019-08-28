@@ -4,7 +4,7 @@
 			$svg_icon = file_get_contents('public/images/icons/'.$item->categories[$i]->logo);
 		?> 
 		<li>
-			<a href="category/<?php echo $item->categories[$i]->id; ?>">
+			<a href="companies/?search_keywords=&search_location=&search_categories=<?php echo $item->categories[$i]->id; ?>&submit=&filter_job_type=">
 				<span class="category-icon">
 					<?php echo $svg_icon; ?>
 				</span>
