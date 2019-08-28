@@ -4,9 +4,11 @@
 		$current_working_time = $display_location->working_times[date('N')];
 		if($current_working_time->not_working == 0){
 			$working_from = strtotime(date('Y-m-d')) + $current_working_time->working_from_hours * 60 * 60 + $current_working_time->working_from_minutes * 60;
-			$working_to_minutes = strtotime(date('Y-m-d')) + $current_working_time->working_to_hours * 60 * 60 + $current_working_time->working_to_minutes * 60;
+			$working_to = strtotime(date('Y-m-d')) + $current_working_time->working_to_hours * 60 * 60 + $current_working_time->working_to_minutes * 60;
 
-			if(time() >= $working_from && time() < $working_to_minutes){
+			$working_to = $working_to < $working_from ? strtotime(date('Y-m-d')) + 24*60*60 : $working_to;
+
+			if(time() >= $working_from && time() < $working_to){
 				$display_working = array(
 					'css' => 'open',
 					'text' => 'Otvoreno',
@@ -31,7 +33,7 @@
 ?>
 <div class="grid__item">
 		<article class="card  card--listing product product first instock shipping-taxable product-type-simple" itemscope="" data-latitude="44.8172465" data-longitude="20.4560913" data-icon="http://belgradepass.com/wp-content/uploads/2017/07/images-150x150.png">
-			<a href="<?php echo $company->link; ?>">
+			<a href="company/location/<?php echo $display_location->id; ?>">
 				<aside class="card__image" style="background-image: url(<?php echo $company->thumb; ?>);">
 					<span class="product__price"></span>
 				</aside><!-- .card__image -->

@@ -27,14 +27,22 @@
             Email:<br/>
             <input type="text" class="form-control" name="location_email" placeholder="Email">
           </div>
-          <div class="col col-sm-6 margin_form">
-            Username:<br/>
-            <input type="text" class="form-control" name="location_username" placeholder="Username">
+
+          <div class="col col-sm-12">
+              <input type="checkbox" id="change_u_a_p" name="change_u_a_p" onchange="change_u_a_p_change()"> <label for="change_u_a_p">Change username and password</label>
+
+              <div class="row change_u_a_p" style="display: none;">
+                  <div class="col col-sm-6 margin_form">
+                    Username:<br/>
+                    <input type="text" class="form-control" name="location_username" placeholder="Username">
+                  </div>
+                  <div class="col col-sm-6 margin_form">
+                    Password:<br/>
+                    <input type="password" class="form-control" name="location_password" placeholder="Password">
+                  </div>
+              </div>
           </div>
-          <div class="col col-sm-6 margin_form">
-            Password:<br/>
-            <input type="password" class="form-control" name="location_password" placeholder="Password">
-          </div>
+          
           <div class="col col-sm-12 margin_form">
             GEO location (drag marker to pin location):<br/>
             <div id="map"></div>
@@ -110,3 +118,13 @@
   <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+
+
+<script type="text/javascript">
+  
+  function change_u_a_p_change(){
+    var change_u_a_p = $('[name="change_u_a_p"]').is(':checked');
+    $('.change_u_a_p').toggle();
+  }
+
+</script>

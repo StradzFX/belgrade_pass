@@ -50,17 +50,26 @@ class AdminPanelCore{
 	}
 
 	public static function run_ajax_page($page){
+
+		$ajax_folders = array('','users_manage/','card_info/');
+
 		global $url_params,$page,$base_url;
 		include 'app/pages/logic/inc/wp_svg_icons.php';
-		if(is_file('app/ajax/admin/'.$page.'.php')){
-			$post_data = self::prepare_post_data($_POST);
-			if($_POST){
-				include_once 'app/ajax/admin/'.$page.'.php';
-			}else{
-				echo "No such POST was made against this page.";
+
+		for ($i=0; $i < sizeof($ajax_folders); $i++) {
+			$ajax_folder = $ajax_folders[$i]; 
+			if(is_file('app/ajax/admin/'.$ajax_folder.$page.'.php')){
+				$post_data = self::prepare_post_data($_POST);
+				if($_POST){
+					include_once 'app/ajax/admin/'.$ajax_folder.$page.'.php';
+				}else{
+					echo "No such POST was made against this page.";
+				}
+				die();
 			}
-			die();
 		}
+
+		
 		
 	}
 

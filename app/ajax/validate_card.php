@@ -76,7 +76,7 @@ if($validation_message == ""){
                       Unesite broj računa za izvršenu transakciju
                     </div>
                     <div>
-                      <input type="text" name="purchase_value" value="<?php echo $_GET['card']; ?>">
+                      <input type="text" name="account_number" value="<?php echo $_GET['card']; ?>">
                     </div>
                     <div>
                       <br/>

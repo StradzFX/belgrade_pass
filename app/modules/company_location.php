@@ -143,7 +143,7 @@ class CompanyLocationModule{
 		$item_all->add_condition('training_school','IN',"(SELECT id FROM training_school WHERE recordStatus = 'O' AND checker != '')");
 
 		if($filters['category'] != ''){
-			$item_all->add_condition('training_school','IN',"(SELECT id FROM training_school WHERE recordStatus = 'O' AND checker != '' AND sport_category = ".$filters['category'].")");
+			$item_all->add_condition('training_school','IN',"(SELECT company FROM company_category WHERE recordStatus = 'O' AND checker != '' AND category = ".$filters['category'].")");
 		}
 
 		if($filters['search_text'] != ''){
@@ -224,6 +224,15 @@ class CompanyLocationModule{
 
 		return $list;
 
+	}
+
+	public static function get($id){
+		global $broker;
+
+		$item = $broker->get_data(new ts_location($id));
+		$item = self::process_map_data($item);
+
+		return $item;
 	}
 
 }

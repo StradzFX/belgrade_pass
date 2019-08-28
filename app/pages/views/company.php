@@ -41,6 +41,12 @@
 							<?php /* ===================== CATEGORIES AND GALLERY ================== */ ?>
 							<div class="listing-sidebar  listing-sidebar--bottom  listing-sidebar--secondary">
 								<?php /* ===================== MAP AND LOCATION ================== */ ?>
+								<?php include_once 'app/pages/views/elements/presentation/company/working_hours.php'; ?>
+							</div>
+
+							<?php /* ===================== CATEGORIES AND GALLERY ================== */ ?>
+							<div class="listing-sidebar  listing-sidebar--bottom  listing-sidebar--secondary">
+								<?php /* ===================== MAP AND LOCATION ================== */ ?>
 								<?php include_once 'app/pages/views/elements/presentation/company/map.php'; ?>
 							</div>
 

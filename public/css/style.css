@@ -2782,6 +2782,9 @@ body {
   .grid__item .card .working_time .closed {
     color: red; }
 
+.card__title {
+  font-size: 20px !important; }
+
 .site-header .site-title {
   font-family: "Armata", sans-serif;
   font-weight: 400; }
@@ -3297,7 +3300,7 @@ div.sd-social.sd-social > div.sd-content.sd-content ul li > a,
 
 .card__title.card__title,
 ul.categories--widget .category-text {
-  font-size: 24px; }
+  font-size: 20px; }
 
 .card__title.card__title, ul.categories--widget .category-count,
 ul.categories--widget .category-text {
@@ -3557,7 +3560,7 @@ div.sd-social.sd-social > div.sd-content.sd-content ul li > a,
 
 .card__title.card__title,
 ul.categories--widget .category-text {
-  font-size: 24px; }
+  font-size: 20px; }
 
 .card__title.card__title, ul.categories--widget .category-count,
 ul.categories--widget .category-text {

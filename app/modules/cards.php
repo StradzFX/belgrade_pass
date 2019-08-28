@@ -281,8 +281,8 @@ class CardModule{
 			    
 
 			    $pay_to_us = $collect['take_passes'];
-			    $pay_to_us = ($pay_to_us * 100) / (100-$company->pass_customer_percentage);
-			    $pay_to_us = ($pay_to_us * $company->pass_company_percentage) / 100;
+			    //$pay_to_us = ($pay_to_us * 100) / (100-$company->pass_customer_percentage);
+			    $pay_to_us = $pay_to_us * (($company->pass_company_percentage) / 100);
 
 			    $pay_to_company = $collect['take_passes'] - $pay_to_us;
 			    $accepted_passes->pay_to_company = $pay_to_company;

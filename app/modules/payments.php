@@ -112,7 +112,7 @@ class PaymentModule{
 		    $id = $purchase->id;
 
 		    $success = true;
-			$message = "You have inserted object.";
+			$message = "Uplacen je kredit na karticu.";
 
 		}else{
 			$message = $error_message;

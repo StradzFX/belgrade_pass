@@ -21,6 +21,10 @@ if($data['company'] != ''){
   $accepted_passes_all->add_condition('training_school','=',$data['company']);
 }
 
+if($data['card_id'] != ''){
+  $accepted_passes_all->add_condition('user_card','=',$data['card_id']);
+}
+
 if($data['user_search'] != ''){
   $user_search = $data['user_search'];
   $accepted_passes_all->add_condition('','',"user IN (SELECT id FROM user WHERE email LIKE '$user_search%' OR CONCAT(first_name,' ',last_name) LIKE '$user_search%' OR CONCAT(last_name,' ',first_name) LIKE '$user_search%')");

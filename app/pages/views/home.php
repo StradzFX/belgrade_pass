@@ -3,7 +3,7 @@
 			
 								<article id="post-206" class="post-206 page type-page status-publish has-post-thumbnail hentry">
 					<header class="entry-header has-image">
-						<div class="entry-featured" style="background-image: url(http://belgradepass.com/wp-content/uploads/2015/10/image_14.jpg);">
+						<div class="entry-featured" style="background-image: url(wp-content/uploads/2015/10/image_14.jpg);">
 													</div>
 						<div class="header-content">
 							<h1 class="page-title">Istraži Beograd</h1>
@@ -148,7 +148,8 @@
 			</h3>
 			<div class="grid  grid--widget  list">
 				<?php for ($i=0; $i < sizeof($top_places); $i++) {
-				$company = $top_places[$i]; ?>
+					$display_location = $top_places[$i];
+					$company = $top_places[$i]->company; ?>
 				<?php include 'app/pages/views/elements/presentation/company/_thumbnail.php'; ?>
 				<?php } ?>
 			</div>

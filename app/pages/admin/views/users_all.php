@@ -20,96 +20,35 @@
             		<div class="col-12 col-xs-3">
 		            	<div class="form-group">
 		            		<label>Search card number:</label>
-		                	<input type="text" class="form-control" value="example 000022">
+		                	<input type="text" name="card_number" class="form-control" placeholder="example 000022" value="" onkeyup="get_users()">
 		            	</div>
 		            </div>
             		<div class="col-12 col-xs-3">
 		            	<div class="form-group">
 		            		<label>Search by name:</label>
-		                	<input type="text" class="form-control" value="Name">
+		                	<input type="text" name="name" class="form-control" placeholder="Name" value="" onkeyup="get_users()">
 		            	</div>
 		            </div>
 		            <div class="col-12 col-xs-3">
 		            	<div class="form-group">
 		            		<label>Search by email:</label>
-		                	<input type="text" class="form-control" value="Email">
+		                	<input type="text" name="email" class="form-control" placeholder="Email" value="" onkeyup="get_users()">
 		            	</div>
 		            </div>
 	              	<div class="col-12 col-xs-3">
 		              	<div class="form-group">
 		                  <label>User type</label>
-		                  <select class="form-control">
-		                    <option>All</option>
-		                    <option>Pravna lica</option>
-		                    <option>Fizička lica</option>
+		                  <select name="user_type" class="form-control" onchange="get_users()">
+		                    <option value="">All</option>
+		                    <option value="pravno">Pravna lica</option>
+		                    <option value="fizicko">Fizička lica</option>
 		                  </select>
 		              	</div>
 	              	</div>
 	            </div><br>
 	            <div class="row">
-	            	<div class="col-12 col-xs-12">
-	            		<table class="table table-striped all_items">
-			                <tbody>
-				                <tr>
-				                  <th style="width: 10px">#</th>
-				                  <th>User type</th>
-				                  <th>Name</th>
-				                  <th>Email</th>
-				                  <th style="width: 150px">Actions</th>
-				                </tr>
-				                <tr>
-				                	<td>1.</td>
-				                	<td><i class="fa fa-user"></i> Fizičko lice</td>
-				                	<td>Pavle Jovanovic</td>
-				                	<td>nikola@weblab.co.rs</td>
-				                	<input type="hidden" name="id" value="0">
-				                	<td>
-				                		<div class="btn btn-primary">
-				                			<a href="javascript:void(0)" class="action">
-				                          	<i class="fa fa-star" title="Edit"></i>
-				                        	</a>
-				                		</div>
-				                        <div class="btn btn-primary">
-					                        <a href="users_manage/" class="action">
-					                          <i class="fas fa-edit"></i>
-					                        </a>
-				                        </div>
-				                        <div class="btn btn-primary">
-					                        <a href="javascript:void(0)" class="action" data-toggle="modal" data-target="#modal-user-delete">
-					                          <i class="fa fa-trash" title="delete">
-					                          </i>
-					                        </a>
-				                    	</div>
-				                    </td>
-				                </tr>
-				                <tr>
-				                	<td>2.</td>
-				                	<td><i class="fa fa-building"></i> Pravno lice</td>
-				                	<td>Prasad & Sons</td>
-				                	<td>office@weblab.co.rs</td>
-				                	<input type="hidden" name="id" value="0">
-				                	<td>
-				                		<div class="btn btn-primary">
-				                			<a href="javascript:void(0)" class="action">
-				                          	<i class="fa fa-star" title="Edit"></i>
-				                        	</a>
-				                		</div>
-				                        <div class="btn btn-primary">
-					                        <a href="users_manage_legal/" class="action">
-					                          <i class="fas fa-edit"></i>
-					                        </a>
-				                        </div>
-				                        <div class="btn btn-primary">
-					                        <a href="javascript:void(0)" class="action" data-toggle="modal" 
-					                       data-target="#modal-user-delete">
-					                          <i class="fa fa-trash" title="delete">
-					                          </i>
-					                        </a>
-				                    	</div>
-				                    </td>
-				                </tr>
-			              	</tbody>
-			            </table>
+	            	<div class="col-12 col-xs-12 users_holder">
+	            		
 	            	</div>
 	            </div>
             </div>
@@ -229,7 +168,7 @@
 
   function user_delete(){
   
-    var data={};
+    var data = {};
         data.id = $('[name="id"]').val();
 
 
@@ -238,8 +177,6 @@
     var call_data = {
         data:data
     }
-
-
 
     var call_back = function(odgovor){
       if(odgovor.success){
@@ -250,5 +187,28 @@
     ajax_json_call(call_url, call_data, call_back);
 }
 
+
+function get_users(){
+
+	var data = {};
+		data.card_number = $('[name="card_number"]').val();
+		data.name = $('[name="name"]').val();
+		data.email = $('[name="email"]').val();
+		data.user_type = $('[name="user_type"]').val();
+
+  	var call_url = "get_users";  
+	var call_data = { 
+	  data:data 
+	}  
+	var callback = function(response){  
+		$('.users_holder').html(response);
+	}  
+	ajax_call(call_url, call_data, callback); 
+}
+
+
+$(function(){
+	get_users();
+});
 
 </script>
