@@ -869,6 +869,7 @@
       get_school_programms();
       get_school_locations_bithdays();
       get_company_categories();
+      get_company_discount_rules();
     });
     <?php } ?>
 </script>
