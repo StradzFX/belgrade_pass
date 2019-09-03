@@ -20,6 +20,10 @@
           <div class="row">
             <?php if($item->id > 0){ ?>
             <div class="col-sm-12 col-md-12">
+              <?php include_once 'app/pages/admin/views/elements/company_manage/company_discount_rules.php'; ?>
+            </div>
+
+            <div class="col-sm-12 col-md-12">
               <?php include_once 'app/pages/admin/views/elements/company_manage/company_options.php'; ?>
             </div>
 
