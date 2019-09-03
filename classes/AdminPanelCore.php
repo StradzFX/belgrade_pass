@@ -51,7 +51,7 @@ class AdminPanelCore{
 
 	public static function run_ajax_page($page){
 
-		$ajax_folders = array('','users_manage/','card_info/');
+		$ajax_folders = array('','users_manage/','card_info/','company_manage/');
 
 		global $url_params,$page,$base_url;
 		include 'app/pages/logic/inc/wp_svg_icons.php';

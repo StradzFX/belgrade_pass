@@ -14,6 +14,7 @@ if($data["transaction_value"] == ""){$validation_message = "Morate odabarati vre
 if($data["transaction_date"] == ""){$validation_message = "Morate odabrati datum";}
 
 if($validation_message == ""){
+
 	$company_transaction = new company_transactions();
 	$company_transaction->training_school = $data['id'];
 	$company_transaction->transaction_type = $data['transaction_type'];

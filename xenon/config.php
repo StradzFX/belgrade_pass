@@ -21,4 +21,11 @@ define(ADMINPANELLANG, "kidpass_admin_panel_lang");				//LISTA PRIVILEGIJA ZA DO
 define(FRONTENDLANG, "kidpass_front_end_lang"); 					//DEFAULTNI JEZIK ZA PREDNJU STRANU
 define(XMLSERVICENEWS, "kidpass_xml_service_news");				//XML SERVICE NEWS
 define(XMLSERVICEPROMOTIONS, "kidpass_xml_service_promotions");	//XML SERVICE PROMOTIONS
+
+$_global_config = array();
+$_global_config['DBNAME'] = "kidpass";
+$_global_config['DBHOST'] = "localhost";
+$_global_config['DBUSER'] = "root";
+$_global_config['DBPASS'] = "";
+
 ?>

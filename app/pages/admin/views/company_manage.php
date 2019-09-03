@@ -2,6 +2,7 @@
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal_create_new_company_transaction.php'; ?>
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal_company_transaction_edit.php'; ?>
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal_company_transaction_delete.php'; ?>
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal_company_discount_rules.php'; ?>
 
 <div class="content-wrapper" style="min-height: 989.8px;">
     <input type="hidden" name="id" value="<?php echo $item->id; ?>">
