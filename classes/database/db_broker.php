@@ -2,10 +2,10 @@
 class db_broker
 {
 	public $instance = NULL;
-	protected $db_user  = DBUSER;
-	protected $db_pass  = DBPASS;
-	protected $db_name  = DBNAME;
-	protected $db_host  = DBHOST;
+	protected $db_user  = 'DBUSER';
+	protected $db_pass  = 'DBPASS';
+	protected $db_name  = 'DBNAME';
+	protected $db_host  = 'DBHOST';
 	protected $format_options  = NULL;
 	public $debugger = false;
 	
@@ -27,7 +27,7 @@ class db_broker
 	public function __construct($data=null)
 	{
 		global $_global_config;
-		
+
 		if($data){
 			$this->instance = mysqli_connect($data['server'], $data['username'], $data['password'], $data['db_name']);
 		}else{
