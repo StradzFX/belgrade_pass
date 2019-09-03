@@ -1,4 +1,4 @@
-<?php include_once 'app/pages/admin/views/elements/company_manage/modal-user-delete.php';?>
+d<?php include_once 'app/pages/admin/views/elements/company_manage/modal-user-delete.php';?>
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal_user_add_card_credit.php';?>
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal-change-card.php';?>
 

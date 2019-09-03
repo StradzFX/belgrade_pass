@@ -1,7 +1,4 @@
 <?php include_once 'app/pages/admin/views/elements/company_manage/modals.php'; ?>
-<?php include_once 'app/pages/admin/views/elements/company_manage/modal_create_new_company_transaction.php'; ?>
-<?php include_once 'app/pages/admin/views/elements/company_manage/modal_company_transaction_edit.php'; ?>
-<?php include_once 'app/pages/admin/views/elements/company_manage/modal_company_transaction_delete.php'; ?>
 
 <div class="content-wrapper" style="min-height: 989.8px;">
     <input type="hidden" name="id" value="<?php echo $item->id; ?>">
@@ -29,6 +26,7 @@
 
     <!-- Main content -->
     <section class="content">
+
       <div class="nav-tabs-custom">
         <ul class="nav nav-tabs">
           <li class="active"><a href="#company_data" data-toggle="tab">Company data</a></li>
@@ -41,64 +39,174 @@
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="company_transactions">
+              <section class="content-header">
+                <h1>
+                  Transactions with companies
+                </h1>
+              </section>
               <section class="content">
               <div class="row">
-                <div class="col col-sm-3">
-                  Date From:<br/>
-                  <input type="date" class="form-control" value="<?php echo date('Y-m-d', strtotime('-1 year')); ?>" name="transactions_date_from" onchange="get_list_of_transactions_with_companies()">
-                </div>
-                <div class="col col-sm-3">
-                  Date To:<br/>
-                  <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" name="transactions_date_to" onchange="get_list_of_transactions_with_companies()">
-                </div>
-                <div class="col-12 col-md-6">
-                  <div class="pull-right">
-                    <a href="javascript:void(0)" class="btn btn-success" data-toggle="modal" data-target="#modal_create_new_company_transaction">New transaction</a>
+                <div class="col-md-12">
+                  <div class="box">
+                    <div class="box-header">
+                      <h3 class="box-title">All data</h3>
+                      <div class="pull-right">
+                        <a href="company_transaction_manage/" class="btn btn-success">New transaction</a>
+                      </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding">
+                      <table class="table table-striped all_items">
+                        <tbody>
+                          <tr>
+                            <th style="width: 10px">#</th>
+                            <th>Trn. Date</th>
+                            <th>Trn. Type</th>
+                            <th>Value</th>
+                            <th style="width: 150px">Actions</th>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>31.12.2018</td>
+                            <td>Payment to company</td>
+                            <td>-6.025,25</td>
+                            <td>
+                              <a href="company_transaction_manage/" class="btn btn-primary">
+                                <i class="fa fa-pencil" title="Edit"></i>
+                              </a>
+                              <a href="javascript:void(0)" class="btn btn-primary">
+                                <i class="fa fa-trash" title="delete"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>31.01.2019</td>
+                            <td>Payment from company</td>
+                            <td>250</td>
+                            <td>
+                              <a href="company_transaction_manage/" class="btn btn-primary">
+                                <i class="fa fa-pencil" title="Edit"></i>
+                              </a>
+                              <a href="javascript:void(0)" class="btn btn-primary">
+                                <i class="fa fa-trash" title="delete"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>31.02.2019</td>
+                            <td>Payment to company</td>
+                            <td>-1500,00</td>
+                            <td>
+                              <a href="company_transaction_manage/" class="btn btn-primary">
+                                <i class="fa fa-pencil" title="Edit"></i>
+                              </a>
+                              <a href="javascript:void(0)" class="btn btn-primary">
+                                <i class="fa fa-trash" title="delete"></i>
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>1.</td>
+                            <td>31.12.2019</td>
+                            <td>Payment from company</td>
+                            <td>3500</td>
+                            <td>
+                              <a href="company_transaction_manage/" class="btn btn-primary">
+                                <i class="fa fa-pencil" title="Edit"></i>
+                              </a>
+                              <a href="javascript:void(0)" class="btn btn-primary">
+                                <i class="fa fa-trash" title="delete"></i>
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.box-body -->
                   </div>
+                  <!-- /.box -->
                 </div>
-              </div><br>
-              <div class="row">
-                <div class="col-12 col-xs-12">
-                  <div class="transactions_with_company_holder">
-                  
-                  </div>
-                </div>
-              </div><br>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            <div>
             </section>
             </div>
+            <!-- /.tab-pane -->
+                
             <div class="tab-pane" id="company_payments">
-              <section class="content">
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="row">
-                      <div class="col col-sm-3">
-                        Date From:<br/>
-                        <input type="date" class="form-control" value="<?php echo date('Y-m-d', strtotime('-1 year')); ?>" name="payment_date_from" onchange="get_list_of_company_cards_payments()">
-                      </div>
-                      <div class="col col-sm-3">
-                        Date To:<br/>
-                        <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" name="payment_date_to" onchange="get_list_of_company_cards_payments()">
-                      </div>
-                      <div class="col col-sm-3">
-                          User Email or Full Name:<br/>
-                          <input type="text" class="form-control" value="" name="payment_user_search" onkeyup="get_list_of_company_cards_payments()">
-                      </div>
-                    </div><br>
+                 <section class="content-header">
+                    <h1>
+                      Reports | Card Usage
+                    </h1>
+                  </section>
 
-                    
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="box-body no-padding company_card_usage_holder">
-                      
+                  <!-- Main content -->
+                  <section class="content">
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="box">
+                          <div class="box-header">
+                            <h3 class="box-title">Filters</h3>
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body">
+                            <div class="row">
+                              <div class="col col-sm-2">
+                                Date From:<br/>
+                                <input type="date" class="form-control" value="<?php echo $filter_date_from; ?>" name="date_from" onchange="get_report_card_usage()">
+                              </div>
+
+                              <div class="col col-sm-2">
+                                Date To:<br/>
+                                <input type="date" class="form-control" value="<?php echo $filter_date_to; ?>" name="date_from" onchange="get_report_card_usage()">
+                              </div>
+
+                              <div class="col col-sm-2">
+                                Company:<br/>
+                                <select name="company" class="form-control" onchange="get_report_card_usage()">
+                                  <option value="">Select company</option>
+                                  <?php for ($i=0; $i < sizeof($company_list); $i++) { ?>
+                                    <option value="<?php echo $company_list[$i]->id; ?>" <?php if($preselected_company == $company_list[$i]->id){ ?>selected="selected"<?php } ?>><?php echo $company_list[$i]->name; ?></option>
+                                  <?php } ?>
+                                </select>
+                                </div>
+
+                              <div class="col col-sm-2">
+                                  User Email or Full Name:<br/>
+                                  <input type="text" class="form-control" value="" name="user_search" onkeyup="get_report_card_usage()">
+                              </div>
+                            </div><br>
+                            <div class="company_card_usage_holder">
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <!-- /.col -->
-                </div>
-                <!-- /.row -->
-              <div>
-              </section>
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="box">
+                          <div class="box-header">
+                            <h3 class="box-title">Result</h3>
+                          </div>
+                          <!-- /.box-header -->
+                          <div class="box-body no-padding result_holder">
+                            
+                          </div>
+                          <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                      </div>
+                      <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                  <div>
+                  </section>
             </div>
             <!-- /.tab-pane -->
           </div>
@@ -127,14 +235,11 @@
 
 <script>
 
-    function get_list_of_company_cards_payments(){
+    function get_list_of_company_cards_usage(){
       var data={};
           data.id=$('[name="id"]').val();
-          data.payment_date_from = $('[name="payment_date_from"]').val();
-          data.payment_date_to = $('[name="payment_date_to"]').val();
-          data.payment_user_search = $('[name="payment_user_search"]').val();
-          
-      var call_url='get_list_of_company_cards_payments';
+
+      var call_url='get_list_of_company_cards_usage';
       var call_data={data:data}
       var callback = function(response){
         $('.company_card_usage_holder').html(response);
@@ -144,26 +249,7 @@
     }
 
     $(function(){
-      get_list_of_company_cards_payments()
-    });
-
-    function get_list_of_transactions_with_companies(){
-      var data={};
-          data.id=$('[name="id"]').val();
-          data.date_from = $('[name="transactions_date_from"]').val();
-          data.date_to = $('[name="transactions_date_to"]').val();
-
-      var call_url='get_list_of_transactions_with_companies';
-      var call_data={data:data}
-      var callback = function(response){
-        $('.transactions_with_company_holder').html(response);
-      }
-      ajax_call(call_url, call_data, callback);
-
-    }
-
-    $(function(){
-      get_list_of_transactions_with_companies()
+      get_list_of_company_cards_usage()
     });
 
     function change_business_option(type){

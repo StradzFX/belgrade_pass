@@ -2,7 +2,7 @@
 $data=$post_data['data'];
 ?>
     <input type="hidden" name="id" value="0">
-    <table class="table table-hover">
+    <table class="table table-striped all_items">
       <tbody>
         <tr>
           <th>ID</th>
