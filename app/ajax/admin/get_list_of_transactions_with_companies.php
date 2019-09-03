@@ -41,10 +41,10 @@ for($i=0;$i<sizeof($list);$i++){
       <td><?php echo $list[$i]->transaction_type; ?></td>
       <td><?php echo $list[$i]->transaction_value; ?></td>
       <td>
-          <a href="javascript:void(0)>" class="btn btn-primary" data-toggle="modal" data-target="#modal_company_transaction_edit">
+          <a href="javascript:void(0)>" class="btn btn-primary" data-toggle="modal" data-target="#modal_company_transaction_edit" onclick="get_edit_input_fields(<?php echo $list[$i]->id; ?>)">
             <i class="fa fa-edit" title="edit"></i>
           </a>
-           <a href="javascript:void(0)>" class="btn btn-primary" data-toggle="modal" data-target="#modal_company_transaction_delete">
+           <a href="javascript:void(0)>" class="btn btn-primary" data-toggle="modal" data-target="#modal_company_transaction_delete" onclick="set_transaction_id(<?php echo $list[$i]->id; ?>)">
             <i class="fa fa-trash" title="delete"></i>
           </a>
         </td>

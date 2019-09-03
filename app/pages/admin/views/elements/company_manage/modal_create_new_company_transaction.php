@@ -64,8 +64,12 @@
     var callback = function(response){
       if(response.success){
           alert(response.message);
-          $('#modal-change-card').modal('hide');
-          location.reload();
+          $('#modal_create_new_company_transaction').modal('hide');
+          get_list_of_transactions_with_companies();
+
+          $('[name="transaction_type"]').val('');
+          $('[name="transaction_value"]').val('');
+          $('[name="transaction_date"]').val('');
       } else {
           alert(response.message);
         }

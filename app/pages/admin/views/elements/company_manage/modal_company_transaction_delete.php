@@ -1,4 +1,5 @@
 <div class="modal fade" id="modal_company_transaction_delete">
+  <input type="hidden" name="transaction_id" value="0">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -27,10 +28,14 @@
 
 <script type="text/javascript">
 
+  function set_transaction_id(id){
+    $('[name="transaction_id"]').val(id);
+  }
+
   function company_payment_delete(){
   
     var data={};
-        data.id = $('[name="id"]').val();
+        data.id = $('[name="transaction_id"]').val();
 
 
     var call_url = "company_payment_delete";
@@ -45,6 +50,7 @@
       if(odgovor.success){
           alert(odgovor.message);
           $('#modal_company_transaction_delete').modal('hide');
+          get_list_of_transactions_with_companies();
       }
     }
     ajax_json_call(call_url, call_data, call_back);

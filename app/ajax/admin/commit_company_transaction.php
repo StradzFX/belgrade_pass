@@ -5,6 +5,8 @@ $data = $post_data['data'];
 $succes = false;
 $message = 'Morate popuniti sva polja';
 
+
+
 $validation_message = "";
 
 if($data["transaction_type"] == ""){$validation_message = "Morate odabrati tip transakcije";}
@@ -28,9 +30,10 @@ if($validation_message == ""){
 	$company_transaction->multilang_id = 0;
 
 	$company_transaction = $broker->insert($company_transaction);
-	//
+
 	$success = true;
 	$message = 'All ok';
+
 } else {
 	$message = $validation_message;
 }
