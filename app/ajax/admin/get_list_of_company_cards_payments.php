@@ -31,6 +31,7 @@ for ($i=0;$i<sizeof($list);$i++) {
   $list[$i]->user = $broker->get_data($user_name);
 
   $total_price += $list[$i]->taken_passes;
+  $total_user_payed +=$list[$i]->pay_to_company;
   $bp_comission += $list[$i]->pay_to_us;
 }
 
@@ -48,6 +49,7 @@ for ($i=0;$i<sizeof($list);$i++) {
       <th>User</th>
       <th>Total price</th>
       <th>User payed</th>
+      <th>BP commission</th>
     </tr>
     <?php for ($i=0; $i < sizeof($list); $i++) { ?>
     <tr>
@@ -56,6 +58,7 @@ for ($i=0;$i<sizeof($list);$i++) {
       <td><?php echo $list[$i]->location->street; ?></td>
       <td><?php echo $list[$i]->card->card_number; ?></td>
       <td><?php echo $list[$i]->user->first_name; ?> <?php echo $list[$i]->user->last_name; ?> (<?php echo $list[$i]->user->email; ?>)</td>
+      <td><?php echo $list[$i]->taken_passes; ?></td>
       <td><?php echo $list[$i]->pay_to_company; ?></td>
       <td><?php echo $list[$i]->pay_to_us; ?></td>
     </tr>
@@ -64,6 +67,7 @@ for ($i=0;$i<sizeof($list);$i++) {
       <td colspan="5"><b class="pull-right">Total</b></td>
 
       <td><?php echo $total_price; ?> RSD</td>
+      <td><?php echo $total_user_payed; ?> RSD</td>
       <td><?php echo $bp_comission; ?> RSD</td>
     </tr>
   </tbody>
