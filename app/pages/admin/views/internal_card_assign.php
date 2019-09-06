@@ -1,3 +1,5 @@
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal_make_internal_card_reservation.php'; ?>
+
 <div class="content-wrapper" style="min-height: 989.8px;">
     <input type="hidden" name="id" value="<?php echo $item->id; ?>">
     <!-- Content Header (Page header) -->
@@ -48,7 +50,8 @@
                     <div class="col col-md-23">
                       <div class="form-group">
                         <label for="field_name">No cards?</label>
-                        <a class="btn btn-success" href="internal_card_reserve/">Reserve cards</a>
+                        <a class="btn btn-success" data-toggle="modal"
+                        data-target = "#modal_make_internal_card_reservation">Reserve cards</a>
                       </div>
                     </div>
 

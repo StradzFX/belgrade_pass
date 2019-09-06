@@ -34,9 +34,6 @@ for ($i=0;$i<sizeof($list);$i++) {
   $total_user_payed +=$list[$i]->pay_to_company;
   $bp_comission += $list[$i]->pay_to_us;
 }
-
-
-
 ?>
 
 <table class="table table-striped all_items">

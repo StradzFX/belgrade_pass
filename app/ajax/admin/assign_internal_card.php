@@ -14,7 +14,7 @@ if($card_data["email"] == ""){$validation_message = "Enter email.";}
 
 if($validation_message == ""){
 	$card_number = $broker->get_data(new card_numbers($card_data["card_number"]));
-
+	
 	if($card_number){
 		$available_card = $card_number;
 
