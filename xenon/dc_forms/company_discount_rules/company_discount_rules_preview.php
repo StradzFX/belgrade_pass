@@ -46,14 +46,14 @@ if($search != "")
 {
 //================ SEARCH FILTER INITIALIZATION 	
 
-	$array_som[] = array("day_from","LIKE","%".$search."%","OR");
-	$array_som[] = array("day_to","LIKE","%".$search."%","OR");
-	$array_som[] = array("hours_from","LIKE","%".$search."%","OR");
-	$array_som[] = array("hours_to","LIKE","%".$search."%","OR");
 	if(is_numeric($search))
 	{
 		$array_som[] = array("id","=",$search,"OR");
 		$array_som[] = array("training_school","=",$search,"OR");
+		$array_som[] = array("day_from","=",$search,"OR");
+		$array_som[] = array("day_to","=",$search,"OR");
+		$array_som[] = array("hours_from","=",$search,"OR");
+		$array_som[] = array("hours_to","=",$search,"OR");
 	}	
 	$dc_objects->add_group_condition($array_som,"AND");
 }
@@ -61,18 +61,6 @@ if($search != "")
 
 if($filter_training_school != "all" && $filter_training_school != "")
 	$dc_objects->add_condition("training_school","=",$filter_training_school);	
-
-if($filter_day_from != "all" && $filter_day_from != "")
-	$dc_objects->add_condition("day_from","=",$filter_day_from);
-
-if($filter_day_to != "all" && $filter_day_to != "")
-	$dc_objects->add_condition("day_to","=",$filter_day_to);
-
-if($filter_hours_from != "all" && $filter_hours_from != "")
-	$dc_objects->add_condition("hours_from","=",$filter_hours_from);
-
-if($filter_hours_to != "all" && $filter_hours_to != "")
-	$dc_objects->add_condition("hours_to","=",$filter_hours_to);
 
 $dc_objects->add_condition("jezik","=",$filter_lang);
 $dc_objects->set_order_by("pozicija","DESC");

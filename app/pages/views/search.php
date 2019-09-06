@@ -127,9 +127,9 @@ var blanko_pin = '';
 
 
 function populate_markers(){
-  var marker_image = '<?php echo $base_url; ?>public/images/markers/m1.png';
+  	var marker_image = '<?php echo $base_url; ?>public/images/markers/m1.png';
 
-  var myIcon = L.icon({
+  	var myIcon = L.icon({
 	  iconUrl: marker_image,
 	  iconRetinaUrl: marker_image,
 	  iconSize: [29, 24],
@@ -137,14 +137,13 @@ function populate_markers(){
 	  popupAnchor: [0, -14]
 	});
 
- /* var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });*/
 
-  map_marker_list = new Array();
- var markerClusters = L.markerClusterGroup({
- 	iconCreateFunction: function (cluster) {
-        var childCount = cluster.getChildCount();
+  	map_marker_list = new Array();
+	var markerClusters = L.markerClusterGroup(
+		{
+			iconCreateFunction: function (cluster) {
+			var childCount = cluster.getChildCount();
+			console.log(childCount);
 
 			var c = ' marker-cluster-';
 			if (childCount < 10) {
@@ -156,68 +155,39 @@ function populate_markers(){
 			}
 
 			return new L.DivIcon({ html: marker_list[0][8] + '<span>' + childCount + '</span>', className: 'marker-cluster' + c, iconSize: new L.Point(40, 40) });
-    },
-                        showCoverageOnHover: false,
-                        spiderfyDistanceMultiplier: 3,
-                        spiderLegPolylineOptions: {
-                            weight: 0
-                        }
-                    });
+		},
+		showCoverageOnHover: false,
+		spiderfyDistanceMultiplier: 3,
+		spiderLegPolylineOptions: {
+			weight: 0
+		}
+	});
 
 
-  for(var i=0; i< marker_list.length;i++){
-  	var iconClass = 'pin';
-  		iconHTML = "<div class='" + iconClass + "'>" + marker_list[i][7] + "<div class='pin__icon'>" + marker_list[i][6] + "</div></div>";
-  	var m = L.marker([marker_list[i][0],marker_list[i][1]],{
-                    icon: new CustomHtmlIcon({
-                        html: iconHTML
-                    })
-                }).addTo(mymap)
-		.bindPopup("<a class='popup' href='" + marker_list[i][5] + "'>" +
-                        "<div class='popup__image' style='background-image: url(" + marker_list[i][9] + ");'></div>" +
-                        "<div class='popup__content'>" +
-                        "<h3 class='popup__title'>" + marker_list[i][3] + "</h3>" +
-                        "<div class='popup__footer'>" +
-                        "<div class='popup__address'>" + marker_list[i][10] + "</div>" +
-                        "</div>" +
-                        "</div>" +
-                        "</a>");
-
-	markerClusters.addLayer( m );
-
-  	/*var contentString = '<div id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-      '<div id="firstHeading" class="firstHeading">'+marker_list[i][3]+'</div>'+
-      '<div id="bodyContent">'+
-      '<p>'+marker_list[i][4]+'</b></p>'+
-      '<a href="'+marker_list[i][5]+'">Pogledaj detalje</a>.</p>'+
-      '</div>'+
-      '</div>';
-
-  	var marker_point = {lat: marker_list[i][0], lng: marker_list[i][1]};
-  	var marker = new google.maps.Marker({
-  		position: marker_point, 
-  		map: map, 
-  		icon:marker_image,
-  		content:contentString
-  	});
-	  	google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
-	  		return function() {
-        		infowindow.setContent(content);
-       			infowindow.open(map,marker);
-    		};
-		})(marker,contentString,infowindow));  
 
 
-  		map_marker_list[i] = marker;
-  		*/
-  }
+  	for(var i=0; i< marker_list.length;i++){
+	  	var iconClass = 'pin';
+	  		iconHTML = "<div class='" + iconClass + "'>" + marker_list[i][7] + "<div class='pin__icon'>" + marker_list[i][6] + "</div></div>";
+	  	var m = L.marker([marker_list[i][0],marker_list[i][1]],{
+	                    icon: new CustomHtmlIcon({
+	                        html: iconHTML
+	                    })
+	                })
+			.bindPopup("<a class='popup' href='" + marker_list[i][5] + "'>" +
+	                        "<div class='popup__image' style='background-image: url(" + marker_list[i][9] + ");'></div>" +
+	                        "<div class='popup__content'>" +
+	                        "<h3 class='popup__title'>" + marker_list[i][3] + "</h3>" +
+	                        "<div class='popup__footer'>" +
+	                        "<div class='popup__address'>" + marker_list[i][10] + "</div>" +
+	                        "</div>" +
+	                        "</div>" +
+	                        "</a>");
 
-  mymap.addLayer( markerClusters );
+		markerClusters.addLayer( m );
+  	}
 
-  /*var markerCluster = new MarkerClusterer(map, map_marker_list,
-            {imagePath: 'public/images/markers/m'});*/
+  	mymap.addLayer( markerClusters );
 }
 </script>
 
@@ -297,7 +267,7 @@ function populate_markers(){
 
 
 <script type="text/javascript">
-	var mymap = L.map('mapid').setView([44.8029925,20.4865823], 14);
+	var mymap = L.map('mapid').setView([44.8135272,20.4472725], 13);
 
 	L.HtmlIcon = L.Icon.extend({
 		options: {

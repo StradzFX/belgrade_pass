@@ -26,6 +26,8 @@
 			$success = true;
 			$message = 'Uspešno ste rezervisali kredite';
 
+			$card_credits = CardModule::get_card_credits($card);
+
 
 			//============= PURCHASE EMAIL ===============
 			require_once "vendor/phpmailer/mail_config.php";
@@ -38,13 +40,16 @@
 			$wl_mailer = new wl_mailer($host_email,$host_password,array($sender_email,$sender_name),array($replier_email,$replier_name),$host,$port); 
 			$wl_mailer->set_subject('BelgradePASS rezervacija sredstava (kredita)/ instrukcije za plaćanje');
 
-			$mail_html = str_replace('{user_email}', $user->email, $mail_html);
+			$mail_html = str_replace('{user_name}', $user->first_name.' '.$user->last_name, $mail_html);
 			$mail_html = str_replace('{user_password}', $user_data["password"], $mail_html);
 			$mail_html = str_replace('{card_number}', $card->card_number, $mail_html);
 			$mail_html = str_replace('{card_credits}', $user_data['selected_amount'], $mail_html);
 			$mail_html = str_replace('{purchase_date}', date('d.m.Y.'), $mail_html);
 			$mail_html = str_replace('{purchase_time}', date('H:i'), $mail_html);
 			$mail_html = str_replace('{purchase_id}', $transaction->id, $mail_html);
+			$mail_html = str_replace('{total_available}', $card_credits, $mail_html);
+
+			
 			
 			
 			if($user->email != ''){

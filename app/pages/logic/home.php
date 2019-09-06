@@ -113,6 +113,19 @@ for ($i=0; $i < sizeof($top_places); $i++) {
 	$ts_location->set_order_by('pozicija','DESC');
 	$ts_location = $broker->get_all_data_condition($ts_location);
 	$ts_location = $ts_location[0];
+
+	$working_times = new working_times();
+	$working_times->add_condition('checker','!=','');
+	$working_times->add_condition('recordStatus','=','O');
+	$working_times->add_condition('ts_location','=',$ts_location->id);
+	$working_times = $broker->get_all_data_condition($working_times);
+
+	$ts_location->working_times = array();
+	for ($j=0; $j < sizeof($working_times); $j++) { 
+		$ts_location->working_times[$working_times[$j]->day_of_week] = $working_times[$j];
+	}
+
+
 	$ts_location->company = $top_places[$i];
 	$top_places[$i] = $ts_location;
 }

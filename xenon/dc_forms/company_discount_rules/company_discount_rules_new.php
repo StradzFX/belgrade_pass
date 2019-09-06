@@ -42,6 +42,9 @@ $id = $_POST["id"];
 
 	if(isset($day_from))
 	{
+		if(!is_numeric($day_from) && $day_from != "NULL")
+			$error_message = $ap_lang["Field"] . " Day From " . $ap_lang["must be number!"];
+		
 		if(strlen($day_from) > 250)
 			$error_message = $ap_lang["Field"] . " Day From " . $ap_lang["must be below"] . " 250 ". $ap_lang["characters!"];
 	}
@@ -49,6 +52,9 @@ $id = $_POST["id"];
 
 	if(isset($day_to))
 	{
+		if(!is_numeric($day_to) && $day_to != "NULL")
+			$error_message = $ap_lang["Field"] . " Day To " . $ap_lang["must be number!"];
+		
 		if(strlen($day_to) > 250)
 			$error_message = $ap_lang["Field"] . " Day To " . $ap_lang["must be below"] . " 250 ". $ap_lang["characters!"];
 	}
@@ -56,6 +62,9 @@ $id = $_POST["id"];
 
 	if(isset($hours_from))
 	{
+		if(!is_numeric($hours_from) && $hours_from != "NULL")
+			$error_message = $ap_lang["Field"] . " Hours From " . $ap_lang["must be number!"];
+		
 		if(strlen($hours_from) > 250)
 			$error_message = $ap_lang["Field"] . " Hours From " . $ap_lang["must be below"] . " 250 ". $ap_lang["characters!"];
 	}
@@ -63,6 +72,9 @@ $id = $_POST["id"];
 
 	if(isset($hours_to))
 	{
+		if(!is_numeric($hours_to) && $hours_to != "NULL")
+			$error_message = $ap_lang["Field"] . " Hours To " . $ap_lang["must be number!"];
+		
 		if(strlen($hours_to) > 250)
 			$error_message = $ap_lang["Field"] . " Hours To " . $ap_lang["must be below"] . " 250 ". $ap_lang["characters!"];
 	}

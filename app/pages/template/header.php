@@ -147,6 +147,8 @@ var a2a_config=a2a_config||{};a2a_config.callbacks=a2a_config.callbacks||[];a2a_
 <!-- ======================= WEBSITE SYSTEM MESSAGE ========================-->
 <div class="website_system_message"></div>
 
+<?php include_once 'app/pages/template/admin_control_panel.php'; ?>
+
 
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>

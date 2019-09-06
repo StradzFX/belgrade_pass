@@ -35,6 +35,7 @@
           <li class="active"><a href="#company_data" data-toggle="tab">Company data</a></li>
           <li><a href="#company_transactions" data-toggle="tab">Transactions</a></li>
           <li><a href="#company_payments" data-toggle="tab">Payments</a></li>
+          <li><a href="#test" data-toggle="tab">TEST</a></li>
         </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="company_data">
@@ -100,6 +101,14 @@
                 <!-- /.row -->
               <div>
               </section>
+            </div>
+            <div class="tab-pane active" id="test">
+              <div class="callout callout-danger">
+                <h4>Ne diraj!</h4>
+
+                <p>Opcije u ovom tabu su za testiranje.
+                Ne koristiti ih. Strahinja tako reko!!!</p>
+              </div>
             </div>
             <!-- /.tab-pane -->
           </div>
@@ -869,6 +878,7 @@
       get_school_programms();
       get_school_locations_bithdays();
       get_company_categories();
+      get_company_discount_rules();
     });
     <?php } ?>
 </script>

@@ -1,10 +1,24 @@
 Poštovani/a {user_email},<br/>
 <br/>
 Vaš račun  je u nastavku.<br/>
-Datum: {transaction_date}<br/>
-Račun: {total_bill} RSD<br/>
-Ušteda: {total_saved} RSD<br/>
-Naplaćeno: {passes_total_to_collect} RSD<br/>
+<table>
+	<tr>
+		<td>Datum: </td>
+		<td>{transaction_date}</td>
+	</tr>
+	<tr>
+		<td>Račun: </td>
+		<td><b>{total_bill}</b> RSD</td>
+	</tr>
+	<tr>
+		<td>Ušteda: </td>
+		<td><b>{total_saved}</b> RSD</td>
+	</tr>
+	<tr>
+		<td>Naplaćeno: </td>
+		<td><b>{passes_total_to_collect}</b> RSD</td>
+	</tr>
+</table>
 <br/>
 Mesto: {company_name}, {company_location_address}<br/>
 Vreme: {transaction_time}h <br/>

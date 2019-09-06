@@ -4,10 +4,10 @@ class company_discount_rules implements base_domain_object
 {
 	public $id = 0;
 	public $training_school = 0;
-	public $day_from = "";
-	public $day_to = "";
-	public $hours_from = "";
-	public $hours_to = "";
+	public $day_from = 0;
+	public $day_to = 0;
+	public $hours_from = 0;
+	public $hours_to = 0;
 	public $discount = 0;
 	public $maker = "";
 	public $makerDate = "";
@@ -25,7 +25,7 @@ class company_discount_rules implements base_domain_object
 	public $limit  = 600;
 	public $direction  = "DESC";
 
-	private $varchar = array("day_from","day_to","hours_from","hours_to","maker","makerDate","checker","checkerDate","jezik","recordStatus");
+	private $varchar = array("maker","makerDate","checker","checkerDate","jezik","recordStatus");
 
 	public $domain_fields_array = array("id","training_school","day_from","day_to","hours_from","hours_to","discount");
 
@@ -33,14 +33,14 @@ class company_discount_rules implements base_domain_object
 	public $format_options = NULL; 
 	
 	//Constructor and Domain name
-	public function __construct($id = 0, $training_school = 0, $day_from = "", $day_to = "", $hours_from = "", $hours_to = "", $discount = 0, $maker = "",$makerDate = "",$checker = "",$checkerDate = "",$pozicija="",$jezik="",$recordStatus="",$modNumber="",$multilang_id = 0)
+	public function __construct($id = 0, $training_school = 0, $day_from = 0, $day_to = 0, $hours_from = 0, $hours_to = 0, $discount = 0, $maker = "",$makerDate = "",$checker = "",$checkerDate = "",$pozicija="",$jezik="",$recordStatus="",$modNumber="",$multilang_id = 0)
 	{
 		if(is_numeric($id)){ $this->id = $id;}else{$this->id = 0;}
 		if(is_numeric($training_school)){ $this->training_school = $training_school;}else{$this->training_school = 0;}
-		$this->day_from = $day_from;
-		$this->day_to = $day_to;
-		$this->hours_from = $hours_from;
-		$this->hours_to = $hours_to;
+		if(is_numeric($day_from)){ $this->day_from = $day_from;}else{$this->day_from = 0;}
+		if(is_numeric($day_to)){ $this->day_to = $day_to;}else{$this->day_to = 0;}
+		if(is_numeric($hours_from)){ $this->hours_from = $hours_from;}else{$this->hours_from = 0;}
+		if(is_numeric($hours_to)){ $this->hours_to = $hours_to;}else{$this->hours_to = 0;}
 		if(is_numeric($discount)){ $this->discount = $discount;}else{$this->discount = 0;}
 		$this->maker = $maker;
 		$this->makerDate = $makerDate;
@@ -84,7 +84,7 @@ class company_discount_rules implements base_domain_object
 
 	public function get_attribute_values()
 	{
-		return "NULL,{$this->training_school},'{$this->day_from}','{$this->day_to}','{$this->hours_from}','{$this->hours_to}',{$this->discount},'{$this->maker}','{$this->makerDate}','{$this->checker}','{$this->checkerDate}',{$this->pozicija},'{$this->jezik}','{$this->recordStatus}','{$this->modNumber}','{$this->multilang_id}'";
+		return "NULL,{$this->training_school},{$this->day_from},{$this->day_to},{$this->hours_from},{$this->hours_to},{$this->discount},'{$this->maker}','{$this->makerDate}','{$this->checker}','{$this->checkerDate}',{$this->pozicija},'{$this->jezik}','{$this->recordStatus}','{$this->modNumber}','{$this->multilang_id}'";
 	}
 	
 	public function get_object($row)
@@ -303,7 +303,7 @@ class company_discount_rules implements base_domain_object
 	
 	public function get_update_values()
 	{
-		return "`training_school` = {$this->training_school},`day_from` = '{$this->day_from}',`day_to` = '{$this->day_to}',`hours_from` = '{$this->hours_from}',`hours_to` = '{$this->hours_to}',`discount` = {$this->discount},`maker` = '{$this->maker}',`makerDate` = '{$this->makerDate}',`checker` = '{$this->checker}',`checkerDate` = '{$this->checkerDate}',`pozicija` = '{$this->pozicija}',`jezik` = '{$this->jezik}',`recordStatus` = '{$this->recordStatus}',`modNumber` = '{$this->modNumber}',`multilang_id` = '{$this->multilang_id}'";
+		return "`training_school` = {$this->training_school},`day_from` = {$this->day_from},`day_to` = {$this->day_to},`hours_from` = {$this->hours_from},`hours_to` = {$this->hours_to},`discount` = {$this->discount},`maker` = '{$this->maker}',`makerDate` = '{$this->makerDate}',`checker` = '{$this->checker}',`checkerDate` = '{$this->checkerDate}',`pozicija` = '{$this->pozicija}',`jezik` = '{$this->jezik}',`recordStatus` = '{$this->recordStatus}',`modNumber` = '{$this->modNumber}',`multilang_id` = '{$this->multilang_id}'";
 	}
 
 	public function get_fields_array(){ 

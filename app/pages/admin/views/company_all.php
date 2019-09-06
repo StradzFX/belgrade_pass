@@ -22,7 +22,7 @@
                   <th>Name</th>
                   <th>Category</th>
                   <th>Card Usage (Passes)</th>
-                  <th style="width: 150px">Actions</th>
+                  <th style="width: 200px">Actions</th>
                 </tr>
                 <?php for ($i=0; $i < sizeof($list); $i++) { ?>
                   <tr>
@@ -35,9 +35,14 @@
                       </a>
                     </td>
                     <td>
+                        <a href="javascript:void(0)" class="action" onclick="company_approve_or_disaprove(<?php echo $list[$i]->id; ?>)">
+                            <div class="btn btn-primary">
+                              <i class="fas fa-thumbs-up <?php if($list[$i]->checker !== ''){ ?>red<?php }else{ ?>white<?php } ?>" title="Approve"></i>
+                            </div>
+                        </a>
                         <a href="javascript:void(0)" class="action" onclick="promote_school(<?php echo $list[$i]->id; ?>)">
                           <div class="btn btn-primary">
-                            <i class="fa fa-star <?php if($list[$i]->promoted){ ?>red<?php }else{ ?>silver<?php } ?>" title="Edit"></i>
+                            <i class="fa fa-star <?php if($list[$i]->promoted){ ?>red<?php }else{ ?>white<?php } ?>" title="Edit"></i>
                           </div>
                         </a>
 
@@ -103,6 +108,26 @@
 </style>
 
 <script type="text/javascript">
+
+    function company_approve_or_disaprove(id){
+      var data = {};
+          data.id = id;
+
+      var call_url = "company_approve_or_disaprove";  
+      var call_data = { 
+        data:data 
+      }  
+      var callback = function(response){  
+      if(response.success){  
+          document.location = master_data.base_url+'company_all/';
+      }else{  
+          alert(response.message);
+      }  
+
+      }  
+      ajax_json_call(call_url, call_data, callback); 
+    }
+
     function promote_school(id){
       var data = {};
           data.id = id;
