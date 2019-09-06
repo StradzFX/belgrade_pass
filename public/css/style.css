@@ -2765,6 +2765,9 @@ body {
 
 .grid--widget .grid__item {
   width: 33%; }
+  @media (max-width: 768px) {
+    .grid--widget .grid__item {
+      width: 100%; } }
   .grid--widget .grid__item .card__tagline {
     height: 80px;
     overflow: hidden; }
@@ -2784,6 +2787,26 @@ body {
 
 .card__title {
   font-size: 20px !important; }
+
+.admin_control_panel {
+  margin: 5px;
+  background-color: #fcf6e9;
+  padding: 10px;
+  border: 5px solid #0095ff; }
+  .admin_control_panel .title {
+    font-size: 12px;
+    color: #0095ff;
+    border-bottom: 1px solid #0095ff;
+    padding-bottom: 3px;
+    margin-bottom: 3px; }
+  .admin_control_panel .options {
+    padding: 10px; }
+    .admin_control_panel .options .option_item .title {
+      color: #7cc9ff;
+      border-bottom: 1px solid #7cc9ff; }
+    .admin_control_panel .options .option_item .content .btn {
+      font-size: 12px;
+      padding: 5px 10px; }
 
 .site-header .site-title {
   font-family: "Armata", sans-serif;

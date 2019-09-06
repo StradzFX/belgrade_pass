@@ -29,6 +29,7 @@ $page = $page != '' ? $page : 'home';
 $page_folders = array();
 $page_folders[] = 'app/pages/views/';
 $page_folders[] = 'app/ajax/';
+$page_folders[] = 'app/ajax/admin_control_panel/';
 $page_folders[] = 'php/';
 $page_folders[] = 'php/ajax/';
 

@@ -313,8 +313,11 @@ class CardModule{
 
 
 	public static function send_email($user,$company,$card_data,$total_passes){
+		global $broker;
 		require_once "vendor/phpmailer/mail_config.php";
 		require_once "vendor/phpmailer/wl_mailer.class.php";
+
+		$original_company = $broker->get_data(new training_school($company->id));
 
 		//====================== SEND EMAILS ==============================
 		$mail_html = file_get_contents('app/mailer/html/general_template.html');
@@ -327,19 +330,19 @@ class CardModule{
 		$mail_html = str_replace('{transaction_date}', date('d.m.Y.'), $mail_html);
 		$mail_html = str_replace('{transaction_time}', date('H:i'), $mail_html);
 
-		$total_bill = ($total_passes * 100) / (100 - $company->pass_customer_percentage);
-		$total_saved = $total_bill - $total_passes;
+		$total_bill = round(($total_passes * 100) / (100 - $original_company->pass_customer_percentage),2);
+		$total_saved = round($total_bill - $total_passes,2);
 
 		$mail_html = str_replace('{total_bill}', $total_bill, $mail_html);
 		$mail_html = str_replace('{total_saved}', $total_saved, $mail_html);
 
 		$mail_html = str_replace('{user_email}', $user->email, $mail_html);
 		$mail_html = str_replace('{user_card_number}', $last_card->card_number, $mail_html);
-		$mail_html = str_replace('{company_name}', $company->name, $mail_html);
+		$mail_html = str_replace('{company_name}', $original_company->name, $mail_html);
 		$mail_html = str_replace('{company_location_address}', $company->location->street, $mail_html);
 		$mail_html = str_replace('{passes_number_of_kids}', $card_data["number_of_kids"], $mail_html);
 		$mail_html = str_replace('{passes_per_kid}', 1, $mail_html);
-		$mail_html = str_replace('{passes_total_to_collect}', $total_passes, $mail_html);
+		$mail_html = str_replace('{passes_total_to_collect}', number_format($total_passes,2,'.',','), $mail_html);
 		$mail_html = str_replace('{passes_time}', date('d.m.Y. H:i:s'), $mail_html);
 		
 		if($user->email != ''){

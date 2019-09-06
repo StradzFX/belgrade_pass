@@ -1,5 +1,4 @@
 <?php
-
 	if($display_location){
 		$current_working_time = $display_location->working_times[date('N')];
 		if($current_working_time->not_working == 0){
@@ -79,7 +78,7 @@
 						<div class="address  card__address" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
 							<div itemprop="streetAddress">
 								<span class="address__street">
-									<?php echo $company->short_location_display; ?>
+									<?php echo $display_location->street; ?>
 								</span>
 							</div>
 						</div>

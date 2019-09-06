@@ -92,7 +92,7 @@ for ($i=0; $i < sizeof($list); $i++) {
 		$working_day_marker,
 		$list[$i]->company->name,
 		$list[$i]->company->short_description,
-		$list[$i]->company->link,
+		'company/location/'.$list[$i]->id,
 		file_get_contents('public/images/icons/'.$list[$i]->categories[0]->logo),
 		file_get_contents('public/images/blanko_pin.svg'),
 		file_get_contents('public/images/cluster_icon.svg'),
