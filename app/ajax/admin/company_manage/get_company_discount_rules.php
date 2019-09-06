@@ -19,6 +19,8 @@ $company_discount_rules->add_condition('training_school','=',$data['id']);
 
 $company_discount_rules = $broker->get_all_data_condition($company_discount_rules);
 
+
+
 for ($i=0; $i < sizeof($company_discount_rules); $i++) { 
 	if($company_discount_rules[$i]->day_from == $company_discount_rules[$i]->day_to){
 		$company_discount_rules[$i]->day_display = $day_of_week_cdr[$company_discount_rules[$i]->day_from];

@@ -1,3 +1,4 @@
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal_make_internal_card_reservation.php'; ?>
 <div class="content-wrapper" style="min-height: 960px;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -5,7 +6,7 @@
         List of cards for internal usage
       </h1>
     </section>
-
+<input type="hidden" name="reservation_id" value="0">
     <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -14,7 +15,8 @@
             <div class="box-header">
               <h3 class="box-title">All data</h3>
 
-              <a class="btn btn-warning pull-right" href="internal_card_reserve/">Make reservations</a>
+              <a href="javascript:void(0)" class="btn btn-warning pull-right"  data-toggle="modal" 
+              data-target="#modal_make_internal_card_reservation">Make reservations</a>
               <a class="btn btn-success pull-right" style="margin-right: 10px;" href="internal_card_assign/">Assign new card</a>
 
 
@@ -39,6 +41,8 @@
 </div>
 
 <script type="text/javascript">
+
+
   function get_internal_cards_all(){
     var data={};
         data.id=$('[name="id"]').val();
