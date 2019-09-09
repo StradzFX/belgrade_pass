@@ -143,6 +143,7 @@ if($search != "")
 	$array_som[] = array("errorCode","LIKE","%".$search."%","OR");
 	$array_som[] = array("responseCode","LIKE","%".$search."%","OR");
 	$array_som[] = array("responseMsg","LIKE","%".$search."%","OR");
+	$array_som[] = array("po_payment_name","LIKE","%".$search."%","OR");
 	if(is_numeric($search))
 	{
 		$array_som[] = array("id","=",$search,"OR");
@@ -267,6 +268,9 @@ if($filter_responseCode != "all" && $filter_responseCode != "")
 
 if($filter_responseMsg != "all" && $filter_responseMsg != "")
 	$dc_objects->add_condition("responseMsg","=",$filter_responseMsg);
+
+if($filter_po_payment_name != "all" && $filter_po_payment_name != "")
+	$dc_objects->add_condition("po_payment_name","=",$filter_po_payment_name);
 
 $dc_objects->add_condition("jezik","=",$filter_lang);
 if(unserialize($_SESSION[ADMINUSER])->see_other_data == 0 && property_exists("xenon_user","see_other_data")){

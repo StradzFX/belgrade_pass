@@ -83,6 +83,10 @@ $id = $_POST["id"];
 	$responseCode = $_POST["responseCode"];
 	$responseMsg = $_POST["responseMsg"];
 	$company_location = $_POST["company_location"];
+	$po_payment_date = explode("/",$_POST["po_payment_date"]);
+	$po_payment_date = $po_payment_date[2]."-".$po_payment_date[0]."-".$po_payment_date[1];
+	$_POST["po_payment_date"] = $po_payment_date;
+	$po_payment_name = $_POST["po_payment_name"];
 	
 
 	
@@ -370,6 +374,13 @@ $id = $_POST["id"];
 		if(strlen($company_location) > 11)
 			$error_message = $ap_lang["Field"] . " Company Location " . $ap_lang["must be below"] . " 11 ". $ap_lang["characters!"];
 	}
+//================ ERROR HANDLER - INPUT|INPUT READONLY|DROPMENUEXT|DROPMENUPARENT ELEMENT - Po Payment_name
+
+	if(isset($po_payment_name))
+	{
+		if(strlen($po_payment_name) > 250)
+			$error_message = $ap_lang["Field"] . " Po Payment_name " . $ap_lang["must be below"] . " 250 ". $ap_lang["characters!"];
+	}
 
 	if($error_message == "")
 	{
@@ -391,7 +402,7 @@ $id = $_POST["id"];
 		else						$language = $filter_lang;
 		
 		$new_object = new purchase();
-		$new_object->user = $user;$new_object->price = $price;$new_object->to_company = $to_company;$new_object->to_us = $to_us;$new_object->duration_days = $duration_days;$new_object->number_of_passes = $number_of_passes;$new_object->start_date = $start_date;$new_object->end_date = $end_date;$new_object->purchase_type = $purchase_type;$new_object->company_flag = $company_flag;$new_object->po_name = $po_name;$new_object->po_address = $po_address;$new_object->po_city = $po_city;$new_object->po_postal = $po_postal;$new_object->card_package = $card_package;$new_object->user_card = $user_card;$new_object->card_active_token = $card_active_token;$new_object->returnUrl = $returnUrl;$new_object->merchantPaymentId = $merchantPaymentId;$new_object->apiMerchantId = $apiMerchantId;$new_object->paymentSystem = $paymentSystem;$new_object->paymentSystemType = $paymentSystemType;$new_object->paymentSystemEftCode = $paymentSystemEftCode;$new_object->pgTranDate = $pgTranDate;$new_object->pgTranId = $pgTranId;$new_object->pgTranRefId = $pgTranRefId;$new_object->pgOrderId = $pgOrderId;$new_object->customerId = $customerId;$new_object->amount = $amount;$new_object->installment = $installment;$new_object->sessionToken = $sessionToken;$new_object->random_string = $random_string;$new_object->SD_SHA512 = $SD_SHA512;$new_object->sdSha512 = $sdSha512;$new_object->pgTranErrorText = $pgTranErrorText;$new_object->pgTranErrorCode = $pgTranErrorCode;$new_object->errorCode = $errorCode;$new_object->responseCode = $responseCode;$new_object->responseMsg = $responseMsg;$new_object->company_location = $company_location;$new_object->maker = $_SESSION[ADMINLOGGEDIN];
+		$new_object->user = $user;$new_object->price = $price;$new_object->to_company = $to_company;$new_object->to_us = $to_us;$new_object->duration_days = $duration_days;$new_object->number_of_passes = $number_of_passes;$new_object->start_date = $start_date;$new_object->end_date = $end_date;$new_object->purchase_type = $purchase_type;$new_object->company_flag = $company_flag;$new_object->po_name = $po_name;$new_object->po_address = $po_address;$new_object->po_city = $po_city;$new_object->po_postal = $po_postal;$new_object->card_package = $card_package;$new_object->user_card = $user_card;$new_object->card_active_token = $card_active_token;$new_object->returnUrl = $returnUrl;$new_object->merchantPaymentId = $merchantPaymentId;$new_object->apiMerchantId = $apiMerchantId;$new_object->paymentSystem = $paymentSystem;$new_object->paymentSystemType = $paymentSystemType;$new_object->paymentSystemEftCode = $paymentSystemEftCode;$new_object->pgTranDate = $pgTranDate;$new_object->pgTranId = $pgTranId;$new_object->pgTranRefId = $pgTranRefId;$new_object->pgOrderId = $pgOrderId;$new_object->customerId = $customerId;$new_object->amount = $amount;$new_object->installment = $installment;$new_object->sessionToken = $sessionToken;$new_object->random_string = $random_string;$new_object->SD_SHA512 = $SD_SHA512;$new_object->sdSha512 = $sdSha512;$new_object->pgTranErrorText = $pgTranErrorText;$new_object->pgTranErrorCode = $pgTranErrorCode;$new_object->errorCode = $errorCode;$new_object->responseCode = $responseCode;$new_object->responseMsg = $responseMsg;$new_object->company_location = $company_location;$new_object->po_payment_date = $po_payment_date;$new_object->po_payment_name = $po_payment_name;$new_object->maker = $_SESSION[ADMINLOGGEDIN];
 		$new_object->makerDate = date("c");
 		$new_object->checker = $checker;
 		$new_object->checkerDate = $checkerDate;
@@ -421,6 +432,9 @@ if($error_message != "")
 	
 	$end_date = explode("-",$purchase->end_date);
 	$purchase->end_date = $end_date[1]."/".$end_date[2]."/".$end_date[0];
+	
+	$po_payment_date = explode("-",$purchase->po_payment_date);
+	$purchase->po_payment_date = $po_payment_date[1]."/".$po_payment_date[2]."/".$po_payment_date[0];
 	
 	if(isset($_POST["promote"]))	$purchase->checker = $_SESSION[ADMINLOGGEDIN];
 	else							$purchase->checker = "";
@@ -1634,6 +1648,59 @@ else	unset($purchase);
 		}else{ 
 	?>
 	<input type="text" name="company_location" value="<?php echo $purchase->company_location; ?>" style="width:600px;" limit="11" onkeyup="count_input_limit('company_location')">
+	<?php } ?>
+</td>
+</tr>
+<!--FORM TYPE DATEPICKER-->
+<link rel="stylesheet" type="text/css" href="js/datepicker/css/jquery-ui-1.8.4.custom.css"/>
+<script type="text/javascript" src="js/datepicker/jquery.ui.core.js"></script>
+<script type="text/javascript" src="js/datepicker/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="js/datepicker/jquery.ui.datepicker.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#po_payment_date").datepicker({
+			showOn: 'button',
+			buttonImage: 'js/datepicker/calendar.gif',
+			buttonImageOnly: true
+		});
+	});
+</script>
+<tr>
+<td>Po Payment_date</td>
+<td>
+<?php if($_GET["action"] == "preview"){ echo date("d.m.Y",strtotime($purchase->po_payment_date)); }else{ ?>
+<input type="text" name="po_payment_date" id="po_payment_date" value="<?php if($purchase->po_payment_date == "" || $purchase->po_payment_date == NULL){ echo date('m/d/Y'); } else{ echo $purchase->po_payment_date; } ?>" />
+<?php } ?>
+</td>
+</tr>
+<!--FORM TYPE INPUT-->
+<script>
+	function count_input_limit(element_name){
+		var input_limit = parseInt($('[name="'+element_name+'"]').attr("limit"));
+		var input_value = $('[name="'+element_name+'"]').val();
+		var input_value_length = input_value.length;
+		$("#"+element_name+"_counter").html("("+(input_limit-input_value_length)+")");
+		if(input_value_length <= input_limit){
+			$("#"+element_name+"_counter").css("color","#999");
+		}else{
+			$("#"+element_name+"_counter").css("color","#F00");
+		}
+	}
+	$(function(){
+		count_input_limit("po_payment_name");
+		
+	});
+</script>
+<tr>
+<td>Po Payment_name <span id="po_payment_name_counter" style="color:#999">(250)</span></td>
+	
+<td>
+	<?php 
+		if($_GET["action"] == "preview"){ 
+			echo $purchase->po_payment_name; 
+		}else{ 
+	?>
+	<input type="text" name="po_payment_name" value="<?php echo $purchase->po_payment_name; ?>" style="width:600px;" limit="250" onkeyup="count_input_limit('po_payment_name')">
 	<?php } ?>
 </td>
 </tr>	
