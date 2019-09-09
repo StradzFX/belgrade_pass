@@ -89,4 +89,7 @@ for ($i=0; $i < sizeof($card_list); $i++) {
 		$card_list[$i]->partner = $broker->get_data(new training_school($card_list[$i]->partner_id));
 		$card_list[$i]->card_status = 'Preuzeti kod patnera "<b>'.$card_list[$i]->partner->name.'</b>"';
 	}
+
+	$card_list[$i]->left_passes = CardModule::get_card_credits($card_list[$i]);
+	$card_list[$i]->last_package_date = CardModule::get_last_package_date($card_list[$i]);
 }
