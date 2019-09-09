@@ -210,6 +210,29 @@ class CardModule{
 		return $total_credits - $total_used_credits;
 	}
 
+	public static function get_last_package_date($card){
+		global $broker;
+
+		$total_credits = 0;
+		$total_used_credits = 0;
+
+		$can_make_transaction = false;
+		$need_more_passes = 0;
+		$collect_from_packages = array();
+
+		$purchase_all = new purchase();
+		$purchase_all->set_condition('checker','!=','');
+		$purchase_all->add_condition('recordStatus','=','O');
+		$purchase_all->add_condition('user_card','=',$card->id);
+		$purchase_all->set_order_by('id','ASC');
+		$purchase_all = $broker->get_all_data_condition($purchase_all);
+
+		return sizeof($purchase_all) > 0 ? date('d.m.Y.',strtotime($purchase_all[0]->end_date)) : 'Nema aktivnih uplata';
+	}
+
+
+	
+
 	public static function save_passes($card,$total_credits,$company){
 		global $broker;
 

@@ -40,7 +40,7 @@
 
 <div class="admin_control_panel">
 	<div class="title">
-		Admin control panel
+		<a href="admin/">Admin control panel</a>
 	</div>
 	<div class="options">
 		<div class="row">
