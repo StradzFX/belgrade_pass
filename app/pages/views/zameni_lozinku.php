@@ -2,12 +2,6 @@
   <div class="login">
     <div class="container">
       <div class="row">
-          <div class="col-12 col-sm-12 col-md-12">
-            <div class="header">
-              Zamenite lozinku na svom profilu na <span>KIDCARD</span>u <br/><br/>
-              Unesite novu lozinku i potvrdite istu u označena polja.
-            </div>
-          </div>
           <div class="col-12 col-sm-12 col-md-6 col-md-offset-3">
               <div class="forms">
                   <div class="title">
