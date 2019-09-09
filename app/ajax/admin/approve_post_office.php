@@ -47,7 +47,7 @@ $mail_html = str_replace('{purchase_package_use_to}', date('d.m.Y.',strtotime($p
 
 if($purchase->user_card->email != ''){
 	$wl_mailer->add_address($purchase->user_card->email,'');
-	$wl_mailer->add_address('office@weblab.co.rs','');
+	$wl_mailer->add_address('dev@weblab.co.rs','');
 	$wl_mailer->add_image("public/images/mailer/company_logo.png", "company_logo", "company_logo.png");
 }
 
