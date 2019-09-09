@@ -1,0 +1,1 @@
+ALTER TABLE `purchase` ADD `po_payment_date` DATE NOT NULL AFTER `company_location`, ADD `po_payment_name` VARCHAR(250) NOT NULL AFTER `po_payment_date`;

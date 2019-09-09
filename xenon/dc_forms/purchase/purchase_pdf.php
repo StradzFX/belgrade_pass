@@ -76,7 +76,10 @@ if($purchase->pgTranErrorCode != "" || $purchase->pgTranErrorCode != NULL){ $htm
 if($purchase->errorCode != "" || $purchase->errorCode != NULL){ $html .= '<b>Errorcode: </b> <BR>'.$purchase->errorCode.'<BR><BR>';}
 if($purchase->responseCode != "" || $purchase->responseCode != NULL){ $html .= '<b>Responsecode: </b> <BR>'.$purchase->responseCode.'<BR><BR>';}
 if($purchase->responseMsg != "" || $purchase->responseMsg != NULL){ $html .= '<b>Responsemsg: </b> <BR>'.$purchase->responseMsg.'<BR><BR>';}
-if($purchase->company_location != "" || $purchase->company_location != NULL){ $html .= '<b>Company Location: </b> <BR>'.$purchase->company_location.'<BR><BR>';}	
+if($purchase->company_location != "" || $purchase->company_location != NULL){ $html .= '<b>Company Location: </b> <BR>'.$purchase->company_location.'<BR><BR>';}
+if($purchase->po_payment_date != "" || $purchase->po_payment_date != NULL){ 
+$html .= '<b>Po Payment_date: </b> <BR>'; $html .= date("d.m.Y",strtotime($purchase->po_payment_date)); $html .='<BR><BR>';}
+if($purchase->po_payment_name != "" || $purchase->po_payment_name != NULL){ $html .= '<b>Po Payment_name: </b> <BR>'.$purchase->po_payment_name.'<BR><BR>';}	
 $file="xenon-document-".time().".pdf";
 $html = str_replace("Ä†", "C", $html); //C
 $html = str_replace("Ä‡", "c", $html); //c

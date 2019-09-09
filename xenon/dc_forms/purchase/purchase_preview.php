@@ -110,6 +110,7 @@ if($search != "")
 	$array_som[] = array("errorCode","LIKE","%".$search."%","OR");
 	$array_som[] = array("responseCode","LIKE","%".$search."%","OR");
 	$array_som[] = array("responseMsg","LIKE","%".$search."%","OR");
+	$array_som[] = array("po_payment_name","LIKE","%".$search."%","OR");
 	if(is_numeric($search))
 	{
 		$array_som[] = array("id","=",$search,"OR");
@@ -228,6 +229,9 @@ if($filter_responseCode != "all" && $filter_responseCode != "")
 
 if($filter_responseMsg != "all" && $filter_responseMsg != "")
 	$dc_objects->add_condition("responseMsg","=",$filter_responseMsg);
+
+if($filter_po_payment_name != "all" && $filter_po_payment_name != "")
+	$dc_objects->add_condition("po_payment_name","=",$filter_po_payment_name);
 
 $dc_objects->add_condition("jezik","=",$filter_lang);
 $dc_objects->set_order_by("pozicija","DESC");
@@ -1474,6 +1478,59 @@ if($sec_to_min == NULL)	$sec_to_min = $max_item;
 		}else{ 
 	?>
 	<input type="text" name="company_location" value="<?php echo $purchase->company_location; ?>" style="width:600px;" limit="11" onkeyup="count_input_limit('company_location')">
+	<?php } ?>
+</td>
+</tr>
+<!--FORM TYPE DATEPICKER-->
+<link rel="stylesheet" type="text/css" href="js/datepicker/css/jquery-ui-1.8.4.custom.css"/>
+<script type="text/javascript" src="js/datepicker/jquery.ui.core.js"></script>
+<script type="text/javascript" src="js/datepicker/jquery.ui.widget.js"></script>
+<script type="text/javascript" src="js/datepicker/jquery.ui.datepicker.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#po_payment_date").datepicker({
+			showOn: 'button',
+			buttonImage: 'js/datepicker/calendar.gif',
+			buttonImageOnly: true
+		});
+	});
+</script>
+<tr>
+<td>Po Payment_date</td>
+<td>
+<?php if($_GET["action"] == "preview"){ echo date("d.m.Y",strtotime($purchase->po_payment_date)); }else{ ?>
+<input type="text" name="po_payment_date" id="po_payment_date" value="<?php if($purchase->po_payment_date == "" || $purchase->po_payment_date == NULL){ echo date('m/d/Y'); } else{ echo $purchase->po_payment_date; } ?>" />
+<?php } ?>
+</td>
+</tr>
+<!--FORM TYPE INPUT-->
+<script>
+	function count_input_limit(element_name){
+		var input_limit = parseInt($('[name="'+element_name+'"]').attr("limit"));
+		var input_value = $('[name="'+element_name+'"]').val();
+		var input_value_length = input_value.length;
+		$("#"+element_name+"_counter").html("("+(input_limit-input_value_length)+")");
+		if(input_value_length <= input_limit){
+			$("#"+element_name+"_counter").css("color","#999");
+		}else{
+			$("#"+element_name+"_counter").css("color","#F00");
+		}
+	}
+	$(function(){
+		count_input_limit("po_payment_name");
+		
+	});
+</script>
+<tr>
+<td>Po Payment_name <span id="po_payment_name_counter" style="color:#999">(250)</span></td>
+	
+<td>
+	<?php 
+		if($_GET["action"] == "preview"){ 
+			echo $purchase->po_payment_name; 
+		}else{ 
+	?>
+	<input type="text" name="po_payment_name" value="<?php echo $purchase->po_payment_name; ?>" style="width:600px;" limit="250" onkeyup="count_input_limit('po_payment_name')">
 	<?php } ?>
 </td>
 </tr>	
