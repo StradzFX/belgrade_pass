@@ -61,23 +61,13 @@
                           </div>
                       </div>
                     </div>
-
-                    <div class="login_option">
-                      <div class="title"><i class="fab fa-facebook"></i> Putem Facebook naloga</div>
-                      <div class="content">
-                          <div class="form_field">
-                            <div class="button" onclick="fb_login();">Uloguj se putem Facebooka</div>
-                          </div>
-                        
-                      </div>
-                    </div>
                   </div>
               </div>
           </div>
           <div class="col-12 col-sm-12 col-md-6">
               <div class="forms">
                   <div class="title">
-                    Registracija <i class="fa fa-pencil-alt"></i>
+                    Registracija <i class="fa fa-edit"></i>
                   </div>
                   <div class="content">
 

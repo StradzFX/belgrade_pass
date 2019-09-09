@@ -25,7 +25,7 @@ if(sizeof($user_all) > 0){
 	$mail_html = str_replace('{content}', $mail_html_content, $mail_html);
 
 	$wl_mailer = new wl_mailer($host_email,$host_password,array($sender_email,$sender_name),array($replier_email,$replier_name),$host,$port); 
-	$wl_mailer->set_subject('Resetovanje lozinke na KidCard.rs');
+	$wl_mailer->set_subject('Resetovanje lozinke na BelgradePass-u');
 
 	$mail_html = str_replace('{user_email}', $user->email, $mail_html);
 	$mail_html = str_replace('{reset_link}', $base_url.'zameni_lozinku/'.md5($user->id).'/', $mail_html);

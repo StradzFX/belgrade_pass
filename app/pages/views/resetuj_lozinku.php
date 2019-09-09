@@ -2,12 +2,6 @@
   <div class="login">
     <div class="container">
       <div class="row">
-          <div class="col-12 col-sm-12 col-md-12">
-            <div class="header">
-              Zaboravili ste lozinku na<span>KIDCARD</span>u? <br/><br/>
-              Unesite email u označeno polje i poslaćemo Vam instrukcije za resetovanje lozinke.
-            </div>
-          </div>
           <div class="col-12 col-sm-12 col-md-6 col-md-offset-3">
               <div class="forms">
                   <div class="title">
