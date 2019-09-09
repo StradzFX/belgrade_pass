@@ -176,9 +176,9 @@ class CoreConfig{
 		global $page,$url_params,$base,$seo,$base_url,$default_css_files,$default_js_files,$broker;
 
 		$tr_types = array();
-		$tr_types['purchase_post_office'] = 'Uplata paketa uplatnicom';
-		$tr_types['purchase_card'] = 'Uplata paketa platnom karticom';
-		$tr_types['purchase_company'] = 'Uplata paketa kod partnera';
+		$tr_types['purchase_post_office'] = 'Uplatnica';
+		$tr_types['purchase_card'] = 'Platna kartica';
+		$tr_types['purchase_company'] = 'Uplata kod parttnera';
 
 		$_SERVER["REQUEST_URI"] = explode("?",$_SERVER["REQUEST_URI"]);
 		$_SERVER["REQUEST_URI"] = $_SERVER["REQUEST_URI"][0];

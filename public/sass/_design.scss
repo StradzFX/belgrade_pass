@@ -231,13 +231,21 @@ body{
       margin: 0 0 50px 0; }
     .my-account .wrapper-main .btn {
       text-decoration: none;
-      margin: 0 25px 0 0; }
+      margin: 0 25px 0 0; 
+
+       @media (max-width: $medium-mobile-width) {
+        margin: 0; 
+        font-size: 12px;
+        padding:3px 5px;
+      }
+
+    }
       .my-account .wrapper-main .btn:hover {
         text-decoration: none;
         color: #fff; }
       @media (max-width: 767px) {
         .my-account .wrapper-main .btn {
-          margin: 25px 0 0 0; } }
+           } }
     .my-account .wrapper-main .item {
       margin: 15px 0 0 0; }
       .my-account .wrapper-main .item .input-field label.active {
@@ -2534,7 +2542,7 @@ body{
 
 .page_content{
   @media (max-width: $medium-mobile-width) {
-    padding-top: 40px;
+    padding-top: 0px!important;
   }
 
   &.payment-transaction{
@@ -2857,6 +2865,10 @@ body{
 .user_menu{
   padding: 10px 0px;
 
+  @media (max-width: $medium-mobile-width) {
+    padding: 0px;
+  }
+
    a {
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
@@ -2880,7 +2892,13 @@ body{
       @media (max-width: $medium-mobile-width) {
         font-size: 10px;
         margin: 0 0 0 5px;
+        width: 100%;
+        border-radius: 0px;
+        margin: 0px!important;
+        background-color: #ff6f75;
+        padding: 10px;
       }
+
 
       &:hover{
         -webkit-transition: all 0.3s ease-in-out;
@@ -3001,6 +3019,16 @@ body{
 
     span{
       font-weight: bold;
+    }
+  }
+
+  .paying_option_box{
+    .green{
+      color:green;
+    }
+
+    .red{
+      color:red;
     }
   }
 
