@@ -202,7 +202,7 @@
   }
 </style>
 <script type="text/javascript">
-    /*function approve_post_office(id){
+    function approve_post_office(id){
       var confirm_result = confirm('Are you sure you want to approve this transaction?');
 
       var data = {};
@@ -225,7 +225,8 @@
         }  
         ajax_json_call(call_url, call_data, callback); 
       }
-    }*/
+    }
+
     function  delete_post_office_payment(){
         alert('Uplata obrisana');
         $('#modal-delete-post-office-payment').modal('hide');
@@ -237,7 +238,7 @@
       var data={};
           data.id=$('[name="id"]').val();
 
-      var call_url='get_list_of_postoffice_payments2';
+      var call_url='get_list_of_postoffice_payments';
       var call_data={data:data}
       var callback = function(response){
         $('.list_of_postoffice_payments_holder').html(response);
