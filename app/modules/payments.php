@@ -196,7 +196,7 @@ class PaymentModule{
 	}
 
 	public static function create_post_office_image($purchase,$card_package){
-		$font = 'public/post_office_template/arial.ttf';
+		$font = realpath('public/post_office_template/arial.ttf');
 		$source_image = imagecreatefrompng('public/post_office_template/uplatnica.png');
 		$image_to_display = imagecreatetruecolor(600, 300);
 		imagecopy($image_to_display, $source_image, 0, 0, 0, 0, 600, 300);
