@@ -22,7 +22,7 @@
 													Unesite iznos računa sa popustom
 												</div>
 												<div>
-													<input type="number" name="purchase_value" value="0">
+													<input type="number" name="purchase_value" value="">
 												</div>
 											</div>
 
@@ -40,7 +40,7 @@
 													<b>Broj kartice</b>
 												</div>
 												<div>
-													<input type="text" name="purchase_card_number" value="<?php echo $_GET['card']; ?>">
+													<input type="text" name="purchase_card_number" autocomplete="off" value="<?php echo $_GET['card']; ?>">
 												</div>
 											</div>
 
@@ -49,7 +49,7 @@
 													<b>Šifra kartice</b>
 												</div>
 												<div>
-													<input type="password" name="purchase_card_password" value="<?php echo $_GET['approval_code']; ?>">
+													<input type="password" name="purchase_card_password" autocomplete="new-password" value="<?php echo $_GET['approval_code']; ?>">
 												</div>
 											</div>
 

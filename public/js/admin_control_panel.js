@@ -40,6 +40,52 @@ function admin_company_logout(){
     ajax_json_call(call_url, call_data, callback);      
 } 
 
+
+function retail_user_login(){ 
+
+    var data = {};
+        data.retail_user = $('[name="retail_user"]').val();
+
+    start_global_call_loader(); 
+    var call_url = "retail_user_login";  
+    var call_data = { 
+        data:data 
+    }  
+    var callback = function(odgovor){  
+        finish_global_call_loader(); 
+        if(odgovor.success){  
+            window.location = master_data.base_url+'profile/';
+        }else{  
+            valid_selector = "error";  
+        }  
+        show_user_message(valid_selector,odgovor.message)  
+    }  
+    ajax_json_call(call_url, call_data, callback);      
+} 
+
+
+function retail_user_logout(){ 
+
+    start_global_call_loader(); 
+    var call_url = "retail_user_logout";  
+    var call_data = { 
+        data:'data' 
+    }  
+    var callback = function(odgovor){  
+        finish_global_call_loader(); 
+        if(odgovor.success){  
+            window.location = master_data.base_url;
+        }else{  
+            valid_selector = "error";  
+        }  
+        show_user_message(valid_selector,odgovor.message)  
+    }  
+    ajax_json_call(call_url, call_data, callback);      
+} 
+
+
+
+
 function get_test_card_data(){
     var test_card = $('[name="test_card"]').val();
     test_card = test_card.split(',');

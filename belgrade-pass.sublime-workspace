@@ -519,6 +519,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "xenon/config.php",
+			"settings":
+			{
+				"buffer_size": 1364,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -573,30 +581,15 @@
 	"expanded_folders":
 	[
 		"/D/wamp/www/Xenon3/websites/belgrade_pass",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/mailer",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/mailer/html",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/logic",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/elements",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/elements/company_manage",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/company",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/presentation",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/presentation/company",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/php/core",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/public",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/public/js",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/public/sass"
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/classes",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/classes/database",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/xenon"
 	],
 	"file_history":
 	[
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/company_approval.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/vendor/phpmailer/wl_mailer.class.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/vendor/phpmailer/mail_config.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/public/sass/_design.scss",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/admin_control_panel.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules/AdminControlPanelModule.php",
@@ -721,10 +714,7 @@
 		"/D/wamp/www/Xenon3/websites/simfonija/classes/database/MainTableClass.php",
 		"/D/wamp/www/Xenon3/websites/simfonija/classes/tables/user.php",
 		"/D/wamp/www/Xenon3/websites/simfonija/php/core/classes/ValidationError.php",
-		"/D/wamp/www/Xenon3/websites/simfonija/app/ajax/website/login/login_user.php",
-		"/D/wamp/www/Xenon3/websites/simfonija/php/core/core_config.php",
-		"/D/wamp/www/Xenon3/websites/simfonija/app/modules/UserModule.php",
-		"/D/wamp/www/Xenon3/websites/simfonija/app/pages/logic/home.php"
+		"/D/wamp/www/Xenon3/websites/simfonija/app/ajax/website/login/login_user.php"
 	],
 	"find":
 	{
@@ -1143,8 +1133,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "xenon/config.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1364,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1361,
+								1186
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		},
 		{
@@ -1181,7 +1200,7 @@
 		"cols":
 		[
 			0.0,
-			0.742876204596,
+			0.964788732394,
 			1.0
 		],
 		"rows":
@@ -1249,7 +1268,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

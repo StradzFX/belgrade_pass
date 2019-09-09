@@ -39,4 +39,20 @@ class AdminControlPanelModule{
 		return $user;
 	}
 
+	public static function get_retail_users_list(){
+		global $broker;
+
+		$list = new user();
+		$list->set_condition('checker','!=','');
+		$list->add_condition('recordStatus','=','O');
+		$list->add_condition('user_type','=','fizicko');
+		$list->set_order_by('id','DESC');
+		$list->set_limit(100);
+		$list = $broker->get_all_data_condition_limited($list);
+
+
+
+		return $list;
+	}
+
 }
