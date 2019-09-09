@@ -6,7 +6,16 @@ class AdminControlPanelModule{
 		global $broker;
 
 		$user_card_all = new user_card();
-		$user_card_all->set_condition('checker','=','test');
+
+		if($_SESSION['user']){
+			$user = $broker->get_session('user');
+			$user_card_all->set_condition('checker','!=','');
+			$user_card_all->set_condition('user','=',$user->id);
+		}else{
+			$user_card_all->set_condition('checker','=','test');
+		}
+
+		
 		$user_card_all->add_condition('recordStatus','=','O');
 		$user_card_all->set_order_by('pozicija','DESC');
 		$user_card_all = $broker->get_all_data_condition($user_card_all);
