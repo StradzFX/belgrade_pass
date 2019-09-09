@@ -31,7 +31,7 @@ $mail_html = str_replace('{card_password}', $card->card_password, $mail_html);
 
 if($reg_user->email != ''){
 	$wl_mailer->add_address($reg_user->email,'');
-	$wl_mailer->add_address('office@weblab.co.rs','');
+	$wl_mailer->add_address('dev@weblab.co.rs','');
 	$wl_mailer->add_image("public/images/mailer/company_logo.png", "company_logo", "company_logo.png");
 	$wl_mailer->add_image("files/qr_codes/".$card->card_number.".png", "qr_code", "company_logo.png");
 }

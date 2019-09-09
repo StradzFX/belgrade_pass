@@ -54,7 +54,7 @@
 			
 			if($user->email != ''){
 				$wl_mailer->add_address($user->email,'');
-				$wl_mailer->add_address('office@weblab.co.rs','');
+				$wl_mailer->add_address('dev@weblab.co.rs','');
 				$wl_mailer->add_image("public/images/mailer/company_logo.png", "company_logo", "company_logo.png");
 			}
 

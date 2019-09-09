@@ -19,7 +19,7 @@ class EmailMoodule{
 		
 		if($user->email != ''){
 			$wl_mailer->add_address($user->email,'');
-			$wl_mailer->add_address('office@weblab.co.rs','');
+			$wl_mailer->add_address('dev@weblab.co.rs','');
 			$wl_mailer->add_image("public/images/mailer/company_logo.png", "company_logo", "company_logo.png");
 
 			$wl_mailer->add_image("files/qr_codes/".$card->card_number.".png", "qr_code", "company_logo.png");
@@ -54,7 +54,7 @@ class EmailMoodule{
 		
 		if($user->email != ''){
 			$wl_mailer->add_address($user->email,'');
-			$wl_mailer->add_address('office@weblab.co.rs','');
+			$wl_mailer->add_address('dev@weblab.co.rs','');
 			$wl_mailer->add_image("public/images/mailer/company_logo.png", "company_logo", "company_logo.png");
 		}
 
@@ -85,7 +85,7 @@ class EmailMoodule{
 		
 		if($user_email!= ''){
 			$wl_mailer->add_address($user_email,'');
-			$wl_mailer->add_address('office@weblab.co.rs','');
+			$wl_mailer->add_address('dev@weblab.co.rs','');
 			$wl_mailer->add_image("public/images/mailer/company_logo.png", "company_logo", "company_logo.png");
 			$wl_mailer->add_image("files/qr_codes/".$card->card_number.".png", "qr_code", "company_logo.png");
 		}

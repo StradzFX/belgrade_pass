@@ -124,9 +124,13 @@ function initMap() {
 }*/
 
 var blanko_pin = '';
-
+var markerClusters = null;
 
 function populate_markers(){
+	if(markerClusters){
+		markerClusters.clearLayers();
+	}
+	
   	var marker_image = '<?php echo $base_url; ?>public/images/markers/m1.png';
 
   	var myIcon = L.icon({
@@ -139,7 +143,7 @@ function populate_markers(){
 
 
   	map_marker_list = new Array();
-	var markerClusters = L.markerClusterGroup(
+	markerClusters = L.markerClusterGroup(
 		{
 			iconCreateFunction: function (cluster) {
 			var childCount = cluster.getChildCount();
