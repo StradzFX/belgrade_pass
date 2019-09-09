@@ -39,16 +39,19 @@ for($i=0;$i<sizeof($transactions_all);$i++){
 	if($transactions_all[$i]->transaction_type == 'purchase_post_office'){
 		$transactions_all[$i]->purchase = $broker->get_data(new purchase($transactions_all[$i]->tranaction_id));
 		$transactions_all[$i]->status = $transactions_all[$i]->purchase->checker == '' ? 'Nije plaćen' : 'Plaćen';
+		$transactions_all[$i]->status_css = $transactions_all[$i]->purchase->checker != '' ? 'green' : 'red';
 	}
 
 	if($transactions_all[$i]->transaction_type == 'purchase_card'){
 		$transactions_all[$i]->purchase = $broker->get_data(new purchase($transactions_all[$i]->tranaction_id));
 		$transactions_all[$i]->status = $transactions_all[$i]->purchase->checker == '' ? 'Nije plaćen' : 'Plaćen';
+		$transactions_all[$i]->status_css = $transactions_all[$i]->purchase->checker != '' ? 'green' : 'red';
 	}
 
 	if($transactions_all[$i]->transaction_type == 'purchase_company'){
 		$transactions_all[$i]->purchase = $broker->get_data(new purchase($transactions_all[$i]->tranaction_id));
 		$transactions_all[$i]->status = $transactions_all[$i]->purchase->checker == '' ? 'Nije plaćen' : 'Plaćen';
+		$transactions_all[$i]->status_css = $transactions_all[$i]->purchase->checker != '' ? 'green' : 'red';
 	}
 }
 
@@ -69,6 +72,7 @@ for($i=0;$i<sizeof($accepted_passes_all);$i++){
 	if($accepted_passes_all[$i]->purchase != ''){$accepted_passes_all[$i]->purchase = $broker->get_data(new purchase($accepted_passes_all[$i]->purchase));}
 	if($accepted_passes_all[$i]->training_school != ''){$accepted_passes_all[$i]->company = $broker->get_data(new training_school($accepted_passes_all[$i]->training_school));}
 	if($accepted_passes_all[$i]->user != ''){$accepted_passes_all[$i]->user = $broker->get_data(new user($accepted_passes_all[$i]->user));}
+	if($accepted_passes_all[$i]->company_location != ''){$accepted_passes_all[$i]->company_location = $broker->get_data(new ts_location($accepted_passes_all[$i]->company_location));}
 
 	$accepted_passes_all[$i]->display_date = date('d.m.Y. H:i:s',strtotime($accepted_passes_all[$i]->makerDate));
 }

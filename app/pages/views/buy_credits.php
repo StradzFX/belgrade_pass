@@ -42,6 +42,11 @@ $(function(){
     $("#ex1SliderVal").text(slideEvt.value);
     selected_amount = slideEvt.value;
   });
+
+  $("#ex1").on("slideStop", function(slideEvt) {
+    $("#ex1SliderVal").text(slideEvt.value);
+    selected_amount = slideEvt.value;
+  });
 });
 
 var selected_amount = 2500;

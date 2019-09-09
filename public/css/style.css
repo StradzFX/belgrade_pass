@@ -189,14 +189,16 @@ body {
 .my-account .wrapper-main .btn {
   text-decoration: none;
   margin: 0 25px 0 0; }
+  @media (max-width: 768px) {
+    .my-account .wrapper-main .btn {
+      margin: 0;
+      font-size: 12px;
+      padding: 3px 5px; } }
 
 .my-account .wrapper-main .btn:hover {
   text-decoration: none;
   color: #fff; }
 
-@media (max-width: 767px) {
-  .my-account .wrapper-main .btn {
-    margin: 25px 0 0 0; } }
 .my-account .wrapper-main .item {
   margin: 15px 0 0 0; }
 
@@ -1931,7 +1933,7 @@ body {
 
 @media (max-width: 768px) {
   .page_content {
-    padding-top: 40px; } }
+    padding-top: 0px !important; } }
 .page_content.payment-transaction {
   background-color: #e6e6e6; }
 
@@ -2125,6 +2127,9 @@ body {
 
 .user_menu {
   padding: 10px 0px; }
+  @media (max-width: 768px) {
+    .user_menu {
+      padding: 0px; } }
   .user_menu a {
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -2147,7 +2152,12 @@ body {
     @media (max-width: 768px) {
       .user_menu a {
         font-size: 10px;
-        margin: 0 0 0 5px; } }
+        margin: 0 0 0 5px;
+        width: 100%;
+        border-radius: 0px;
+        margin: 0px !important;
+        background-color: #ff6f75;
+        padding: 10px; } }
     .user_menu a:hover {
       -webkit-transition: all 0.3s ease-in-out;
       -moz-transition: all 0.3s ease-in-out;
@@ -2242,6 +2252,10 @@ body {
   margin-top: 10px; }
   .user_data .hello span {
     font-weight: bold; }
+.user_data .paying_option_box .green {
+  color: green; }
+.user_data .paying_option_box .red {
+  color: red; }
 .user_data .location_home_instructions {
   text-align: center;
   padding: 50px 0px; }
