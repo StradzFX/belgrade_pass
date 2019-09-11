@@ -49,7 +49,7 @@
 													<b>Šifra kartice</b>
 												</div>
 												<div>
-													<input type="password" name="purchase_card_password" autocomplete="new-password" value="<?php echo $_GET['approval_code']; ?>">
+													<input type="text" name="purchase_card_password" autocomplete="new-password" value="<?php echo $_GET['approval_code']; ?>" id="txtPassword">
 												</div>
 											</div>
 
@@ -146,3 +146,9 @@
 	});
 </script>
 	
+
+	<style>
+       #txtPassword{
+           -webkit-text-security:disc;
+       }
+   </style>
