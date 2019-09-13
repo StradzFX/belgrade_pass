@@ -2,7 +2,6 @@
 global $broker;
 $data = $post_data['data'];
 $list = PaymentModule::list_payments_admin('post_office',$data['post_office_name_search'], null, $data['post_office_by_number_search'], $data['post_office_dateFrom_search'], $data['post_office_dateTo_search'], $data['post_office_status_search'], $data['post_office_acc_search'])
-
 ?>
 
 

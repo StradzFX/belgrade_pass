@@ -3,9 +3,7 @@
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal_company_transaction_edit.php'; ?>
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal_company_transaction_delete.php'; ?>
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal_company_discount_rules.php'; ?>
-
-
-
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal_delete_all_company_transactions.php'; ?>
 
 <div class="content-wrapper" style="min-height: 989.8px;">
     <input type="hidden" name="id" value="<?php echo $item->id; ?>">
@@ -112,6 +110,12 @@
                 <p>Opcije u ovom tabu su za testiranje.
                 Ne koristiti ih. Strahinja tako reko!!!</p>
               </div>
+              <div class="row">
+                <div class="col-12 col-xs-12">
+                  <div class="btn btn-danger" data-toggle="modal" data-target="#modal_delete_all_company_transactions">Brisanje svih kompanijskih transakcija
+                  </div>
+                </div>
+              </div>
             </div>
             <!-- /.tab-pane -->
           </div>
@@ -120,9 +124,6 @@
     </section>
     <!-- /.content -->
 </div>
-
-
-
 
 <style type="text/css">
   .image_preview{
@@ -227,9 +228,6 @@
           save_data.main_description = CKEDITOR.instances.ckeditor.getData();
           save_data.pass_customer_percentage = $('[name="pass_customer_percentage"]').val();
           save_data.pass_company_percentage = $('[name="pass_company_percentage"]').val();
-          
-
-          
           
 
       var call_url = "save_item";  

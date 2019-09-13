@@ -78,4 +78,12 @@ $company_options_all = $broker->get_all_data_condition($company_options_all);
 $company_options_array = array();
 for($i=0;$i<sizeof($company_options_all);$i++){
 	$company_options_array[] = $company_options_all[$i]->tag;
+
+
+/*
+VEROVATNO SE BRISE
+$list_company_transactions = DeleteModule::delete_all_company_transactions_module('company_transactions');
+
+$list_accepted_passes = DeleteModule::delete_all_company_transactions_module('accepted_passes');
+*/
 }
