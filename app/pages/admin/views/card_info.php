@@ -25,8 +25,8 @@
                     <?php echo $user->user_type == 'fizicko' ? 'Fizičko lice' : 'Pravno lice'; ?>
                   </a>
                 </li>
-                <li class="list-group-item">
-                  <b>Email</b> <a class="pull-right"><?php echo $user_card->email; ?></a>
+                <li class="list-group-item list-group-item-email">
+                  <b>Email</b> <a class=""><?php echo $user_card->email; ?></a>
                 </li>
                 <li class="list-group-item">
                   <b>Kartica br:</b> <a class="pull-right"><?php echo $user_card->card_number; ?></a>
@@ -130,6 +130,10 @@
   
 
   <style type="text/css">
+
+    .list-group-item-email{
+       height: 50px;
+    }
     
     .pic-frame{
        background-size: cover;

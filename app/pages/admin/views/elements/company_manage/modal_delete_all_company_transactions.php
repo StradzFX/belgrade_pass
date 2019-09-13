@@ -40,6 +40,7 @@
       if(odgovor.success){
           alert(odgovor.message);
           get_list_of_transactions_with_companies();
+          get_list_of_company_cards_payments()
           $('#modal_delete_all_company_transactions').modal('hide');
       }
     }
