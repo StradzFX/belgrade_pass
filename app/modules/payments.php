@@ -2,8 +2,9 @@
 
 class PaymentModule{
 
-	public static function list_payments_admin($payment_type=null,$search_term=null,$limit=null){
+	public static function list_payments_admin($payment_type=null,$search_term=null,$limit=null, $search_number='', $search_dateFrom='', $search_dateTO='', $search_status='', $search_acc=''){
 		global $broker;
+
 
 		$list = new purchase();
 		$list->add_condition('recordStatus','=','O');
@@ -12,8 +13,60 @@ class PaymentModule{
 		}
 
 		if($search_term){
-			$list->add_condition('','',"(id = $search_term OR po_name LIKE '%$search_term%')");
+			if(is_numeric($search_term)){
+				$list->add_condition('','',"(po_name LIKE '%".$search_term."%'
+					OR po_payment_name LIKE '%".$search_term."%' OR id LIKE
+				'%".$search_term."%')");
+			}
+
+			if(!is_numeric($search_term)){
+				//$list->add_condition('po_name','LIKE','%'.$search_term.'%');
+				$list->add_condition('','',"(po_name LIKE '%".$search_term."%' OR po_payment_name LIKE '%".$search_term."%')");
+			}
 		}
+
+		if($search_number){
+			if(is_numeric($search_number)){
+				/*
+				('id', '=', $search_number);
+				U ovom slucaju moramo napisati tacan broj inace necemo dobiti rezultat posto upit pretrazuje tacan broj
+				*/
+				$list->add_condition('', '', "(id LIKE '%".$search_number."%')");
+			}
+			if(!is_numeric($search_number)){
+				echo 'Morate uneti broj';
+			}
+		}
+
+		if ($search_dateFrom){
+			$list->add_condition('', '', "(start_date >= '$search_dateFrom' AND start_date <= '$search_dateTO')");
+		}
+
+		if($search_status != ''){
+			if ($search_status == 'yes') {
+				$list->add_condition('checker', '!=', '');
+			}
+
+			if ($search_status == 'no') {
+				$list->add_condition('checker', '=', '');
+			}
+		}
+		
+
+		if ($search_acc) {
+			if ($search_acc == '') {
+			}elseif ($search_acc == 'yes' ) {
+				$list->add_condition('po_payment_name', '!=', '');
+			}else{
+				if ($search_acc == 'no') {
+					$list->add_condition('po_payment_name', '=', '');
+				}
+			}
+		}
+		
+
+
+
 		$list->set_order_by('id','DESC');
 		if($limit){
 			$list->set_limit($limit);
@@ -21,7 +74,7 @@ class PaymentModule{
 		}else{
 			$list = $broker->get_all_data_condition($list);
 		}
-		
+
 
 		foreach ($list as $key => $value) {
 			$list[$key]->user = $broker->get_data(new user($list[$key]->user));
@@ -33,11 +86,10 @@ class PaymentModule{
 				$list[$key]->company = $broker->get_data(new training_school($list[$key]->company_flag));
 			}
 		}
-
 		return $list;
 	}
 
-
+	
 	public static function save_admin_payment($data){
 		global $broker;
 
