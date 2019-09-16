@@ -24,17 +24,17 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="row">
-                <div class="col col-sm-2">
+                <div class="col col-sm-3">
                   Date From:<br/>
                   <input type="date" class="form-control" value="<?php echo $filter_date_from; ?>" name="date_from" onchange="get_report_card_usage()">
                 </div>
 
-                <div class="col col-sm-2">
+                <div class="col col-sm-3">
                   Date To:<br/>
                   <input type="date" class="form-control" value="<?php echo $filter_date_to; ?>" name="date_from" onchange="get_report_card_usage()">
                 </div>
 
-                <div class="col col-sm-2">
+                <div class="col col-sm-3">
                   Company:<br/>
                   <select name="company" class="form-control" onchange="get_report_card_usage()">
                     <option value="">Select company</option>
@@ -44,7 +44,7 @@
                   </select>
                   </div>
 
-                <div class="col col-sm-2">
+                <div class="col col-sm-3">
                     User Email or Full Name:<br/>
                     <input type="text" class="form-control" value="" name="user_search" onkeyup="get_report_card_usage()">
                 </div>

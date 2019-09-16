@@ -24,7 +24,6 @@ for($i=0;$i<sizeof($list);$i++){
   $list[$i]->transaction_type = $list[$i]->transaction_type == 'credit' ? 'Payment to company' : 'Payment from company';
 }
 
-
 ?>
 <table class="table table-striped all_items">
   <tbody><tr>

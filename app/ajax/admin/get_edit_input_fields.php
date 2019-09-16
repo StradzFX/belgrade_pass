@@ -20,7 +20,6 @@ $item = $broker->get_data($item);
       <option value="credit" <?php if('credit' == $item->transaction_type){ ?>selected="selected"<?php } ?>>Payment to company</option>
     </select>
   </div>
-
   <div class="form-group">
     <label for="field_name">Value</label>
     <input type="text" class="form-control" name="edit_transaction_value" id="transaction_value" placeholder="Enter value (e.g. 1000)" value="<?php echo $item->transaction_value; ?>">

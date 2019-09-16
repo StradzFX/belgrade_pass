@@ -41,7 +41,7 @@ for ($i=0;$i<sizeof($list);$i++) {
     <tr>
       <th>#</th>
       <th>Date:</th>
-      <th>Location</th>s
+      <th>Location</th>
       <th>Card Number</th>
       <th>User</th>
       <th>Total price</th>

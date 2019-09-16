@@ -17,8 +17,8 @@ d<?php include_once 'app/pages/admin/views/elements/company_manage/modal-user-de
                 <li class="list-group-item">
                   <b>Tip Korisnika</b> <a class="pull-right">Fizičko lice</a>
                 </li>
-                <li class="list-group-item">
-                  <b>Email</b> <a class="pull-right"><?php echo $user->email; ?></a>
+                <li class="list-group-item" style="height: 50px">
+                  <b>Email</b> <a class="" ><?php echo $user->email; ?></a>
                 </li>
                 <li class="list-group-item">
                   <b>Kartica br:</b> <a class="pull-right"><?php echo $user_card->card_number; ?></a>
@@ -66,7 +66,7 @@ d<?php include_once 'app/pages/admin/views/elements/company_manage/modal-user-de
                     </div>
                   </div>
                   <div class="col-12 col-xs-12">
-                    <div class="form-group">
+                    <div class="form-group list-group-item-email">
                       <label for="mail">Email</label>
                       <input type="text" name="mail" id="mail" class="form-control" value="<?php echo $user->email; ?>">
                     </div>
@@ -132,6 +132,10 @@ d<?php include_once 'app/pages/admin/views/elements/company_manage/modal-user-de
   </div>
 
   <style type="text/css">
+
+    .list-group-item-email{
+       height: 50px;
+    }
     
     .pic-frame{
        background-size: cover;

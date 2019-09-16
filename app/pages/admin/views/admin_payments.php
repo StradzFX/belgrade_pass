@@ -22,26 +22,6 @@
               </div>
             </div>
             <div class="col-12 col-xs-4">
-              <div class="form-group">
-                <label>Odobreno</label>
-                <select class="form-control">
-                  <option>--</option>
-                  <option>Da</option>
-                  <option>Ne</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-12 col-xs-4">
-              <div class="form-group">
-                <label>Za računovodstvo</label>
-                <select class="form-control">
-                  <option>--</option>
-                  <option>Spremni</option>
-                  <option>Nepopunjeni</option>
-                </select>
-              </div>
-            </div>
-            <div class="col-12 col-xs-4">
               <label>Date From:</label> 
               <input type="date" class="form-control" value="2019-04-02" name="date_from" onchange="get_company_transactions()">
             </div>
