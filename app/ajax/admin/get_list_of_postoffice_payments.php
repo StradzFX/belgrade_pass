@@ -1,3 +1,6 @@
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal_recall_post_office_transaction.php'; ?>
+
+
 <?php
 global $broker;
 $data = $post_data['data'];
@@ -7,13 +10,14 @@ $list = PaymentModule::list_payments_admin('post_office',$data['post_office_name
 
 <table class="table table-striped">
   <tbody><tr>
-    <th style="width: 100px;">Purchase no.</th>
+    <th style="width: 50px;">Purchase no.</th>
     <th>Price</th>
     <th>Card number</th>
     <th>Email</th>
     <th>User name</th>
     <th>Transaction date</th>
-    <th style="width: 150px">Actions</th>
+    <th>Status</th>
+    <th style="width: 175px">Actions</th>
   </tr>
   <?php for ($i=0; $i < sizeof($list); $i++) { ?>
     <tr>
@@ -24,19 +28,37 @@ $list = PaymentModule::list_payments_admin('post_office',$data['post_office_name
       <td><?php echo $list[$i]->po_payment_name;?></td>
       <td><?php echo $list[$i]->po_payment_date;?></td>
       <td>
-
+        
+        <?php if($list[$i]->status != 'Approved'){ ?>
+          <span class="label label-danger">Not Approved</span>
+        <?php }else{ ?>
+          <span class="label label-success">Approved</span>
+        <?php } ?>
+      </td>
+      <td>
         <?php if($list[$i]->status != 'Approved'){ ?>
         <a href="javascript:void(0)">
-          <div class="btn btn-default" data-toggle="modal" data-target="#modal_approve_post_office_payment"
+          <div class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_approve_post_office_payment"
           onclick="set_approve_id(<?php echo $list[$i]->id; ?>)" >
             <i class="fa fa-thumbs-up" title="Approve"></i>
           </div>
         </a>
         <?php }else{ ?>
-        <div class="btn btn-primary" disabled>
-          <i class="fa fa-thumbs-up" title="Approved"></i>
-        </div>
+          <a href="javascript:void(0)">
+            <div class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_recall_post_office_transaction"
+            onclick="set_post_office_transaction_id(
+                <?php echo $list[$i]->id;?>)" >
+              <i class="fas fa-redo-alt" title="Recall"></i>
+            </div>
+          </a>
         <?php } ?>
+        <a href="post_office_single_payment_details/<?php echo $list[$i]->id; ?>">
+          <div type="button "class="btn btn-primary"
+          onclick="" >
+            <i class="fas fa-info" title="Info" ></i>
+          </div>
+        </a>
+ 
         
 
         <?php /*<a href="categories_manage/<?php echo $list[$i]->id; ?>">
@@ -54,6 +76,14 @@ $list = PaymentModule::list_payments_admin('post_office',$data['post_office_name
     /*Prilikom poziva funkcije u kodu iznad prosledjujes(echo) id (post office transakcije) koji je ranije povucen iz baze i ispisan u tabeli.
     Funkcija uzima vrednost i dodeljuje je approve_id-ju i to je to.
      */
+  }
+
+  function  set_post_office_transaction_id(id){
+    $('[name="recall_id"]').val(id);
+
+  }
+  function  set_detail_office_transaction_id(id){
+    $('[name="single_payment_id"]').val(id);
   }
 
 </script>

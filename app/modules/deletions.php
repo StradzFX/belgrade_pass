@@ -15,6 +15,17 @@ class DeleteModule{
 		$broker->execute_query($SQL_company_transactions);
 		$broker->execute_query($SQL_accepted_passes);
 	}
+
+
+	public static function recall_company_transaction_module($id){
+		
+		global $broker;
+
+		$SQL_credits_to_recall = "UPDATE purchase SET checker = '', po_payment_date = '', po_payment_name = '' WHERE id = '".$id."'";
+
+		$broker->execute_query($SQL_credits_to_recall);
+
+	}
 }
 
 ?>

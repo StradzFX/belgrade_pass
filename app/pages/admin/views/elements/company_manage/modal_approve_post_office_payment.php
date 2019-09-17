@@ -68,5 +68,5 @@ function approve_post_office(){
 
         }  
         ajax_json_call(call_url, call_data, callback); 
-      }
+      }    
 </script>
