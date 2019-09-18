@@ -1,5 +1,10 @@
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal-user-delete.php';?>
 <?php include_once 'app/pages/admin/views/elements/company_manage/modal_repeat_transaction.php';?>
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal_approve_post_office_payment.php';?>
+<?php include_once 'app/pages/admin/views/elements/company_manage/modal_recall_post_office_transaction.php';?>
+
+
+
 
 
 <div class="content-wrapper" style="min-height: 960px;">
@@ -20,7 +25,7 @@
               <h3 class="profile-username text-center"><i class="fa fa-user"></i> Podaci o uplati</h3>
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                  <b>Id transakcije</b> <a class="pull-right">
+                  <b>Id transakcije</b> <a class="pull-right" name="single_id">
                     <?php echo $list->id ?>
                   </a>
                 </li>
@@ -42,25 +47,23 @@
                 </li>
               </ul>
               <div>
-                
-              </div>
-              <a href="users_manage/<?php echo $list->user; ?>/" class="btn btn-warning btn-block"><b>Pogledaj korisnika</b></a>
+                <a href="users_manage/<?php echo $list->user; ?>/" class="btn btn-warning btn-block"><b>Pogledaj korisnika</b></a>
 
-            
-             
-  <!--<?php if ($list[$i]->status != 'Approved'){ ?>
-                <a href="javascript:void(0)" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal_approve_post_office_payment" onclick="set_approve_id(<?php echo $list[$i]->id; ?>)"><b>Odobri transakciju</b></a>
-              <?php }else{ ?>
-                 <a href="#" class="btn btn-danger btn-block" data-toggle="modal" data-target="#modal_recall_post_office_transaction" onclick="set_post_office_transaction_id(
-                <?php echo $list[$i]->id;?>)"><b>Opozovi transakciju</b></a>
-               <?php } ?>
-            -->
+<?php if ($list->checker == ''){ ?>
+    <a href="javascript:void(0)" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal_approve_post_office_payment" onclick="set_approve_id(<?php echo $list->id; ?>)"><b>Odobri transakciju</b></a>
+<?php }else{ ?>
+     <a href="#" class="btn btn-danger btn-block" data-toggle="modal" data-target="#modal_recall_post_office_transaction" onclick="set_post_office_transaction_id(
+    <?php echo $list->id;?>)"><b>Opozovi transakciju</b></a>
+<?php } ?>
+
+              </div>
             </div>
             <!-- /.box-body -->
           </div>
         </div>
         <!-- /.col -->
         <div class="col-md-9">
+         
           <div class="box box-primary">
             <div class="box-body">
               <div class="row">
@@ -121,6 +124,12 @@
 </style>
 
 <script type="text/javascript">
+  function set_approve_id(id){
+    $('[name="approve_id"]').val(id);
+    /*Prilikom poziva funkcije u kodu iznad prosledjujes(echo) id (post office transakcije) koji je ranije povucen iz baze i ispisan u tabeli.
+    Funkcija uzima vrednost i dodeljuje je approve_id-ju i to je to.
+     */
+  }
 
 function get_single_payment_picture(){
       var data={};
@@ -134,6 +143,11 @@ function get_single_payment_picture(){
       }
       ajax_call(call_url, call_data, call_back);
     }
+
+    function  set_post_office_transaction_id(id){
+    $('[name="recall_id"]').val(id);
+
+  }
 
 $(function(){
   get_single_payment_picture();

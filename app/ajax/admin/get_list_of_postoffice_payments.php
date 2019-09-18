@@ -34,6 +34,7 @@ $list = PaymentModule::list_payments_admin('post_office',$data['post_office_name
         <?php }else{ ?>
           <span class="label label-success">Approved</span>
         <?php } ?>
+
       </td>
       <td>
         <?php if($list[$i]->status != 'Approved'){ ?>

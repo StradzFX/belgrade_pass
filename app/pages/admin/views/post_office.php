@@ -218,7 +218,6 @@
               }
 
 
-
     function get_list_of_postoffice_payments(){
       var data={};
           data.id=$('[name="id"]').val();
