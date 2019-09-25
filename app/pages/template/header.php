@@ -122,6 +122,17 @@ var a2a_config=a2a_config||{};a2a_config.callbacks=a2a_config.callbacks||[];a2a_
 
 <link href="https://fonts.googleapis.com/css?family=Armata&display=swap" rel="stylesheet">
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44137778-16"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-44137778-16');
+</script>
+
+
 </head>
 <body class="<?php echo $body_classes; ?>" data-mapbox-token="" data-mapbox-style="mapbox.emerald">
 <?php include_once 'app/pages/template/registration_popup.php'; ?>

@@ -11,7 +11,7 @@
                     <div class="login_option">
                       <div class="content">
                           <div class="form_field">
-                            <div class="field_title">Username:</div>
+                            <div class="field_title">Korisničko ime:</div>
                             <div class="field_component">
                               <input name="email_login" value="<?php echo $kompanija; ?>" id="email_login" type="text" />
                             </div>

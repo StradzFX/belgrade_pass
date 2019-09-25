@@ -28,11 +28,11 @@
 								<?php for ($i=0; $i < sizeof($card_list); $i++) { ?> 
 								<tr>
 									<td><?php echo $card_list[$i]->card_number; ?></td>
-									<td>0</td>
+									<td><?php echo $card_list[$i]->balance; ?></td>
 									<td><?php echo $card_list[$i]->parent_first_name; ?> <?php echo $card_list[$i]->parent_last_name; ?></td>
 									<td><?php echo $card_list[$i]->email; ?></td>
 									<td>
-										<a class="btn" href="buy_company_credits/">Uplati kredit</a>
+										<a class="btn" href="assign_company_credits/<?php echo $card_list[$i]->id; ?>">Dodaj kredit</a>
 									</td>
 								</tr>
 								<?php } ?>

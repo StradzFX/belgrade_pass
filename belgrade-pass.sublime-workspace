@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"sele",
+				"selected_amount\t(assign_company_credits.php)"
+			],
+			[
+				"hid",
+				"hidden\t(registracija.php)"
+			],
+			[
+				"reg",
+				"reg_user\tabc"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"random_registration_",
+				"random_registration_legal_user\tabc"
+			],
+			[
 				"include",
 				"include_once"
 			],
@@ -14,10 +34,6 @@
 			[
 				"de",
 				"description\t(registracija.php)"
-			],
-			[
-				"var",
-				"var_dump\t(copy_domain_class_ajax.php)"
 			],
 			[
 				"exec",
@@ -498,50 +514,17 @@
 			[
 				"json",
 				"json_encode"
-			],
-			[
-				"zip",
-				"zip_city"
-			],
-			[
-				"zi",
-				"zip_city"
-			],
-			[
-				"phone",
-				"phone"
-			],
-			[
-				"id",
-				"id"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/brain/controllers/RegistracijaController.php",
+			"file": "app/pages/views/company_panel.php",
 			"settings":
 			{
-				"buffer_size": 440,
+				"buffer_size": 2783,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/brain/controllers/MasterController.php",
-			"settings":
-			{
-				"buffer_size": 746,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/pages/logic/registracija.php",
-			"settings":
-			{
-				"buffer_size": 473,
 				"line_ending": "Windows"
 			}
 		}
@@ -598,14 +581,46 @@
 	},
 	"expanded_folders":
 	[
+		"/D/wamp/www/Xenon3/websites/belgrade_pass",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views"
 	],
 	"file_history":
 	[
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules/payments.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/header_home.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/header.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/company/home/company_home.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/buy_credits_legal.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules/cards.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/assign_company_credits_to_user.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/logic/profile.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/logic/assign_company_credits.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/company_approval.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/my_card.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/logic/my_card.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/buy_credits_company.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/assign_company_credits.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/users_manage/get_user_deposits.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/user_menu.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules/AdminControlPanelModule.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/users_manage.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/get_list_of_postoffice_payments.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/user_new_card.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/create_cards.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/website_registration.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/registracija.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/registration_popup.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules/emails.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/mailer/html/content_registration_pravno.html",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/mailer/html/content_buy_credits_pravno.html",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/admin_control_panel.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/brain/controllers/MasterController.php",
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/brain/controllers/RegistracijaController.php",
 		"/D/wamp/www/Xenon3/js/ajax_call.js",
 		"/D/wamp/www/Xenon3/all_websites.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/logic/procedure_testing.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules/cards.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/company_approval.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/sql/1568031389_create_procedure_get_purchases_by_user.sql",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/procedure_testing.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/sql/1568030483_update_purchase.sql",
@@ -618,7 +633,6 @@
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/approve_post_office.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/buy_credits_personal.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/save_passes.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules/emails.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/search.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/user/transactions/approved_passes.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/transaction_details.php",
@@ -631,27 +645,21 @@
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/public/sass/_design.scss",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/company/home/retail_home.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/profile.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules/AdminControlPanelModule.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/admin_control_panel.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/logic/profile.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/public/js/admin_control_panel.js",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin_control_panel/retail_user_login.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin_control_panel/retail_user_logout.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/registracija.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/resetuj_lozinku.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/forgot_password.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/zameni_lozinku.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/mailer/html/content_forget_password.html",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/vendor/phpmailer/wl_mailer.class.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/vendor/phpmailer/mail_config.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/header_home.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/php/pages.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin_control_panel/admin_company_login.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin_control_panel/admin_company_logout.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/admin_payments_create.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/elements/company_manage/tab_company_info.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/controllers/krypton_admin.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/header.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/mailer/html/content_taken_pass_customer.html",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/validate_card.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/logic/admin_payments_create.php",
@@ -677,13 +685,10 @@
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/card_info/send_user_email_pin.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/elements/company_manage/modal_user_send_pin.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/card_info/save_card_deposit.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/modules/payments.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/elements/company_manage/modal_user_add_card_credit.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/card_info/save_card_user_data.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/users_manage/save_user_data.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/users_manage.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/card_info/get_card_payments.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/users_manage/get_user_deposits.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/logic/users_manage.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/logic/card_info.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/admin/views/report_card_usage.php",
@@ -710,35 +715,19 @@
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/presentation/company/gallery.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/presentation/company/slider.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/presentation/company/breadcrumb.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/presentation/company/categories.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/presentation/company/details.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/public/sass/_style_v2.scss",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/logic/rodjendani.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/logic/companies.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/logic/coaches.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/logic/category.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/school_insert_location.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/ajax/admin/school_remove_location.php",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/template/admin/header_menu.php",
-		"/D/wamp/www/Xenon3/websites/delta_polovni_automobili/app/pages/views/elements/car_preview.php",
-		"/D/wamp/www/Xenon3/websites/delta_polovni_automobili/public/sass/_design.scss",
-		"/D/wamp/www/Xenon3/websites/delta_polovni_automobili/app/pages/template/header.php",
-		"/D/wamp/www/Xenon3/websites/delta_polovni_automobili/php/cron.php",
-		"/D/wamp/www/Xenon3/websites/delta_polovni_automobili/app/pages/views/automobil.php",
-		"/D/wamp/www/Xenon2.1_Production/websites/kupon_diler/app/pages/templates/general_header.php",
-		"/D/wamp/www/Xenon3/websites/delta_polovni_automobili/app/pages/logic/proizvodjaci.php",
-		"/D/wamp/www/Xenon3/websites/delta_polovni_automobili/public/js/ajax_call.js",
-		"/D/wamp/www/Xenon3/websites/delta_polovni_automobili/app/pages/views/elements/otkup_vozila.php"
+		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/elements/presentation/company/categories.php"
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 52.0
 	},
 	"find_in_files":
 	{
 		"height": 156.0,
 		"where_history":
 		[
+			"D:\\wamp\\www\\Xenon3\\websites\\belgrade_pass\\app\\pages\\template",
+			"D:\\wamp\\www\\Xenon3\\websites\\belgrade_pass\\app\\pages\\views",
 			"D:\\wamp\\www\\Xenon3\\websites\\belgrade_pass\\app",
 			"D:\\wamp\\www\\Xenon3\\websites\\belgrade_pass\\php",
 			"D:\\wamp\\www\\Xenon3\\websites\\belgrade_pass\\app",
@@ -864,9 +853,7 @@
 			"D:\\wamp\\www\\upoznavanje_radi_braka\\upoznavanje-angular\\src\\app",
 			"D:\\wamp\\www\\upoznavanje_radi_braka\\upoznavanje-angular\\src\\app\\services",
 			"D:\\wamp\\www\\upoznavanje_radi_braka\\upoznavanje-angular\\src\\app\\modules",
-			"D:\\wamp\\www\\custom\\titan_fitness",
-			"D:\\wamp\\www\\custom\\titan_fitness\\wp-includes",
-			"D:\\wamp\\www\\custom\\titan_fitness\\wp-content\\themes"
+			"D:\\wamp\\www\\custom\\titan_fitness"
 		]
 	},
 	"find_state":
@@ -874,6 +861,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"ex2",
+			"create_card_legal",
+			"selected_amount",
+			"ex1SliderVal",
+			"random_registration_legal_user",
+			"random_registration_user",
 			"END",
 			"office@weblab.co.rs",
 			"markers",
@@ -995,13 +988,7 @@
 			"account_delete_mailer",
 			"account_deactivation_mailer",
 			"delete",
-			"admin_de",
-			"deactiva",
-			"delete",
-			"Modal",
-			"Delete",
-			"ModalDelteAccount",
-			"../.."
+			"admin_de"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1152,86 +1139,32 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app/brain/controllers/RegistracijaController.php",
+					"file": "app/pages/views/company_panel.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 440,
+						"buffer_size": 2783,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								62,
-								62
+								598,
+								598
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/brain/controllers/MasterController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 746,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								671,
-								671
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/pages/logic/registracija.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 473,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								473,
-								6
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -1300,7 +1233,7 @@
 	"project": "belgrade-pass.sublime-project",
 	"replace":
 	{
-		"height": 53.0
+		"height": 93.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1324,7 +1257,7 @@
 		[
 			[
 				"",
-				"D:\\wamp\\www\\Xenon2.1_Production\\websites\\kupon_diler\\KuponDiler.sublime-project"
+				"D:\\wamp\\www\\Xenon3\\websites\\WEB LAB.sublime-project"
 			]
 		],
 		"width": 475.0

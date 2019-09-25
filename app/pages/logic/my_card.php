@@ -20,6 +20,7 @@ $reg_user = $broker->get_session('user');
 
 $card_list = new user_card();
 $card_list->set_condition('checker','!=','');
+$card_list->set_condition('checker','!=','company');
 $card_list->add_condition('recordStatus','=','O');
 $card_list->add_condition('user','=',$reg_user->id);
 $card_list->set_order_by('pozicija','DESC');
@@ -36,6 +37,8 @@ for ($i=0; $i < sizeof($card_list); $i++) {
 		$card_list[$i]->partner = $broker->get_data(new training_school($card_list[$i]->partner_id));
 		$card_list[$i]->card_status = 'Preuzeti kod patnera "<b>'.$card_list[$i]->partner->name.'</b>"';
 	}
+
+	$card_list[$i]->balance = CardModule::get_card_credits($card_list[$i]);
 }
 
 $preselected_package = null;

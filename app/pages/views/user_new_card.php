@@ -23,9 +23,6 @@
 										Email
 									</div>
 									<div class="col-12 col-sm-2">
-										Kredita na kartici
-									</div>
-									<div class="col-12 col-sm-2">
 										&nbsp;
 									</div>
 								</div>
@@ -55,9 +52,6 @@ var row_template = '<div class="row new_user_row row_{id}">\
 						</div>\
 						<div class="col-12 col-sm-2">\
 							<input type="text" class="form-control" placeholder="Email" name="email">\
-						</div>\
-						<div class="col-12 col-sm-2">\
-							<input type="text" class="form-control" id="credit_{id}" placeholder="Kredit" name="credits" data-slider-id="credit_{id}" type="text" data-slider-min="500" data-slider-max="10000" data-slider-step="500" data-slider-value="2500">\
 						</div>\
 						<div class="col-12 col-sm-2">\
 							<a href="javascript:void(0)" onclick="remove_row({id})" class="btn">\

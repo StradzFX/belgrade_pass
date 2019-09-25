@@ -22,7 +22,8 @@
 
 
 	$test_cards = AdminControlPanelModule::get_testing_cards();
-	$random_registration_user = AdminControlPanelModule::get_randon_user_registration_data();
+	$random_registration_user = AdminControlPanelModule::get_random_user_registration_data();
+	$random_registration_legal_user = AdminControlPanelModule::get_random_legal_user_registration_data();
 
 
 	if(!$_SESSION['user']){
@@ -171,6 +172,16 @@
 		$('[name="email"]').val('<?php echo $random_registration_user["email"]; ?>');
 		$('[name="lozinka"]').val('<?php echo $random_registration_user["password"]; ?>');
 		$('[name="potvrdi_lozinku"]').val('<?php echo $random_registration_user["password"]; ?>');
+
+
+		//RANDOM LEGAL USER REGISTRATION
+		$('#pravno').find('[name="naziv"]').val('<?php echo $random_registration_legal_user["company_name"]; ?>');
+		$('#pravno').find('[name="adresa"]').val('<?php echo $random_registration_legal_user["company_address"]; ?>');
+		$('#pravno').find('[name="pib"]').val('<?php echo $random_registration_legal_user["company_pib"]; ?>');
+		$('#pravno').find('[name="maticni"]').val('<?php echo $random_registration_legal_user["company_maticni"]; ?>');
+		$('#pravno').find('[name="email"]').val('<?php echo $random_registration_legal_user["company_email"]; ?>');
+		$('#pravno').find('[name="lozinka"]').val('<?php echo $random_registration_legal_user["password"]; ?>');
+		$('#pravno').find('[name="potvrdi_lozinku"]').val('<?php echo $random_registration_legal_user["password"]; ?>');
 	});
 </script>
 <?php } ?>

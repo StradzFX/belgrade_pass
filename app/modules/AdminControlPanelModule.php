@@ -37,7 +37,20 @@ class AdminControlPanelModule{
 		return $user_card_all;
 	}
 
-	public static function get_randon_user_registration_data(){
+	public static function get_random_legal_user_registration_data(){
+		$user = array();
+		$random_number = time();
+		$user['company_name'] = 'company_'.$random_number;
+		$user['company_address'] = 'street_'.$random_number;
+		$user['company_pib'] = 'pib_'.$random_number;
+		$user['company_maticni'] = 'maticni_'.$random_number;
+		$user['company_email'] = 'company_'.$random_number.'@gmail.com';
+		$user['password'] = '123456';
+
+		return $user;
+	}
+
+	public static function get_random_user_registration_data(){
 		$user = array();
 		$random_number = time();
 		$user['first_name'] = 'name_'.$random_number;
@@ -54,7 +67,7 @@ class AdminControlPanelModule{
 		$list = new user();
 		$list->set_condition('checker','!=','');
 		$list->add_condition('recordStatus','=','O');
-		$list->add_condition('user_type','=','fizicko');
+		//$list->add_condition('user_type','=','fizicko');
 		$list->set_order_by('id','DESC');
 		$list->set_limit(100);
 		$list = $broker->get_all_data_condition_limited($list);
