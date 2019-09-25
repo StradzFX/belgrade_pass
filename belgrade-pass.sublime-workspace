@@ -520,10 +520,20 @@
 	"buffers":
 	[
 		{
-			"file": "xenon/config.php",
+			"file": "app/pages/admin/views/post_office.php",
 			"settings":
 			{
-				"buffer_size": 1364,
+				"buffer_size": 9643,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/modules/payments.php",
+			"settings":
+			{
+				"buffer_size": 9122,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -580,13 +590,35 @@
 	},
 	"expanded_folders":
 	[
-		"/D/wamp/www/Xenon3/websites/belgrade_pass",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/classes",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/classes/database",
-		"/D/wamp/www/Xenon3/websites/belgrade_pass/xenon"
+		"/C/wamp64/www/belgrade_pass",
+		"/C/wamp64/www/belgrade_pass/app",
+		"/C/wamp64/www/belgrade_pass/app/ajax",
+		"/C/wamp64/www/belgrade_pass/app/ajax/admin",
+		"/C/wamp64/www/belgrade_pass/app/ajax/admin/card_info",
+		"/C/wamp64/www/belgrade_pass/app/ajax/admin/company_manage",
+		"/C/wamp64/www/belgrade_pass/app/ajax/admin/users_manage",
+		"/C/wamp64/www/belgrade_pass/app/ajax/admin_control_panel",
+		"/C/wamp64/www/belgrade_pass/app/modules",
+		"/C/wamp64/www/belgrade_pass/app/pages",
+		"/C/wamp64/www/belgrade_pass/app/pages/admin",
+		"/C/wamp64/www/belgrade_pass/app/pages/admin/views",
+		"/C/wamp64/www/belgrade_pass/app/pages/admin/views/elements",
+		"/C/wamp64/www/belgrade_pass/app/pages/admin/views/elements/company_manage",
+		"/C/wamp64/www/belgrade_pass/app/pages/template",
+		"/C/wamp64/www/belgrade_pass/app/pages/views",
+		"/C/wamp64/www/belgrade_pass/app/pages/views/elements",
+		"/C/wamp64/www/belgrade_pass/app/pages/views/elements/company",
+		"/C/wamp64/www/belgrade_pass/app/pages/views/elements/company/transactions",
+		"/C/wamp64/www/belgrade_pass/php",
+		"/C/wamp64/www/belgrade_pass/php/core",
+		"/C/wamp64/www/belgrade_pass/php/core/config"
 	],
 	"file_history":
 	[
+		"/C/wamp64/www/belgrade_pass/app/pages/admin/views/users_manage.php",
+		"/C/wamp64/www/belgrade_pass/app/ajax/admin/get_list_of_postoffice_payments.php",
+		"/C/wamp64/www/belgrade_pass/app/modules/payments.php",
+		"/C/wamp64/www/belgrade_pass/php/core/config/database.json",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/app/pages/views/company_approval.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/vendor/phpmailer/wl_mailer.class.php",
 		"/D/wamp/www/Xenon3/websites/belgrade_pass/vendor/phpmailer/mail_config.php",
@@ -710,15 +742,11 @@
 		"/D/wamp/www/Xenon3/websites/simfonija/app/pages/views/elements/login_form.php",
 		"/D/wamp/www/Xenon3/websites/simfonija/app/controllers/HomeController.php",
 		"/D/wamp/www/Xenon3/websites/simfonija/php/pages.php",
-		"/D/wamp/www/Xenon3/websites/simfonija/classes/database/database_broker.php",
-		"/D/wamp/www/Xenon3/websites/simfonija/classes/database/MainTableClass.php",
-		"/D/wamp/www/Xenon3/websites/simfonija/classes/tables/user.php",
-		"/D/wamp/www/Xenon3/websites/simfonija/php/core/classes/ValidationError.php",
-		"/D/wamp/www/Xenon3/websites/simfonija/app/ajax/website/login/login_user.php"
+		"/D/wamp/www/Xenon3/websites/simfonija/classes/database/database_broker.php"
 	],
 	"find":
 	{
-		"height": 52.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -1138,30 +1166,61 @@
 			[
 				{
 					"buffer": 0,
-					"file": "xenon/config.php",
-					"semi_transient": true,
+					"file": "app/pages/admin/views/post_office.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1364,
+						"buffer_size": 9643,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1361,
-								1186
+								165,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/modules/payments.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9122,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1993,
+								1971
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1174,7 +1233,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 28.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1200,7 +1259,7 @@
 		"cols":
 		[
 			0.0,
-			0.964788732394,
+			0.923076923077,
 			1.0
 		],
 		"rows":
@@ -1230,7 +1289,7 @@
 	"project": "belgrade-pass.sublime-project",
 	"replace":
 	{
-		"height": 93.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1248,16 +1307,16 @@
 	},
 	"select_project":
 	{
-		"height": 625.0,
+		"height": 657.0,
 		"last_filter": "",
 		"selected_items":
 		[
 			[
 				"",
-				"D:\\wamp\\www\\Xenon3\\websites\\beauty_code\\beauty_code.sublime-project"
+				"C:\\wamp64\\www\\Xenon3\\WEB LAB.sublime-project"
 			]
 		],
-		"width": 475.0
+		"width": 483.0
 	},
 	"select_symbol":
 	{
@@ -1276,7 +1335,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 500.0,
+	"side_bar_width": 265.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
