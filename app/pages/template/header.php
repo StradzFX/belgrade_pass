@@ -191,7 +191,7 @@ var a2a_config=a2a_config||{};a2a_config.callbacks=a2a_config.callbacks||[];a2a_
 			</button>
 
 			<ul id="menu-main-menu" class="primary-menu header-menu">
-				<li id="menu-item-11042" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11042"><a href="companies/" class=" ">Istraži</a>
+				<li id="menu-item-11042" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11042"><a href="companies/" class=" ">Kuda</a>
 					<ul  class="sub-menu">
 						<li id="menu-item-11076" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11076"><a href="companies/" class=" ">Sve kategorije</a></li>
 						<?php for ($i=0; $i < sizeof($list_categories_header); $i++) { ?> 
