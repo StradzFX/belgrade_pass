@@ -123,6 +123,17 @@ var a2a_config=a2a_config||{};a2a_config.callbacks=a2a_config.callbacks||[];a2a_
 	<meta name="tec-api-version" content="v1"><meta name="tec-api-origin" content="http://belgradepass.com"><link rel="https://theeventscalendar.com" href="wp-json/tribe/events/v1/" />	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
 
 	<link href="https://fonts.googleapis.com/css?family=Armata&display=swap" rel="stylesheet">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44137778-16"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-44137778-16');
+	</script>
+
 </head>
 <body class="home page-template page-template-page-templates page-template-front_page page-template-page-templatesfront_page-php page page-id-206 wp-custom-logo tribe-no-js group-blog listable" data-mapbox-token="" data-mapbox-style="mapbox.emerald">
 
@@ -177,7 +188,7 @@ var a2a_config=a2a_config||{};a2a_config.callbacks=a2a_config.callbacks||[];a2a_
 
 			</button>
 
-			<ul id="menu-main-menu" class="primary-menu"><li id="menu-item-11042" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11042"><a href="companies/" class=" ">Istraži</a>
+			<ul id="menu-main-menu" class="primary-menu"><li id="menu-item-11042" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-11042"><a href="companies/" class=" ">Kuda</a>
 				<ul  class="sub-menu">
 					<li id="menu-item-11076" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11076"><a href="companies/" class=" ">Sve kategorije</a></li>
 					<?php for ($i=0; $i < sizeof($list_categories_header); $i++) { ?> 

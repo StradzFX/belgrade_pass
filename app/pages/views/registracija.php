@@ -206,6 +206,16 @@
                                 </div>
                               </div>
 
+                              <div class="col-12 col-sm-12">
+                                  <div class="form_field">
+                                    <div class="field_title">Odaberite koliko kredita želite da uplatite:<br/><br/></div>
+                                    <div class="field_component">
+                                       <input id="ex2" data-slider-id='ex2Slider' type="text" data-slider-min="1000" data-slider-max="1000000" data-slider-step="1000" data-slider-value="5000"/>
+                                       <span id="ex6CurrentSliderValLabel">Uplata: <span id="ex2SliderVal">2500</span> RSD</span>
+                                    </div>
+                                  </div>
+                              </div>
+
                           </div>
                         </div>
                         <!-- /.tab-pane -->
@@ -360,6 +370,7 @@
 <script type="text/javascript">
   var user_type = 'fizicko';
   var selected_amount = 2500;
+  var selected_amount_legal = 2500;
   function toggle_tab(option){
         $('.tab_option').removeClass('active');
         $('.'+option).addClass('active');
@@ -383,6 +394,17 @@ $(function(){
   $("#ex1").on("slide", function(slideEvt) {
     $("#ex1SliderVal").text(slideEvt.value);
     selected_amount = slideEvt.value;
+  });
+
+  $('#ex2').bootstrapSlider({
+    formatter: function(value) {
+      return value + ' RSD';
+    }
+  });
+
+  $("#ex2").on("slide", function(slideEvt) {
+    $("#ex2SliderVal").text(slideEvt.value);
+    selected_amount_legal = slideEvt.value;
   });
 });
 

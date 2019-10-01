@@ -73,6 +73,7 @@ for ($i=0; $i < sizeof($card_list); $i++) {
 
 $card_list = new user_card();
 $card_list->set_condition('checker','!=','');
+$card_list->set_condition('checker','!=','company');
 $card_list->add_condition('recordStatus','=','O');
 $card_list->add_condition('user','=',$reg_user->id);
 $card_list->set_order_by('pozicija','DESC');
@@ -92,4 +93,25 @@ for ($i=0; $i < sizeof($card_list); $i++) {
 
 	$card_list[$i]->left_passes = CardModule::get_card_credits($card_list[$i]);
 	$card_list[$i]->last_package_date = CardModule::get_last_package_date($card_list[$i]);
+}
+
+
+if($reg_user->user_type == 'pravno'){
+	$master_card = new user_card();
+	$master_card->set_condition('checker','!=','');
+	$master_card->set_condition('checker','=','company');
+	$master_card->add_condition('recordStatus','=','O');
+	$master_card->add_condition('user','=',$reg_user->id);
+	$master_card->set_order_by('pozicija','DESC');
+	$master_card->set_order_by('id','DESC');
+	$master_card = $broker->get_all_data_condition($master_card);
+	if(sizeof($master_card) > 0){
+		$master_card = $master_card[0];
+		$master_card->left_passes = CardModule::get_card_credits($master_card);
+		$master_card->last_package_date = CardModule::get_last_package_date($master_card);
+
+		$master_card->transactions = PaymentModule::get_company_invoices($master_card->id);
+	}
+
+
 }

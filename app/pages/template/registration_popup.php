@@ -53,6 +53,7 @@
 		var user_data = {};
 			user_data.user_type = user_type;
 			user_data.selected_amount = selected_amount;
+			user_data.selected_amount_legal = selected_amount_legal;
 			
 			user_data.first_name = $('[name="ime"]').val();
 			user_data.last_name = $('[name="prezime"]').val();

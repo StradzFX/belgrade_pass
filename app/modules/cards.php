@@ -95,6 +95,53 @@ class CardModule{
 		}
 	}
 
+	public static function create_card_legal($first_name,$email,$user_id){
+		global $broker;
+
+		$available_card = self::get_available_card();
+
+		if($available_card){
+			$user_card = new user_card();
+		    $user_card->card_number = $available_card->card_number;
+		    $user_card->card_password = $available_card->card_password;
+		    
+		    $user_card->parent_first_name = $first_name;
+		    $user_card->parent_last_name = $last_name;
+		    $user_card->number_of_kids = 0;
+		    $user_card->child_birthdate = '';
+		    $user_card->city = '';
+		    $user_card->phone = '';
+		    $user_card->email = $email;
+
+		    $user_card->delivery_method = 'postal';
+
+		    $user_card->post_street = '';
+		    $user_card->post_city = '';
+		    $user_card->post_postal = '';
+
+		    $user_card->partner_id = 0;
+		    $user_card->customer_received = 0;
+		    
+		    $user_card->user = $user_id;
+		    $user_card->maker = 'company';
+		    $user_card->makerDate = date('c');
+		    $user_card->checker = 'company';
+		    $user_card->checkerDate = date('c');
+		    $user_card->jezik = 'rs';
+		    $user_card->recordStatus = 'O';
+		    
+		    $user_card = $broker->insert($user_card);
+
+		    $available_card->card_taken = 1;
+		    $broker->update($available_card);
+
+		    //self::send_new_card_email($email);
+		   return $user_card;
+		}else{
+			return null;
+		}
+	}
+
 	public static function get_available_card(){
 		global $broker;
 
@@ -147,6 +194,21 @@ class CardModule{
 		$last_card->set_condition('checker','!=','');
 		$last_card->add_condition('recordStatus','=','O');
 		$last_card->add_condition('card_number','=',$card_number);
+		$last_card->set_order_by('pozicija','DESC');
+		$last_card->set_limit(1);
+		$last_card->set_order_by('id','DESC');
+		$last_card = $broker->get_all_data_condition_limited($last_card);
+
+		return sizeof($last_card) > 0 ? $last_card[0] : null;
+	}
+
+	public static function get_company_mster_card($user_id){
+		global $broker;
+
+		$last_card = new user_card();
+		$last_card->set_condition('checker','=','company');
+		$last_card->add_condition('recordStatus','=','O');
+		$last_card->add_condition('user','=',$user_id);
 		$last_card->set_order_by('pozicija','DESC');
 		$last_card->set_limit(1);
 		$last_card->set_order_by('id','DESC');

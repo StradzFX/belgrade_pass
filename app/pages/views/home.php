@@ -3,13 +3,13 @@
 			
 								<article id="post-206" class="post-206 page type-page status-publish has-post-thumbnail hentry">
 					<header class="entry-header has-image">
-						<div class="entry-featured" style="background-image: url(wp-content/uploads/2015/10/image_14.jpg);">
+						<div class="entry-featured"  style="background-image: url(wp-content/uploads/2015/10/image_14.jpg);">
 													</div>
 						<div class="header-content">
 							<h1 class="page-title">Istraži Beograd</h1>
 
 							<div class="entry-subtitle">
-								<p>Pronađi odlična mesta, uštedi sa karticom.</p>
+								<p>Lako pronađi popuste u omiljenim kafićima i restoranima</p>
 							</div>
 
 							
@@ -20,7 +20,7 @@
 		
 		
 		<div class="search-field-wrapper  search-filter-wrapper">
-			<label for="search_keywords">Ključne reći</label>
+			<label for="search_keywords">Ključne reči</label>
 			<input class="search-field  js-search-suggestions-field" type="text" name="search_keywords" id="search_keywords" placeholder="Šta tražite?" autocomplete="off" value=""/>
 					</div>
 
@@ -107,7 +107,7 @@
 								<h3 class="widget_title  widget_title--frontpage">
 									Za šta ste danas raspoloženi?
 									<span class="widget_subtitle  widget_subtitle--frontpage">
-										Istražite BelgradePass i uštedite koristeći našu karticu.
+										Odaberite svoje omiljeno mesto i iskoristite popuste
 									</span>
 								</h3>
 
@@ -159,7 +159,7 @@
 
 		<div class="front-page-section"><div class="section-wrap">
 		<h3 class="widget_title  widget_title--frontpage">
-			Kako funkcioniše BelgradePass				<span class="widget_subtitle  widget_subtitle--frontpage">Iskoristi BelgradePass karticu i uštedi kod naših partnera</span>
+			Kako funkcioniše BelgradePass				<span class="widget_subtitle  widget_subtitle--frontpage">Sigurni popusti te čekaju kod svih naših partnera</span>
 					</h3>
 
 		
@@ -168,9 +168,9 @@
 					<div class="card  card--post  card--feature  card--widget">
 						<div class="card__content">
 							<img src="public/images/restaurant.png" />
-							<div class="card__title">Odaberi restoran</div>
+							<div class="card__title">Odaberi kafić ili restoran</div>
 
-							Zabava je na svakom koraku, pronađi je! Preko 300 restorana samo u Beogradu daju širok izbor mogućnosti
+							Pronađi svoje omiljeno mesto ili istraži neko novo sada i na BelgradePass portalu i uštedi!
 						</div><!-- .card__content -->
 					</div><!-- .card.card--post.card--feature -->
 				</div><!-- .grid__item -->
@@ -180,7 +180,7 @@
 						<div class="card__content">
 							<img src="public/images/credit-card.png" />
 															<div class="card__title">Zatraži karticu i uplati kredite</div>
-							Registracijom dobijate karticu na koju možete uplaćivati kredite koje kasnije trošite kod naših partnera						</div><!-- .card__content -->
+							Prijavi se i uplatom kredita pokreni svoj nalog koji dalje koristiš kod naših partnera.						</div><!-- .card__content -->
 					</div><!-- .card.card--post.card--feature -->
 				</div><!-- .grid__item -->
 
@@ -188,8 +188,8 @@
 					<div class="card  card--post  card--feature  card--widget">
 						<div class="card__content">
 							<img src="public/images/frame.png" />
-							<div class="card__title">Plati QR kodom</div>
-							Sve što je neophodno da uradite je da pokažete QR kod vaše kartice i transakcija će biti zabeležena						</div><!-- .card__content -->
+							<div class="card__title">U restoranu traži BelgradePass račun:</div>
+							Možeš platiti karticom, skeniranjem ličnog QR koda ili unosom jedinstvenog broja naloga sa šifrom.						</div><!-- .card__content -->
 					</div><!-- .card.card--post.card--feature -->
 				</div><!-- .grid__item -->
 
@@ -210,7 +210,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 					<div id="footer-sidebar" class="footer-widget-area" role="complementary">
-				<aside id="a2a_follow_widget-3" class="widget  widget--footer  widget_a2a_follow_widget"><h2 class="widget-title">Follow us</h2><div class="a2a_kit a2a_kit_size_32 a2a_follow addtoany_list" data-a2a-url="http://belgradepass.com/" data-a2a-title="Discover Belgrade" style=""><a class="a2a_button_facebook" href="https://sr-rs.facebook.com/belgradepass/" title="Facebook" rel="noopener" target="_blank"></a><a class="a2a_button_instagram" href="https://www.instagram.com/belgradepass/" title="Instagram" rel="noopener" target="_blank"></a><a class="a2a_button_youtube_channel" href="https://www.youtube.com/user/belgradepass" title="YouTube Channel" rel="noopener" target="_blank"></a></div></aside>			</div><!-- #primary-sidebar -->
+				<aside id="a2a_follow_widget-3" class="widget  widget--footer  widget_a2a_follow_widget"><h2 class="widget-title">Follow us</h2><div class="a2a_kit a2a_kit_size_32 a2a_follow addtoany_list" data-a2a-url="http://belgradepass.com/" data-a2a-title="Discover Belgrade" style=""><a class="a2a_button_facebook" href="https://sr-rs.facebook.com/belgradepass/" title="Facebook" rel="noopener" target="_blank"></a><a class="a2a_button_instagram" href="https://www.instagram.com/belgradepass/" title="Instagram" rel="noopener" target="_blank"></a></div></aside>			</div><!-- #primary-sidebar -->
 				<div class="footer-text-area">
 			<div class="site-info">
 									<div class="site-copyright-area">

@@ -21,7 +21,7 @@ class PaymentModule{
 
 			if(!is_numeric($search_term)){
 				//$list->add_condition('po_name','LIKE','%'.$search_term.'%');
-				$list->add_condition('','',"(po_name LIKE '%".$search_term."%' OR po_payment_name LIKE '%".$search_term."%')");
+				$list->add_condition('','',"(po_name LIKE '%".$search_term."%' OR po_payment_name LIKE '%".$search_term."%' OR user IN (SELECT id FROM user WHERE (first_name LIKE '%".$search_term."%' OR email LIKE '%".$search_term."%' OR last_name LIKE '%".$search_term."%')))");
 			}
 		}
 
@@ -194,6 +194,16 @@ class PaymentModule{
 		return $broker->get_count_condition($list);
 	}
 
+	public static function get_company_invoices($user_card_id){
+		global $broker;
+		$list = new purchase();
+		$list->add_condition('recordStatus','=','O');
+		$list->add_condition('purchase_type','=','invoice');
+		$list->add_condition('user_card','=',$user_card_id);
+		$list->set_order_by('id','DESC');
+		return $broker->get_all_data_condition($list);
+	}
+
 	public static function create_post_office_payment($user_card_id,$amount,$user_id){
 		global $broker;
 
@@ -229,6 +239,58 @@ class PaymentModule{
 
 		    $transactions = new transactions();
 		    $transactions->transaction_type = 'purchase_post_office';
+		    $transactions->tranaction_id = $purchase->id;
+		    $transactions->user = $user_id;
+		    $transactions->maker = 'system';
+		    $transactions->makerDate = date('c');
+		    $transactions->checker = 'system';
+		    $transactions->checkerDate = date('c');
+		    $transactions->jezik = 'rs';
+		    $transactions->recordStatus = 'O';
+		    
+		    $transactions = $broker->insert($transactions);
+
+		    return $purchase;
+		}else{
+			return null;
+		}
+	}
+
+	public static function create_invoice_payment($user_card_id,$amount,$user_id){
+		global $broker;
+
+		$card_package = PackageModule::get_package_by_amount($amount);
+
+		if($card_package){
+			$purchase = new purchase();
+		    $purchase->user = $user_id;
+		    $purchase->price = $card_package->price;
+		    $purchase->to_company = $card_package->price;
+		    $purchase->to_us = $card_package->to_us;
+		    $purchase->duration_days = $card_package->duration_days;
+		    $purchase->number_of_passes = $card_package->number_of_passes;
+		    $purchase->start_date = date('Y-m-d');
+		    $purchase->end_date = date('Y-m-d',strtotime('+'.$card_package->duration_days.' days'));
+		    $purchase->purchase_type = 'invoice';
+		    $purchase->company_flag = '0';
+		    $purchase->po_name = '';
+		    $purchase->po_address = '';
+		    $purchase->po_city = '';
+		    $purchase->po_postal = '';
+		    $purchase->card_package = 'NULL';
+		    $purchase->user_card = $user_card_id;
+		    $purchase->maker = 'system';
+		    $purchase->makerDate = date('c');
+		    $purchase->checkerDate = date('c');
+		    $purchase->jezik = 'rs';
+		    $purchase->recordStatus = 'O';
+
+		    $purchase = $broker->insert($purchase);
+
+		    //self::create_post_office_image($purchase,$card_package);
+
+		    $transactions = new transactions();
+		    $transactions->transaction_type = 'purchase_invoice';
 		    $transactions->tranaction_id = $purchase->id;
 		    $transactions->user = $user_id;
 		    $transactions->maker = 'system';

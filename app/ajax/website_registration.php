@@ -90,27 +90,16 @@
 		    }
 
 		    if($user->user_type == 'pravno'){
-		    	$mail_html_content = file_get_contents('app/mailer/html/content_registration_pravno.html');
-				$mail_html = str_replace('{content}', $mail_html_content, $mail_html);
-
-				$wl_mailer = new wl_mailer($host_email,$host_password,array($sender_email,$sender_name),array($replier_email,$replier_name),$host,$port); 
-				$wl_mailer->set_subject('Registracija na BelgradePass');
-
-				$mail_html = str_replace('{user_email}', $user->email, $mail_html);
-				$mail_html = str_replace('{user_password}', $user_data["password"], $mail_html);
-				
-				if($user->email != ''){
-					$wl_mailer->add_address($user->email,'');
-					$wl_mailer->add_image("public/images/mailer/company_logo.png", "company_logo", "company_logo.png");
-
-					
-				}
-
-				$wl_mailer->set_email_content($mail_html);
-				$wl_mailer->send_email();
-		    }
-
-		    
+		    	$card = CardModule::create_card_legal($user->naziv,$user->email,$user->id);
+		    	if($card){
+		    		EmailMoodule::send_legal_user_registration($user,$card);
+		    		$transaction = PaymentModule::create_invoice_payment($card->id,$user_data['selected_amount_legal'],$user->id);
+		    		if($transaction){
+		    			$id = $transaction->id;
+		    			EmailMoodule::send_new_purchase_reservation_legal_user($user,$card,$transaction);
+		    		}
+		    	}
+		    }   
 
 		}else{
 		    $success = false;

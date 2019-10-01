@@ -10,7 +10,6 @@
   );
 
   global $broker;
-
   $purchase_all = new purchase();
   $purchase_all->add_condition('recordStatus','=','O');
   $purchase_all->add_condition('user','=',$data['id']);

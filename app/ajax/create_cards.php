@@ -32,12 +32,12 @@ if($validation_message == ""){
 	for ($i=0; $i < sizeof($users); $i++) { 
 		$card = CardModule::create_card($users[$i]['first_name'],$users[$i]['last_name'],$users[$i]['email'],$reg_user->id);
     	if($card){
-    		$transaction = PaymentModule::create_post_office_payment($card->id,$users[$i]['credits'],$reg_user->id);
+    		/*$transaction = PaymentModule::create_post_office_payment($card->id,$users[$i]['credits'],$reg_user->id);
     		if($transaction){
     			$id = $transaction->id;
     		}
 
-    		EmailMoodule::send_company_user_new_card($users[$i]['email'],$card,$reg_user);
+    		EmailMoodule::send_company_user_new_card($users[$i]['email'],$card,$reg_user);*/
 
     		$success = true;
 		    $message = "Odobrena Vam je kartica.";
