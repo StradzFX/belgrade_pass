@@ -1,6 +1,6 @@
 <?php
 
-$data=$post_data=['data'];
+$data=$post_data['data'];
 
 ?>
 

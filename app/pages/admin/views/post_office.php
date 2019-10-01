@@ -202,23 +202,7 @@
   }
 </style>
 <script type="text/javascript">
-
-    /*pop=post office payments*/
-    function  search_pop(){
-      var data = {};
-          data.id=$('[name="id"]').val();
-          
-
-        var call_url = 'search_pop';
-        var call_data = {data:data};
-        var call_back = function(response){
-            $('.list_of_postoffice_payments_holder').hmtl(response);
-          }
-          ajax_call(call_url, call_data, call_back);
-              }
-
-
-
+  
     function get_list_of_postoffice_payments(){
       var data={};
           data.id=$('[name="id"]').val();

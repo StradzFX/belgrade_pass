@@ -52,7 +52,6 @@ class PaymentModule{
 			}
 		}
 		
-
 		if ($search_acc) {
 			if ($search_acc == '') {
 			}elseif ($search_acc == 'yes' ) {

@@ -39,7 +39,7 @@
       <div class="modal-footer">
           <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel
           </button>
-          <button type="button" class="btn btn-primary" onclick="approve_post_office(<?php echo $list[$i]->id; ?>)">
+          <button type="button" class="btn btn-primary" onclick="approve_post_office()">
             Approve
           </button>
       </div>
@@ -61,12 +61,12 @@ function approve_post_office(){
         if(response.success){  
           
             alert(response.message) 
-            document.location = master_data.base_url+'post_office/';
+            location.reload();
         }else{  
             alert(response.message);
         }  
 
         }  
         ajax_json_call(call_url, call_data, callback); 
-      }
+      }    
 </script>
